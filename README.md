@@ -124,13 +124,12 @@ pip install python-docx reportlab markdown
 
 If you utilize this repository, evaluation framework, or empirical findings in your research or production systems, please cite as:
 
-```bibtex
-@book{antigravity2026rag,
+```@book{bhuyan2026rag,
   title     = {Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems},
-  subtitle  = {An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval},
-  author    = {Antigravity AI Engineering \& Research Team},
+  subtitle  = {An Empirical Engineering Guide},
+  author    = {Bhuyan, Hrishikesh},
   year      = {2026},
-  publisher = {Antigravity AI Press},
-  url       = {d:/Rag book work/data/processed/publication/}
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23276026}
 }
-```
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23276026.svg)](https://doi.org/10.5281/zenodo.23276026)
