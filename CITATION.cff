@@ -1,17 +1,23 @@
 cff-version: 1.2.0
 message: "If you use this book, codebase, empirical benchmark, or ablation results in your work, please cite it using the metadata below."
 title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
-subtitle: "An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval"
+subtitle: "An Empirical Engineering Guide"
 type: book
+
 authors:
   - family-names: "Bhuyan"
     given-names: "Hrishikesh"
+
 year: 2026
 month: 10
 edition: "First Edition"
-url: "https://github.com/user/rag-book-work"
-repository-code: "https://github.com/user/rag-book-work"
+
+doi: "10.5281/zenodo.23276026"
+url: "https://zenodo.org/records/23276026"
+repository-code: "https://github.com/Bhoomikahs20/rag-under-the-microscope"
+
 license: "CC-BY-4.0"
+
 keywords:
   - retrieval-augmented-generation
   - rag
@@ -23,6 +29,7 @@ keywords:
   - hotpotqa
   - benchmark
   - llm-evaluation
+
 preferred-citation:
   type: book
   title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
@@ -32,5 +39,6 @@ preferred-citation:
   year: 2026
   month: 10
   publisher:
-    name: "Antigravity Research Press"
+    name: "Zenodo"
+  doi: "10.5281/zenodo.23276026"
   notes: "Audited Empirical Research Monograph & Benchmark Codebase"
