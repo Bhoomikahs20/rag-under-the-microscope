@@ -1,0 +1,3999 @@
+{
+  "experiment_info": {
+    "experiment_name": "Controlled Query-Rewriting Experiment",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "rewriter_model": "google/flan-t5-base",
+    "generator_model": "google/flan-t5-base",
+    "top_k": 5,
+    "random_seed": 42,
+    "total_queries": 50,
+    "total_experiment_runtime_seconds": 175.56
+  },
+  "metrics_summary": {
+    "original_query_baseline": {
+      "hit_rate_percent": 100.0,
+      "recall_at_5": 0.95,
+      "precision_at_5": 0.38,
+      "answer_accuracy_percent": 78.0,
+      "exact_match_percent": 64.0,
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      }
+    },
+    "rewritten_query_pipeline": {
+      "rewriter_model": "google/flan-t5-base",
+      "hit_rate_percent": 100.0,
+      "recall_at_5": 0.89,
+      "precision_at_5": 0.356,
+      "answer_accuracy_percent": 74.0,
+      "exact_match_percent": 62.0,
+      "avg_query_rewriting_latency_seconds": 1.5298,
+      "total_pipeline_runtime_seconds": 156.2,
+      "failure_category_counts": {
+        "Retrieval Failure": 8,
+        "Multi-Hop Reasoning Failure": 2,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      }
+    }
+  },
+  "per_question_results": [
+    {
+      "query_index": 1,
+      "query_id": "5a7c35885542996dd594b8d9",
+      "original_question": "The Hope Theatre presented plays during what overall time frame in England?",
+      "rewritten_query": "The Hope Theatre presented plays during the overall time frame in England.",
+      "gold_answer": "1562 and 1642",
+      "rag_generated_answer": "between 1562 and 1642",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.8571,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "7629569",
+        "39566"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "4934253",
+        "7629569",
+        "39566",
+        "7672206"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "4934253",
+        "7629569",
+        "39566",
+        "3751418"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.07,
+      "generation_latency_seconds": 1.574,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "7629569",
+          "chunk_id": "7629569_c0",
+          "title": "Hope Theatre",
+          "similarity_score": 0.7939,
+          "snippet": "The Hope Theatre was one of the theatres built in and around London for the presentation of plays in English Renaissance theatre, comparable to the Gl..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "39566",
+          "chunk_id": "39566_c0",
+          "title": "English Renaissance theatre",
+          "similarity_score": 0.552,
+          "snippet": "English Renaissance theatre, also known as early modern English theatre, or (commonly) as Elizabethan theatre, refers to the theatre of England betwee..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.3308,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "4934253",
+          "chunk_id": "4934253_c0",
+          "title": "The Zoo",
+          "similarity_score": 0.2805,
+          "snippet": "The Zoo is a one-act comic opera, with music by Arthur Sullivan and a libretto by B. C. Stephenson, writing under the pen name of Bolton Rowe. It prem..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "3751418",
+          "chunk_id": "3751418_c0",
+          "title": "The World's Best Prom",
+          "similarity_score": 0.2466,
+          "snippet": "The World's Best Prom is a 2006 documentary film about a high school prom in Racine, Wisconsin. \"Prom\" was released as a short film and was expanded t..."
+        }
+      ]
+    },
+    {
+      "query_index": 2,
+      "query_id": "5a8e4a605542995a26add4cb",
+      "original_question": "The composer of the opera \"The Zoo\" has composed how many major orchestral works?",
+      "rewritten_query": "The composer of the opera \"The Zoo\" has composed how many major orchestral works?",
+      "gold_answer": "13",
+      "rag_generated_answer": "13",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "4934253",
+        "45280"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1499129",
+        "4934253",
+        "67025",
+        "45280",
+        "6566239"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "1499129",
+        "4934253",
+        "67025",
+        "45280",
+        "6566239"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.398,
+      "generation_latency_seconds": 1.221,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "4934253",
+          "chunk_id": "4934253_c0",
+          "title": "The Zoo",
+          "similarity_score": 0.6707,
+          "snippet": "The Zoo is a one-act comic opera, with music by Arthur Sullivan and a libretto by B. C. Stephenson, writing under the pen name of Bolton Rowe. It prem..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "45280",
+          "chunk_id": "45280_c0",
+          "title": "Arthur Sullivan",
+          "similarity_score": 0.3901,
+          "snippet": "Sir Arthur Seymour Sullivan MVO (13 May 1842 – 22 November 1900) was an English composer. He is best known for his series of 14 operatic collaboration..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "67025",
+          "chunk_id": "67025_c0",
+          "title": "Arnold Schoenberg",
+          "similarity_score": 0.2467,
+          "snippet": "Arnold Franz Walter Schoenberg or Schönberg ( ; ] ; 13 September 187413 July 1951) was an Austrian composer, music theorist, and painter. He was assoc..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "6566239",
+          "chunk_id": "6566239_c0",
+          "title": "A Survivor from Warsaw",
+          "similarity_score": 0.2082,
+          "snippet": "A Survivor from Warsaw, Op. 46, is a cantata by the Los Angeles-based Austrian composer Arnold Schoenberg, written in tribute to Holocaust victims. Th..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "1499129",
+          "chunk_id": "1499129_c0",
+          "title": "Pooh's Heffalump Movie",
+          "similarity_score": 0.1617,
+          "snippet": "Pooh's Heffalump Movie is a 2005 American animated film produced by DisneyToon Studios and released by Walt Disney Pictures, featuring characters from..."
+        }
+      ]
+    },
+    {
+      "query_index": 3,
+      "query_id": "5a8780385542996e4f30880e",
+      "original_question": "What character in the television special \"The Pound Puppies\" did the voice actor of Fred Jones from \"Scooby-Doo\" voice as?",
+      "rewritten_query": "The Pound Puppies is a television special that featured the voice of Fred Jones from \"Scooby-Doo\".",
+      "gold_answer": "Howler",
+      "rag_generated_answer": "The relevant information to answer the above question is: He is best known for his role as Fred Jones from the \"Scooby-Doo\" franchise since its conception in 1969, as the only original voice actor still with the \"Sco",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Generation Failure",
+      "gold_doc_ids": [
+        "37328049",
+        "487732"
+      ],
+      "orig_retrieved_doc_ids": [
+        "487732",
+        "1499129",
+        "37328049",
+        "3634471",
+        "2225976"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "200842",
+        "487732",
+        "1499129",
+        "37328049",
+        "858143"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.1438,
+      "generation_latency_seconds": 4.374,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "37328049",
+          "chunk_id": "37328049_c0",
+          "title": "Pound Puppies (film)",
+          "similarity_score": 0.6333,
+          "snippet": "The Pound Puppies is an animated television special, produced by Hanna-Barbera Productions, based on the popular toy line from Tonka, which aired in s..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "487732",
+          "chunk_id": "487732_c0",
+          "title": "Frank Welker",
+          "similarity_score": 0.5375,
+          "snippet": "Franklin Wendell Welker (born March 12, 1946) is an American actor, who for most of his career has specialized as a voice actor. He is best known for ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1499129",
+          "chunk_id": "1499129_c0",
+          "title": "Pooh's Heffalump Movie",
+          "similarity_score": 0.3116,
+          "snippet": "Pooh's Heffalump Movie is a 2005 American animated film produced by DisneyToon Studios and released by Walt Disney Pictures, featuring characters from..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "858143",
+          "chunk_id": "858143_c0",
+          "title": "God's Angry Man",
+          "similarity_score": 0.2346,
+          "snippet": "God's Angry Man is a 1981 documentary film about Gene Scott, a U.S. pastor and Stanford PhD who served for almost fifty years as an ordained minister ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "200842",
+          "chunk_id": "200842_c0",
+          "title": "Only Fools and Horses",
+          "similarity_score": 0.2261,
+          "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+        }
+      ]
+    },
+    {
+      "query_index": 4,
+      "query_id": "5a8cb59055429941ae14ded6",
+      "original_question": "What is the name of the television series \"Wuthering Heights\" actor who also starred in the action film \"Black Hawk Down\"?",
+      "rewritten_query": "The name of the television series \"Wuthering Heights\" is \"Wuthering Heights\" actor.",
+      "gold_answer": "Tom Hardy",
+      "rag_generated_answer": "Tom Hardy",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "1792975",
+        "20722922"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1792975",
+        "45218",
+        "20722922",
+        "1802353",
+        "1817766"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "29540174",
+        "37328049",
+        "20722922",
+        "1802353",
+        "1817766"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.6114,
+      "generation_latency_seconds": 1.732,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "20722922",
+          "chunk_id": "20722922_c0",
+          "title": "Wuthering Heights (2009 TV serial)",
+          "similarity_score": 0.7541,
+          "snippet": "Wuthering Heights is a two-part ITV television series adaptation of the novel \"Wuthering Heights\" by Emily Brontë. The episodes were adapted for the s..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "1802353",
+          "chunk_id": "1802353_c0",
+          "title": "Hugh Bonneville",
+          "similarity_score": 0.3035,
+          "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1817766",
+          "chunk_id": "1817766_c0",
+          "title": "Joseph Gordon-Levitt",
+          "similarity_score": 0.2677,
+          "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "29540174",
+          "chunk_id": "29540174_c0",
+          "title": "Rose Leslie",
+          "similarity_score": 0.2603,
+          "snippet": "Rose Eleanor Arbuthnot-Leslie (born 9 February 1987), known professionally as Rose Leslie, is a Scottish actress. After winning a Scottish BAFTA for B..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "37328049",
+          "chunk_id": "37328049_c0",
+          "title": "Pound Puppies (film)",
+          "similarity_score": 0.2394,
+          "snippet": "The Pound Puppies is an animated television special, produced by Hanna-Barbera Productions, based on the popular toy line from Tonka, which aired in s..."
+        }
+      ]
+    },
+    {
+      "query_index": 5,
+      "query_id": "5ae5fb975542996de7b71aa8",
+      "original_question": "Edmundo \"Eddie\" Rodriguez was born in what Mexican state?",
+      "rewritten_query": "Edmundo \"Eddie\" Rodriguez was born in Mexico.",
+      "gold_answer": "Jalisco",
+      "rag_generated_answer": "Guadalajara",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "73209",
+        "21757108"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "2893773",
+        "4892221",
+        "21757108"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "2893773",
+        "4892221",
+        "21757108"
+      ],
+      "all_gold_retrieved_original": false,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 0.9715,
+      "generation_latency_seconds": 1.179,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "21757108",
+          "chunk_id": "21757108_c0",
+          "title": "Edmundo Rodriguez",
+          "similarity_score": 0.8109,
+          "snippet": "Edmundo \"Eddie\" Rodriguez (born April 22, 1970 in Guadalajara, Mexico) is a retired Mexican soccer player. He spent most of his career in the U.S. lea..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "40343708",
+          "chunk_id": "40343708_c0",
+          "title": "Theodosia Okoh",
+          "similarity_score": 0.2872,
+          "snippet": "Theodosia Salome Okoh (13 June 1922 – 19 April 2015) was a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957. She also..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "4892221",
+          "chunk_id": "4892221_c0",
+          "title": "Justin Vincent",
+          "similarity_score": 0.239,
+          "snippet": "Justin Vincent (born January 25, 1983) is a former American football running back for the Pittsburgh Steelers of the National Football League. He was ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "8454308",
+          "chunk_id": "8454308_c0",
+          "title": "Oberto Airaudi",
+          "similarity_score": 0.2377,
+          "snippet": "Oberto Airaudi (29 May 1950 – 24 June 2013) was an Italian philosopher and artist, who founded the Federation of Damanhur. Airaudi also went by the na..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "2893773",
+          "chunk_id": "2893773_c0",
+          "title": "Dustin Kensrue",
+          "similarity_score": 0.2377,
+          "snippet": "Dustin Michael Kensrue (pronounced KENZ-roo) (born November 18, 1980) is a vocalist, lyricist, and rhythm guitarist in the Orange County, California, ..."
+        }
+      ]
+    },
+    {
+      "query_index": 6,
+      "query_id": "5abd0e8355429924427fcee2",
+      "original_question": "Sylvia Sidney starred in the film Beetlejuice, which was directed by whom?",
+      "rewritten_query": "Sylvia Sidney starred in the film Beetlejuice, which was directed by David A.",
+      "gold_answer": "Tim Burton",
+      "rag_generated_answer": "Tim Burton",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "1046971",
+        "293524"
+      ],
+      "orig_retrieved_doc_ids": [
+        "293524",
+        "1792975",
+        "1046971",
+        "2225976",
+        "89605"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "293524",
+        "1792975",
+        "1046971",
+        "2225976",
+        "89605"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.5994,
+      "generation_latency_seconds": 1.663,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "1046971",
+          "chunk_id": "1046971_c0",
+          "title": "Sylvia Sidney",
+          "similarity_score": 0.7155,
+          "snippet": "Sylvia Sidney (born Sophia Kosow; August 8, 1910 – July 1, 1999) was an American actress of stage, screen and film, with a career spanning over 70 yea..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "293524",
+          "chunk_id": "293524_c0",
+          "title": "Beetlejuice",
+          "similarity_score": 0.5645,
+          "snippet": "Beetlejuice is a 1988 American comedy-fantasy film directed by Tim Burton, produced by The Geffen Film Company and distributed by Warner Bros. The plo..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "2225976",
+          "chunk_id": "2225976_c0",
+          "title": "Candleshoe",
+          "similarity_score": 0.3218,
+          "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.3009,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "89605",
+          "chunk_id": "89605_c0",
+          "title": "Jennifer Saunders",
+          "similarity_score": 0.2622,
+          "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+        }
+      ]
+    },
+    {
+      "query_index": 7,
+      "query_id": "5a7257ce5542990c210a410d",
+      "original_question": "This English comedian wrote the British sitcom \"Absolutely Fabulous\"",
+      "rewritten_query": "This English comedian wrote the sitcom \"Absolutely Fabulous\".",
+      "gold_answer": "Jennifer Saunders",
+      "rag_generated_answer": "John Sullivan",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Multi-Hop Reasoning Failure",
+      "gold_doc_ids": [
+        "49546885",
+        "89605"
+      ],
+      "orig_retrieved_doc_ids": [
+        "49546885",
+        "167961",
+        "200842",
+        "1802353",
+        "89605"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "49546885",
+        "200842",
+        "45218",
+        "1802353",
+        "89605"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.0304,
+      "generation_latency_seconds": 1.153,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "49546885",
+          "chunk_id": "49546885_c0",
+          "title": "Absolutely Fabulous (series 3)",
+          "similarity_score": 0.5877,
+          "snippet": "The third series of \"Absolutely Fabulous\", a British sitcom, premiered on BBC One on 30 March 1995. This series consists of six episodes and concluded..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "89605",
+          "chunk_id": "89605_c0",
+          "title": "Jennifer Saunders",
+          "similarity_score": 0.3622,
+          "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "200842",
+          "chunk_id": "200842_c0",
+          "title": "Only Fools and Horses",
+          "similarity_score": 0.3433,
+          "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1802353",
+          "chunk_id": "1802353_c0",
+          "title": "Hugh Bonneville",
+          "similarity_score": 0.2912,
+          "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2327,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        }
+      ]
+    },
+    {
+      "query_index": 8,
+      "query_id": "5ab739c65542993667793f9a",
+      "original_question": "\"The Class of '62\" is an episode of the BBC television sitcom, \"Only Fools and Horses\", created and written by who?",
+      "rewritten_query": "The Class of '62 is an episode of the BBC television sitcom \"Only Fools and Horses\", created and written by David O'Brien.",
+      "gold_answer": "John Sullivan",
+      "rag_generated_answer": "John Sullivan",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "200842",
+        "7148380"
+      ],
+      "orig_retrieved_doc_ids": [
+        "49546885",
+        "7148380",
+        "200842",
+        "24403156",
+        "1802353"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "7148380",
+        "200842",
+        "2962586",
+        "23066976",
+        "1802353"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.2174,
+      "generation_latency_seconds": 1.108,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "7148380",
+          "chunk_id": "7148380_c0",
+          "title": "The Class of '62",
+          "similarity_score": 0.8473,
+          "snippet": "\"The Class of '62\" is an episode of the BBC sit-com \"Only Fools and Horses\". It was the fourth episode of series 7, and was first broadcast on 20 Janu..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "200842",
+          "chunk_id": "200842_c0",
+          "title": "Only Fools and Horses",
+          "similarity_score": 0.6935,
+          "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "2962586",
+          "chunk_id": "2962586_c0",
+          "title": "Plymouth Regional High School (New Hampshire)",
+          "similarity_score": 0.2213,
+          "snippet": "Plymouth Regional High School (PRHS) is a public secondary school in Plymouth, New Hampshire, United States. Surrounding towns that attend PRHS are As..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "23066976",
+          "chunk_id": "23066976_c0",
+          "title": "Assignment to Kill",
+          "similarity_score": 0.2204,
+          "snippet": "Assignment to Kill is a 1968 American drama film directed by Sheldon Reynolds and starring Patrick O'Neal, Joan Hackett, John Gielgud, Herbert Lom, an..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "1802353",
+          "chunk_id": "1802353_c0",
+          "title": "Hugh Bonneville",
+          "similarity_score": 0.2071,
+          "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+        }
+      ]
+    },
+    {
+      "query_index": 9,
+      "query_id": "5a8c5d795542995e66a475d4",
+      "original_question": "Where is the company located that produced the 2006 James Bond movie Casino Royale?",
+      "rewritten_query": "Casino Royale is the 2006 James Bond movie.",
+      "gold_answer": "based in London's Piccadilly and also operates from Pinewood Studios in the United Kingdom",
+      "rag_generated_answer": "London's Piccadilly",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.2667,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "726979",
+        "930379"
+      ],
+      "orig_retrieved_doc_ids": [
+        "726979",
+        "3300211",
+        "24314125",
+        "10239839",
+        "930379"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "1792975",
+        "726979",
+        "3300211",
+        "10239839",
+        "930379"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.8336,
+      "generation_latency_seconds": 2.189,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "930379",
+          "chunk_id": "930379_c0",
+          "title": "Casino Royale (2006 film)",
+          "similarity_score": 0.8194,
+          "snippet": "Casino Royale (2006) is the twenty-first spy film in the Eon Productions \"James Bond\" film series and the first to star Daniel Craig as the fictional ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "726979",
+          "chunk_id": "726979_c0",
+          "title": "Eon Productions",
+          "similarity_score": 0.4666,
+          "snippet": "Eon Productions (an abbreviation of Everything or Nothing) is a British film production company that produces the \"James Bond\" film series. The compan..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "10239839",
+          "chunk_id": "10239839_c0",
+          "title": "Knife Edge (film)",
+          "similarity_score": 0.4647,
+          "snippet": "Knife Edge is a 2009 British thriller film directed by Anthony Hickox and starring Natalie Press, Hugh Bonneville and Tamsin Egerton...."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.2932,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "3300211",
+          "chunk_id": "3300211_c0",
+          "title": "Assassins (film)",
+          "similarity_score": 0.2593,
+          "snippet": "Assassins is a 1995 American action thriller film directed by Richard Donner. The screenplay was by Andy and Larry Wachowski and Brian Helgeland. The ..."
+        }
+      ]
+    },
+    {
+      "query_index": 10,
+      "query_id": "5add443a5542992ae4cec503",
+      "original_question": "What American biotechnology company is part of Gloucester Pharmaceuticals?",
+      "rewritten_query": "Gloucester Pharmaceuticals is an American biotechnology company.",
+      "gold_answer": "Celgene",
+      "rag_generated_answer": "Celgene Corporation",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.6667,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "24314125",
+        "2887610"
+      ],
+      "orig_retrieved_doc_ids": [
+        "21967618",
+        "52376302",
+        "726979",
+        "2887610",
+        "24314125"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "33126",
+        "21967618",
+        "726979",
+        "2887610",
+        "24314125"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.7658,
+      "generation_latency_seconds": 1.743,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "2887610",
+          "chunk_id": "2887610_c0",
+          "title": "Celgene",
+          "similarity_score": 0.3921,
+          "snippet": "Celgene Corporation is an American biotechnology company that discovers, develops and commercializes medicines for cancer and inflammatory disorders. ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "24314125",
+          "chunk_id": "24314125_c0",
+          "title": "Romidepsin",
+          "similarity_score": 0.3529,
+          "snippet": "Romidepsin, also known as Istodax, is an anticancer agent used in cutaneous T-cell lymphoma (CTCL) and other peripheral T-cell lymphomas (PTCLs). Romi..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "726979",
+          "chunk_id": "726979_c0",
+          "title": "Eon Productions",
+          "similarity_score": 0.2681,
+          "snippet": "Eon Productions (an abbreviation of Everything or Nothing) is a British film production company that produces the \"James Bond\" film series. The compan..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "21967618",
+          "chunk_id": "21967618_c0",
+          "title": "Bomis",
+          "similarity_score": 0.2573,
+          "snippet": "Bomis ( to rhyme with \"promise\") was a dot-com company best known for supporting the creations of free-content online-encyclopedia projects Nupedia an..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "33126",
+          "chunk_id": "33126_c0",
+          "title": "The Wachowskis",
+          "similarity_score": 0.1746,
+          "snippet": "Lana Wachowski (formerly Laurence \"Larry\" Wachowski, born June 21, 1965) and Lilly Wachowski (formerly Andrew Paul \"Andy\" Wachowski, born December 29,..."
+        }
+      ]
+    },
+    {
+      "query_index": 11,
+      "query_id": "5a8b2d8e5542995d1e6f12f1",
+      "original_question": "Which hall at the University of California school, which also has a branch in Palm Desert, is named after the first chancellor of this school?",
+      "rewritten_query": "The University of California school, which also has a branch in Palm Desert, is named after the first chancellor of the school.",
+      "gold_answer": "Spieth Hall",
+      "rag_generated_answer": "Spieth Hall",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "12621451",
+        "230311"
+      ],
+      "orig_retrieved_doc_ids": [
+        "7955325",
+        "49449800",
+        "230311",
+        "18952512",
+        "12621451"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "7955325",
+        "49449800",
+        "230311",
+        "18952512",
+        "12621451"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.7992,
+      "generation_latency_seconds": 1.523,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "230311",
+          "chunk_id": "230311_c0",
+          "title": "University of California, Riverside",
+          "similarity_score": 0.5856,
+          "snippet": "The University of California, Riverside (UCR or UC Riverside), is a public research university and one of the 10 general campuses of the University of..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "12621451",
+          "chunk_id": "12621451_c0",
+          "title": "Herman Spieth",
+          "similarity_score": 0.5034,
+          "snippet": "Herman Spieth (21 August 1905 – 20 October 1988) was an American zoologist and university administrator. He was the first chancellor of the University..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.3255,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 4,
+          "doc_id": "7955325",
+          "chunk_id": "7955325_c0",
+          "title": "University of Toronto",
+          "similarity_score": 0.3155,
+          "snippet": "The University of Toronto (U of T, UToronto, or Toronto) is a public research university in Toronto, Ontario, Canada on the grounds that surround Quee..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "18952512",
+          "chunk_id": "18952512_c0",
+          "title": "Fouquieria",
+          "similarity_score": 0.2814,
+          "snippet": "Fouquieria is a genus of 11 species of desert plants, the sole genus in the family Fouquieriaceae. The genus includes the ocotillo (\"F. splendens\") an..."
+        }
+      ]
+    },
+    {
+      "query_index": 12,
+      "query_id": "5ac1d63055429964131be2a1",
+      "original_question": "E-mails from Bill Clinton's Chief of staff lead to the pizzagate conspiracy in what year?",
+      "rewritten_query": "Bill Clinton's Chief of Staff led to the pizzagate conspiracy in what year?",
+      "gold_answer": "2016",
+      "rag_generated_answer": "2016",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "355604",
+        "52376302"
+      ],
+      "orig_retrieved_doc_ids": [
+        "355604",
+        "277935",
+        "52376302",
+        "330637",
+        "54682964"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "355604",
+        "277935",
+        "52376302",
+        "330637",
+        "54682964"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.3507,
+      "generation_latency_seconds": 0.914,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "52376302",
+          "chunk_id": "52376302_c0",
+          "title": "Pizzagate conspiracy theory",
+          "similarity_score": 0.6532,
+          "snippet": "Pizzagate is a debunked conspiracy theory that emerged and went viral during the 2016 United States presidential election cycle. In the fall of 2016, ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "355604",
+          "chunk_id": "355604_c0",
+          "title": "John Podesta",
+          "similarity_score": 0.3309,
+          "snippet": "John David Podesta (born January 8, 1949) is a columnist and former chairman of the 2016 Hillary Clinton presidential campaign. He previously served a..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "277935",
+          "chunk_id": "277935_c0",
+          "title": "Mario Cuomo",
+          "similarity_score": 0.2835,
+          "snippet": "Mario Matthew Cuomo ( ; ] ; June 15, 1932 – January 1, 2015) was an American Democratic politician. He served as the 52nd Governor of New York for thr..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "330637",
+          "chunk_id": "330637_c0",
+          "title": "Belmont Park",
+          "similarity_score": 0.1495,
+          "snippet": "Belmont Park is a major Thoroughbred horse-racing facility located in Elmont, New York, just outside New York City limits. It first opened on May 4, 1..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "54682964",
+          "chunk_id": "54682964_c0",
+          "title": "Kofi Dzamesi",
+          "similarity_score": 0.1395,
+          "snippet": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He was a Volta Regional minister under the John Kufour administration. Since February ..."
+        }
+      ]
+    },
+    {
+      "query_index": 13,
+      "query_id": "5adf48b25542995ec70e8fb5",
+      "original_question": "In what city did Amir Khan and Lamont Peterson fight for the welterweight titles in 2011?",
+      "rewritten_query": "Amir Khan and Lamont Peterson were a welterweight champion in 2011.",
+      "gold_answer": "British",
+      "rag_generated_answer": "Turin",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Gold-Answer / Data-Quality Issue",
+      "gold_doc_ids": [
+        "7558034",
+        "1290366"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "1290366",
+        "45218",
+        "7558034",
+        "52152672"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "8454308",
+        "1290366",
+        "45218",
+        "7558034",
+        "52152672"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.2607,
+      "generation_latency_seconds": 1.086,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "7558034",
+          "chunk_id": "7558034_c0",
+          "title": "Lamont Peterson",
+          "similarity_score": 0.7189,
+          "snippet": "Lamont Peterson (born January 24, 1984) is an American professional boxer. He is a two-weight world champion, having held the WBA (Regular) welterweig..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "1290366",
+          "chunk_id": "1290366_c0",
+          "title": "Amir Khan (boxer)",
+          "similarity_score": 0.6539,
+          "snippet": "Amir Iqbal Khan (born 8 December 1986) is a British professional boxer. He is a former unified light-welterweight world champion, having held the WBA ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2963,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "52152672",
+          "chunk_id": "52152672_c0",
+          "title": "The Good Fight",
+          "similarity_score": 0.2544,
+          "snippet": "The Good Fight is an American legal and political drama television series produced for CBS's streaming service CBS All Access. It is CBS All Access' f..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "8454308",
+          "chunk_id": "8454308_c0",
+          "title": "Oberto Airaudi",
+          "similarity_score": 0.2482,
+          "snippet": "Oberto Airaudi (29 May 1950 – 24 June 2013) was an Italian philosopher and artist, who founded the Federation of Damanhur. Airaudi also went by the na..."
+        }
+      ]
+    },
+    {
+      "query_index": 14,
+      "query_id": "5a89c2715542993b751ca990",
+      "original_question": "Which was released first, God's Angry Man or The World's Best Prom?",
+      "rewritten_query": "The World's Best Prom was released first.",
+      "gold_answer": "God's Angry Man",
+      "rag_generated_answer": "The World's Best Prom",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "3751418",
+        "858143"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1499129",
+        "858143",
+        "7629569",
+        "52427290",
+        "3751418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "49546885",
+        "7629569",
+        "52427290",
+        "3751418",
+        "23066976"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 0.8718,
+      "generation_latency_seconds": 1.136,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "3751418",
+          "chunk_id": "3751418_c0",
+          "title": "The World's Best Prom",
+          "similarity_score": 0.8008,
+          "snippet": "The World's Best Prom is a 2006 documentary film about a high school prom in Racine, Wisconsin. \"Prom\" was released as a short film and was expanded t..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "7629569",
+          "chunk_id": "7629569_c0",
+          "title": "Hope Theatre",
+          "similarity_score": 0.2699,
+          "snippet": "The Hope Theatre was one of the theatres built in and around London for the presentation of plays in English Renaissance theatre, comparable to the Gl..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "52427290",
+          "chunk_id": "52427290_c0",
+          "title": "17 Carat",
+          "similarity_score": 0.2169,
+          "snippet": "17 Carat is the debut extended play by South Korean boy group Seventeen. It was released on May 29, 2015 by Pledis Entertainment and distributed by LO..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "23066976",
+          "chunk_id": "23066976_c0",
+          "title": "Assignment to Kill",
+          "similarity_score": 0.1799,
+          "snippet": "Assignment to Kill is a 1968 American drama film directed by Sheldon Reynolds and starring Patrick O'Neal, Joan Hackett, John Gielgud, Herbert Lom, an..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "49546885",
+          "chunk_id": "49546885_c0",
+          "title": "Absolutely Fabulous (series 3)",
+          "similarity_score": 0.1685,
+          "snippet": "The third series of \"Absolutely Fabulous\", a British sitcom, premiered on BBC One on 30 March 1995. This series consists of six episodes and concluded..."
+        }
+      ]
+    },
+    {
+      "query_index": 15,
+      "query_id": "5a7612cf55429976ec32bcfe",
+      "original_question": "Which American wide receiver has a brother who was drafted by the Titans fifth overall in the 2017 NFL Draft?",
+      "rewritten_query": "The 2017 NFL Draft was held on September 11, 2017. The following players were drafted by the Titans:",
+      "gold_answer": "Titus Davis",
+      "rag_generated_answer": "Titus Davis",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "51406206",
+        "46521626"
+      ],
+      "orig_retrieved_doc_ids": [
+        "46521626",
+        "51406206",
+        "2893773",
+        "4892221",
+        "21757108"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "46521626",
+        "51406206",
+        "1792975",
+        "46703097",
+        "4892221"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.3751,
+      "generation_latency_seconds": 1.465,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "51406206",
+          "chunk_id": "51406206_c0",
+          "title": "Corey Davis (wide receiver)",
+          "similarity_score": 0.54,
+          "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "46521626",
+          "chunk_id": "46521626_c0",
+          "title": "Titus Davis",
+          "similarity_score": 0.445,
+          "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "4892221",
+          "chunk_id": "4892221_c0",
+          "title": "Justin Vincent",
+          "similarity_score": 0.2789,
+          "snippet": "Justin Vincent (born January 25, 1983) is a former American football running back for the Pittsburgh Steelers of the National Football League. He was ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.2174,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "46703097",
+          "chunk_id": "46703097_c0",
+          "title": "Seventeen (band)",
+          "similarity_score": 0.2019,
+          "snippet": "Seventeen (Hangul: 세븐틴 ), also stylized as SEVENTEEN or SVT, is a South Korean boy group formed by Pledis Entertainment in 2015. The group consists of..."
+        }
+      ]
+    },
+    {
+      "query_index": 16,
+      "query_id": "5ab9c21055429970cfb8eb9d",
+      "original_question": "Michael Jones is a competitor in sport where motorcycle riders attempt to impress judges with what?",
+      "rewritten_query": "Michael Jones is a competitor in sport where motorcycle riders attempt to impress judges with what?",
+      "gold_answer": "jumps and stunts",
+      "rag_generated_answer": "jumps and stunts",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "4699574",
+        "15838235"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1290366",
+        "4699574",
+        "2893773",
+        "7558034",
+        "15838235"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "1290366",
+        "4699574",
+        "2893773",
+        "7558034",
+        "15838235"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.2088,
+      "generation_latency_seconds": 1.481,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "15838235",
+          "chunk_id": "15838235_c0",
+          "title": "Mike Jones (motocross rider)",
+          "similarity_score": 0.6126,
+          "snippet": "Michael Jones, (born February 28, 1966 in Export, Pennsylvania) is an American freestyle motocross competitor, with over 35 years of professional ride..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "4699574",
+          "chunk_id": "4699574_c0",
+          "title": "Freestyle Motocross",
+          "similarity_score": 0.359,
+          "snippet": "Freestyle motocross (also known as FMX) is a variation on the sport of motocross in which motorcycle riders attempt to impress judges with jumps and s..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "2893773",
+          "chunk_id": "2893773_c0",
+          "title": "Dustin Kensrue",
+          "similarity_score": 0.3343,
+          "snippet": "Dustin Michael Kensrue (pronounced KENZ-roo) (born November 18, 1980) is a vocalist, lyricist, and rhythm guitarist in the Orange County, California, ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1290366",
+          "chunk_id": "1290366_c0",
+          "title": "Amir Khan (boxer)",
+          "similarity_score": 0.2469,
+          "snippet": "Amir Iqbal Khan (born 8 December 1986) is a British professional boxer. He is a former unified light-welterweight world champion, having held the WBA ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "7558034",
+          "chunk_id": "7558034_c0",
+          "title": "Lamont Peterson",
+          "similarity_score": 0.2383,
+          "snippet": "Lamont Peterson (born January 24, 1984) is an American professional boxer. He is a two-weight world champion, having held the WBA (Regular) welterweig..."
+        }
+      ]
+    },
+    {
+      "query_index": 17,
+      "query_id": "5a7e264055429965cec5eaa4",
+      "original_question": "Fulda Cathedral is the burial place of the leading figure in what?",
+      "rewritten_query": "Fulda Cathedral is the burial place of the leading figure in the film \"The Legend of Zelda\".",
+      "gold_answer": "Anglo-Saxon mission",
+      "rag_generated_answer": "The relevant information to answer the above question is: Fulda Cathedral (German: \"Fuldaer Dom\" , also \"Sankt Salvator\") is the former abbey church of Fulda Abbey and the",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Generation Failure",
+      "gold_doc_ids": [
+        "28227842",
+        "28172"
+      ],
+      "orig_retrieved_doc_ids": [
+        "28172",
+        "28227842",
+        "18952512",
+        "330637",
+        "6566239"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "4255524",
+        "1499129",
+        "28172",
+        "28227842",
+        "6566239"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.4461,
+      "generation_latency_seconds": 4.006,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "28227842",
+          "chunk_id": "28227842_c0",
+          "title": "Fulda Cathedral",
+          "similarity_score": 0.6371,
+          "snippet": "Fulda Cathedral (German: \"Fuldaer Dom\" , also \"Sankt Salvator\") is the former abbey church of Fulda Abbey and the burial place of Saint Boniface. Sinc..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "28172",
+          "chunk_id": "28172_c0",
+          "title": "Saint Boniface",
+          "similarity_score": 0.2381,
+          "snippet": "Saint Boniface (Latin: \"Bonifatius\" ; 675 – 5 June 754 AD), born Winfrid, Wynfrith, or Wynfryth in the kingdom of Wessex in Anglo-Saxon England, was a..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "6566239",
+          "chunk_id": "6566239_c0",
+          "title": "A Survivor from Warsaw",
+          "similarity_score": 0.2013,
+          "snippet": "A Survivor from Warsaw, Op. 46, is a cantata by the Los Angeles-based Austrian composer Arnold Schoenberg, written in tribute to Holocaust victims. Th..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "4255524",
+          "chunk_id": "4255524_c0",
+          "title": "Ulrich Matthes",
+          "similarity_score": 0.187,
+          "snippet": "Ulrich Matthes (born 9 May 1959) is a German actor, best known for his role as Joseph Goebbels in the film \"Downfall\"...."
+        },
+        {
+          "rank": 5,
+          "doc_id": "1499129",
+          "chunk_id": "1499129_c0",
+          "title": "Pooh's Heffalump Movie",
+          "similarity_score": 0.1698,
+          "snippet": "Pooh's Heffalump Movie is a 2005 American animated film produced by DisneyToon Studios and released by Walt Disney Pictures, featuring characters from..."
+        }
+      ]
+    },
+    {
+      "query_index": 18,
+      "query_id": "5a88a74a554299206df2b31b",
+      "original_question": "What profession does Lewis Milestone and All Quiet on the Western Front have in common?",
+      "rewritten_query": "Lewis Milestone is a professional football player. He played for All Quiet on the Western Front.",
+      "gold_answer": "director",
+      "rag_generated_answer": "director",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "62262",
+        "4592959"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "4255524",
+        "4592959",
+        "62262",
+        "39928514"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "46521626",
+        "51406206",
+        "28871495",
+        "62262",
+        "4892221"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.3632,
+      "generation_latency_seconds": 0.859,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "62262",
+          "chunk_id": "62262_c0",
+          "title": "Lewis Milestone",
+          "similarity_score": 0.4016,
+          "snippet": "Lewis Milestone (born Leib Milstein; September 30, 1895 – September 25, 1980) was a Moldovan-born American motion picture director. He is known for di..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "46521626",
+          "chunk_id": "46521626_c0",
+          "title": "Titus Davis",
+          "similarity_score": 0.3162,
+          "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "51406206",
+          "chunk_id": "51406206_c0",
+          "title": "Corey Davis (wide receiver)",
+          "similarity_score": 0.2949,
+          "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "4892221",
+          "chunk_id": "4892221_c0",
+          "title": "Justin Vincent",
+          "similarity_score": 0.291,
+          "snippet": "Justin Vincent (born January 25, 1983) is a former American football running back for the Pittsburgh Steelers of the National Football League. He was ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "28871495",
+          "chunk_id": "28871495_c0",
+          "title": "Wilfried Zaha",
+          "similarity_score": 0.2905,
+          "snippet": "Dazet Wilfried Armel Zaha (born 10 November 1992) is a professional footballer who plays as a winger for Premier League club Crystal Palace and the Iv..."
+        }
+      ]
+    },
+    {
+      "query_index": 19,
+      "query_id": "5ae1bb88554299234fd042dd",
+      "original_question": "Are both Candleshoe and Pooh's Heffalump Movie Walt Disney films?",
+      "rewritten_query": "Candleshoe and Pooh's Heffalump Movie are Walt Disney films.",
+      "gold_answer": "yes",
+      "rag_generated_answer": "yes",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "1499129",
+        "2225976"
+      ],
+      "orig_retrieved_doc_ids": [
+        "293524",
+        "1499129",
+        "37328049",
+        "49449800",
+        "2225976"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "293524",
+        "1499129",
+        "37328049",
+        "49449800",
+        "2225976"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.2985,
+      "generation_latency_seconds": 1.061,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "1499129",
+          "chunk_id": "1499129_c0",
+          "title": "Pooh's Heffalump Movie",
+          "similarity_score": 0.6543,
+          "snippet": "Pooh's Heffalump Movie is a 2005 American animated film produced by DisneyToon Studios and released by Walt Disney Pictures, featuring characters from..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "2225976",
+          "chunk_id": "2225976_c0",
+          "title": "Candleshoe",
+          "similarity_score": 0.6114,
+          "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "293524",
+          "chunk_id": "293524_c0",
+          "title": "Beetlejuice",
+          "similarity_score": 0.2647,
+          "snippet": "Beetlejuice is a 1988 American comedy-fantasy film directed by Tim Burton, produced by The Geffen Film Company and distributed by Warner Bros. The plo..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.2311,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 5,
+          "doc_id": "37328049",
+          "chunk_id": "37328049_c0",
+          "title": "Pound Puppies (film)",
+          "similarity_score": 0.2159,
+          "snippet": "The Pound Puppies is an animated television special, produced by Hanna-Barbera Productions, based on the popular toy line from Tonka, which aired in s..."
+        }
+      ]
+    },
+    {
+      "query_index": 20,
+      "query_id": "5ae4d3235542993aec5ec0dd",
+      "original_question": "Lorilee Craker co-authored a memoir about a woman who is what relation to Britney Spears?",
+      "rewritten_query": "Lorilee Craker is a co-author of a memoir about a woman who is a relative of Britney Spears.",
+      "gold_answer": "mother",
+      "rag_generated_answer": "mother",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "1647671",
+        "46928473"
+      ],
+      "orig_retrieved_doc_ids": [
+        "355604",
+        "398934",
+        "1647671",
+        "89605",
+        "46928473"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "355604",
+        "398934",
+        "1647671",
+        "89605",
+        "46928473"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.0758,
+      "generation_latency_seconds": 1.448,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "46928473",
+          "chunk_id": "46928473_c0",
+          "title": "Lorilee Craker",
+          "similarity_score": 0.7103,
+          "snippet": "Lorilee Craker (born 1968) is a writer in Michigan, United States. She grew up in Winnipeg, Manitoba, Canada. She has three children. She advocates pa..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "1647671",
+          "chunk_id": "1647671_c0",
+          "title": "Lynne Spears",
+          "similarity_score": 0.4483,
+          "snippet": "Lynne Irene Spears (born Lynne Irene Bridges; May 4, 1955) is an American author and mother of film and television producer Bryan Spears, pop singer B..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "89605",
+          "chunk_id": "89605_c0",
+          "title": "Jennifer Saunders",
+          "similarity_score": 0.2581,
+          "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "355604",
+          "chunk_id": "355604_c0",
+          "title": "John Podesta",
+          "similarity_score": 0.2461,
+          "snippet": "John David Podesta (born January 8, 1949) is a columnist and former chairman of the 2016 Hillary Clinton presidential campaign. He previously served a..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "398934",
+          "chunk_id": "398934_c0",
+          "title": "10 Things I Hate About You",
+          "similarity_score": 0.2077,
+          "snippet": "10 Things I Hate About You is a 1999 American romantic comedy film directed by Gil Junger and starring Julia Stiles, Heath Ledger, Joseph Gordon-Levit..."
+        }
+      ]
+    },
+    {
+      "query_index": 21,
+      "query_id": "5a71532e5542994082a3e7d6",
+      "original_question": "In what year did the actor who played Edward Snowden act in a movie with Heath Ledger and Julia Styles?",
+      "rewritten_query": "Edward Snowden (film) was an actor who played Edward Snowden in a movie with Heath Ledger and Julia Styles.",
+      "gold_answer": "1999",
+      "rag_generated_answer": "Sacha Baron Cohen is a British actor, comedian, screenwriter, and producer.",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "398934",
+        "1817766"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1792975",
+        "62262",
+        "930379",
+        "1802353",
+        "1817766"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "45218",
+        "1792975",
+        "930379",
+        "1802353",
+        "1817766"
+      ],
+      "all_gold_retrieved_original": false,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.8937,
+      "generation_latency_seconds": 3.646,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "1817766",
+          "chunk_id": "1817766_c0",
+          "title": "Joseph Gordon-Levitt",
+          "similarity_score": 0.4126,
+          "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "1802353",
+          "chunk_id": "1802353_c0",
+          "title": "Hugh Bonneville",
+          "similarity_score": 0.4043,
+          "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.3823,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "930379",
+          "chunk_id": "930379_c0",
+          "title": "Casino Royale (2006 film)",
+          "similarity_score": 0.3403,
+          "snippet": "Casino Royale (2006) is the twenty-first spy film in the Eon Productions \"James Bond\" film series and the first to star Daniel Craig as the fictional ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.3033,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        }
+      ]
+    },
+    {
+      "query_index": 22,
+      "query_id": "5ae5e5fc55429929b0807a06",
+      "original_question": "John Shakespeare was the son of the husbandman who lived in what Warwickshire town?",
+      "rewritten_query": "John Shakespeare was the son of the husbandman who lived in what Warwickshire town?",
+      "gold_answer": "Snitterfield",
+      "rag_generated_answer": "Snitterfield",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "308187",
+        "7672206"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "308187",
+        "7629569",
+        "39566",
+        "7672206"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "308187",
+        "7629569",
+        "39566",
+        "7672206"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.4242,
+      "generation_latency_seconds": 1.53,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "7672206",
+          "chunk_id": "7672206_c0",
+          "title": "Richard Shakespeare",
+          "similarity_score": 0.8118,
+          "snippet": "Richard Shakespeare (1490–d. before 10 February 1561) was a husbandman of Snitterfield, Warwickshire, 4 mi north-northeast of Stratford-upon-Avon, the..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "308187",
+          "chunk_id": "308187_c0",
+          "title": "John Shakespeare",
+          "similarity_score": 0.7192,
+          "snippet": "John Shakespeare (c. 1531 – 7 September 1601) was the father of William Shakespeare. He was the son of Richard Shakespeare of the Warwickshire village..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.4028,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "39566",
+          "chunk_id": "39566_c0",
+          "title": "English Renaissance theatre",
+          "similarity_score": 0.333,
+          "snippet": "English Renaissance theatre, also known as early modern English theatre, or (commonly) as Elizabethan theatre, refers to the theatre of England betwee..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "7629569",
+          "chunk_id": "7629569_c0",
+          "title": "Hope Theatre",
+          "similarity_score": 0.2559,
+          "snippet": "The Hope Theatre was one of the theatres built in and around London for the presentation of plays in English Renaissance theatre, comparable to the Gl..."
+        }
+      ]
+    },
+    {
+      "query_index": 23,
+      "query_id": "5ab985b5554299131ca4235e",
+      "original_question": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season, nine of these players have won the award for a second time, the most recent being which professional footballer, who plays as a winger for Premier League club Crystal Palace, and the Ivory Coast national team?",
+      "rewritten_query": "Crystal Palace Football Club Player of the Year is awarded at the end of each season, nine of these players have won the award for a second time, the most recent being which professional footballer,",
+      "gold_answer": "Wilfried Zaha",
+      "rag_generated_answer": "Wilfried Zaha",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "28871495",
+        "54185106"
+      ],
+      "orig_retrieved_doc_ids": [
+        "46521626",
+        "28871495",
+        "51406206",
+        "54185106",
+        "21757108"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "46521626",
+        "28871495",
+        "51406206",
+        "743431",
+        "54185106"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.7935,
+      "generation_latency_seconds": 1.831,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "54185106",
+          "chunk_id": "54185106_c0",
+          "title": "Crystal Palace F.C. Player of the Year",
+          "similarity_score": 0.7575,
+          "snippet": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season. Since the inaugural award was made to John McCormick in 1972..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "28871495",
+          "chunk_id": "28871495_c0",
+          "title": "Wilfried Zaha",
+          "similarity_score": 0.3416,
+          "snippet": "Dazet Wilfried Armel Zaha (born 10 November 1992) is a professional footballer who plays as a winger for Premier League club Crystal Palace and the Iv..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "51406206",
+          "chunk_id": "51406206_c0",
+          "title": "Corey Davis (wide receiver)",
+          "similarity_score": 0.1587,
+          "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "743431",
+          "chunk_id": "743431_c0",
+          "title": "Istanbul Technical University",
+          "similarity_score": 0.1548,
+          "snippet": "Istanbul Technical University (Turkish \"İstanbul Teknik Üniversitesi\", commonly referred to as ITU or Technical University) is an international techni..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "46521626",
+          "chunk_id": "46521626_c0",
+          "title": "Titus Davis",
+          "similarity_score": 0.1459,
+          "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+        }
+      ]
+    },
+    {
+      "query_index": 24,
+      "query_id": "5abef2505542993fe9a41db2",
+      "original_question": "Ulrich Matthes is best known for his role in  a 2004 German-Italian-Austrian historical war drama film directed by who?",
+      "rewritten_query": "Ulrich Matthes is best known for his role in a 2004 German-Italian-Austrian historical war drama film directed by who?",
+      "gold_answer": "Oliver Hirschbiegel",
+      "rag_generated_answer": "Oliver Hirschbiegel",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "993791",
+        "4255524"
+      ],
+      "orig_retrieved_doc_ids": [
+        "4255524",
+        "1792975",
+        "62262",
+        "993791",
+        "1817766"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "4255524",
+        "1792975",
+        "62262",
+        "993791",
+        "1817766"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.4469,
+      "generation_latency_seconds": 2.464,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "4255524",
+          "chunk_id": "4255524_c0",
+          "title": "Ulrich Matthes",
+          "similarity_score": 0.6397,
+          "snippet": "Ulrich Matthes (born 9 May 1959) is a German actor, best known for his role as Joseph Goebbels in the film \"Downfall\"...."
+        },
+        {
+          "rank": 2,
+          "doc_id": "993791",
+          "chunk_id": "993791_c0",
+          "title": "Downfall (2004 film)",
+          "similarity_score": 0.3868,
+          "snippet": "Downfall (German: Der Untergang ) is a 2004 German-Italian-Austrian historical war drama film depicting the final ten days of Adolf Hitler's rule over..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.3774,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1817766",
+          "chunk_id": "1817766_c0",
+          "title": "Joseph Gordon-Levitt",
+          "similarity_score": 0.3116,
+          "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "62262",
+          "chunk_id": "62262_c0",
+          "title": "Lewis Milestone",
+          "similarity_score": 0.3039,
+          "snippet": "Lewis Milestone (born Leib Milstein; September 30, 1895 – September 25, 1980) was a Moldovan-born American motion picture director. He is known for di..."
+        }
+      ]
+    },
+    {
+      "query_index": 25,
+      "query_id": "5a8e0c34554299068b959e37",
+      "original_question": "The Tremont Stakes in June is among the classic races held at Belmont Park in which U.S. state?",
+      "rewritten_query": "Belmont Stakes is a classic race held at Belmont Park in which state?",
+      "gold_answer": "New York",
+      "rag_generated_answer": "New York",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "330637",
+        "9352902"
+      ],
+      "orig_retrieved_doc_ids": [
+        "45604736",
+        "9352902",
+        "330637",
+        "7558034",
+        "7148380"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "200842",
+        "9352902",
+        "330637",
+        "7558034",
+        "7148380"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.5388,
+      "generation_latency_seconds": 1.1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "330637",
+          "chunk_id": "330637_c0",
+          "title": "Belmont Park",
+          "similarity_score": 0.7165,
+          "snippet": "Belmont Park is a major Thoroughbred horse-racing facility located in Elmont, New York, just outside New York City limits. It first opened on May 4, 1..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "9352902",
+          "chunk_id": "9352902_c0",
+          "title": "Tremont Stakes",
+          "similarity_score": 0.5582,
+          "snippet": "The Tremont Stakes is a Listed American Thoroughbred horse race run annually for two-year-olds over the distance of 5 ⁄ furlongs on the dirt in early ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "7148380",
+          "chunk_id": "7148380_c0",
+          "title": "The Class of '62",
+          "similarity_score": 0.2003,
+          "snippet": "\"The Class of '62\" is an episode of the BBC sit-com \"Only Fools and Horses\". It was the fourth episode of series 7, and was first broadcast on 20 Janu..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "200842",
+          "chunk_id": "200842_c0",
+          "title": "Only Fools and Horses",
+          "similarity_score": 0.1918,
+          "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "7558034",
+          "chunk_id": "7558034_c0",
+          "title": "Lamont Peterson",
+          "similarity_score": 0.1784,
+          "snippet": "Lamont Peterson (born January 24, 1984) is an American professional boxer. He is a two-weight world champion, having held the WBA (Regular) welterweig..."
+        }
+      ]
+    },
+    {
+      "query_index": 26,
+      "query_id": "5a87dc635542994846c1cdf2",
+      "original_question": "When was the Polish politician and former Vice-Minister of Foreign Affairs of Poland, who was a Doctor of Law, and who candidated from a right-wing populist, national-conservative, and Christian democratic political party in Poland, elected to the Sejm?",
+      "rewritten_query": "The Polish politician and former Vice-Minister of Foreign Affairs of Poland, who was a Doctor of Law, and who candidated from a right-wing populist, national-conserv",
+      "gold_answer": "September 25, 2005",
+      "rag_generated_answer": "September 25, 2005",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "520309",
+        "5814825"
+      ],
+      "orig_retrieved_doc_ids": [
+        "54682964",
+        "277935",
+        "520309",
+        "5814825",
+        "6566239"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "355604",
+        "54682964",
+        "277935",
+        "520309",
+        "5814825"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.9393,
+      "generation_latency_seconds": 1.098,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "5814825",
+          "chunk_id": "5814825_c0",
+          "title": "Karol Karski",
+          "similarity_score": 0.7022,
+          "snippet": "Karol Karski (born May 13, 1966 in Warsaw) is a Polish politician, former Vice-Minister of Foreign Affairs of Poland. Doctor of Law. He was elected to..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "520309",
+          "chunk_id": "520309_c0",
+          "title": "Law and Justice",
+          "similarity_score": 0.5283,
+          "snippet": "Law and Justice (Polish: ), abbreviated to PiS, is a right-wing populist, national-conservative, and Christian democratic political party in Poland. W..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "54682964",
+          "chunk_id": "54682964_c0",
+          "title": "Kofi Dzamesi",
+          "similarity_score": 0.3859,
+          "snippet": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He was a Volta Regional minister under the John Kufour administration. Since February ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "355604",
+          "chunk_id": "355604_c0",
+          "title": "John Podesta",
+          "similarity_score": 0.2855,
+          "snippet": "John David Podesta (born January 8, 1949) is a columnist and former chairman of the 2016 Hillary Clinton presidential campaign. He previously served a..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "277935",
+          "chunk_id": "277935_c0",
+          "title": "Mario Cuomo",
+          "similarity_score": 0.2744,
+          "snippet": "Mario Matthew Cuomo ( ; ] ; June 15, 1932 – January 1, 2015) was an American Democratic politician. He served as the 52nd Governor of New York for thr..."
+        }
+      ]
+    },
+    {
+      "query_index": 27,
+      "query_id": "5a81de8d55429926c1cdada9",
+      "original_question": "Which English actor co-wrote and also played in The Dictator?",
+      "rewritten_query": "The Dictator is a British film co-written and played by English actor John Lennon.",
+      "gold_answer": "Sacha Baron Cohen",
+      "rag_generated_answer": "Sacha Baron Cohen",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "45218",
+        "30553238"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "4255524",
+        "45218",
+        "62262",
+        "30553238"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "4255524",
+        "45218",
+        "3634471",
+        "30553238"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.8459,
+      "generation_latency_seconds": 1.509,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "30553238",
+          "chunk_id": "30553238_c0",
+          "title": "The Dictator (2012 film)",
+          "similarity_score": 0.5293,
+          "snippet": "The Dictator is a 2012 British-American political satire black comedy film co-written by and starring Sacha Baron Cohen as his fourth feature film in ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2946,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.2855,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "3634471",
+          "chunk_id": "3634471_c0",
+          "title": "Jon Hamm",
+          "similarity_score": 0.275,
+          "snippet": "Jonathan Daniel Hamm (born March 10, 1971) is an American actor, director, and television producer best known for playing advertising executive Don Dr..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "4255524",
+          "chunk_id": "4255524_c0",
+          "title": "Ulrich Matthes",
+          "similarity_score": 0.2514,
+          "snippet": "Ulrich Matthes (born 9 May 1959) is a German actor, best known for his role as Joseph Goebbels in the film \"Downfall\"...."
+        }
+      ]
+    },
+    {
+      "query_index": 28,
+      "query_id": "5a7559b25542992db9473648",
+      "original_question": "Nupedia was underwritten by what company that was founded in 1996?",
+      "rewritten_query": "Nupedia was founded in 1996.",
+      "gold_answer": "Bomis",
+      "rag_generated_answer": "Bomis",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "26155570",
+        "21967618"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "21967618",
+        "4911474",
+        "26155570",
+        "2238418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "8454308",
+        "21967618",
+        "4911474",
+        "26155570",
+        "2238418"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.6672,
+      "generation_latency_seconds": 1.309,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "26155570",
+          "chunk_id": "26155570_c0",
+          "title": "Nupedia",
+          "similarity_score": 0.7779,
+          "snippet": "Nupedia was an English-language Web-based encyclopedia whose articles were written by volunteer contributors with appropriate subject matter expertise..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "2238418",
+          "chunk_id": "2238418_c0",
+          "title": "Indian Statistical Institute",
+          "similarity_score": 0.2846,
+          "snippet": "Indian Statistical Institute (ISI) is an academic institute of national importance as recognised by a 1959 act of the Indian parliament. It grew out o..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "8454308",
+          "chunk_id": "8454308_c0",
+          "title": "Oberto Airaudi",
+          "similarity_score": 0.269,
+          "snippet": "Oberto Airaudi (29 May 1950 – 24 June 2013) was an Italian philosopher and artist, who founded the Federation of Damanhur. Airaudi also went by the na..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "21967618",
+          "chunk_id": "21967618_c0",
+          "title": "Bomis",
+          "similarity_score": 0.2513,
+          "snippet": "Bomis ( to rhyme with \"promise\") was a dot-com company best known for supporting the creations of free-content online-encyclopedia projects Nupedia an..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "4911474",
+          "chunk_id": "4911474_c0",
+          "title": "Nicktoons (UK and Ireland)",
+          "similarity_score": 0.2404,
+          "snippet": "Nicktoons is a British/Irish digital television channel, launched on 22 July 2002. It is a cartoon based sister channel to Nickelodeon. The channel ai..."
+        }
+      ]
+    },
+    {
+      "query_index": 29,
+      "query_id": "5a8b634255429949d91db58b",
+      "original_question": "What symbol did a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957 use in that flag?",
+      "rewritten_query": "Ghanaian stateswoman, teacher and artist, known for designing Ghana's flag in 1957, used the Ghanaian flag in that flag.",
+      "gold_answer": "The Black Star of Africa",
+      "rag_generated_answer": "the black star",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.6667,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "40343708",
+        "25844500"
+      ],
+      "orig_retrieved_doc_ids": [
+        "40343708",
+        "25844500",
+        "8340584",
+        "54682964",
+        "38944834"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "40343708",
+        "25844500",
+        "51406206",
+        "54682964",
+        "38944834"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.1192,
+      "generation_latency_seconds": 1.362,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "40343708",
+          "chunk_id": "40343708_c0",
+          "title": "Theodosia Okoh",
+          "similarity_score": 0.6583,
+          "snippet": "Theodosia Salome Okoh (13 June 1922 – 19 April 2015) was a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957. She also..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "25844500",
+          "chunk_id": "25844500_c0",
+          "title": "Black Star of Africa",
+          "similarity_score": 0.5155,
+          "snippet": "The Black Star of Africa is a black five-pointed star (★) symbolizing Africa in general and Ghana in particular. The Black Star Line, founded in 1919 ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "54682964",
+          "chunk_id": "54682964_c0",
+          "title": "Kofi Dzamesi",
+          "similarity_score": 0.342,
+          "snippet": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He was a Volta Regional minister under the John Kufour administration. Since February ..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "38944834",
+          "chunk_id": "38944834_c0",
+          "title": "Ministry for Chieftaincy and Religious Affairs",
+          "similarity_score": 0.2382,
+          "snippet": "The Ministry for Chieftaincy and Traditional Affairs is the official Ghanaian agency responsible the creation of linkages between the Government of Gh..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "51406206",
+          "chunk_id": "51406206_c0",
+          "title": "Corey Davis (wide receiver)",
+          "similarity_score": 0.2154,
+          "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+        }
+      ]
+    },
+    {
+      "query_index": 30,
+      "query_id": "5a7f81bc5542992097ad2f8f",
+      "original_question": "Sanghamitra Bandyopadhyay a professor at theIndian Statistical Institute, a public university established in what year?",
+      "rewritten_query": "Sanghamitra Bandyopadhyay is a professor at the Indian Statistical Institute, a public university established in what year?",
+      "gold_answer": "1931",
+      "rag_generated_answer": "1931",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "44152621",
+        "2238418"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "44152621",
+        "743431",
+        "49449800",
+        "2238418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "44152621",
+        "743431",
+        "49449800",
+        "54682964",
+        "2238418"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.2095,
+      "generation_latency_seconds": 1.662,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "44152621",
+          "chunk_id": "44152621_c0",
+          "title": "Sanghamitra Bandyopadhyay",
+          "similarity_score": 0.8567,
+          "snippet": "Sanghamitra Bandyopadhyay (born 1968) is an Indian computer scientist specializing in computational biology. A professor at the Indian Statistical Ins..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "2238418",
+          "chunk_id": "2238418_c0",
+          "title": "Indian Statistical Institute",
+          "similarity_score": 0.6048,
+          "snippet": "Indian Statistical Institute (ISI) is an academic institute of national importance as recognised by a 1959 act of the Indian parliament. It grew out o..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.3757,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 4,
+          "doc_id": "54682964",
+          "chunk_id": "54682964_c0",
+          "title": "Kofi Dzamesi",
+          "similarity_score": 0.2805,
+          "snippet": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He was a Volta Regional minister under the John Kufour administration. Since February ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "743431",
+          "chunk_id": "743431_c0",
+          "title": "Istanbul Technical University",
+          "similarity_score": 0.2572,
+          "snippet": "Istanbul Technical University (Turkish \"İstanbul Teknik Üniversitesi\", commonly referred to as ITU or Technical University) is an international techni..."
+        }
+      ]
+    },
+    {
+      "query_index": 31,
+      "query_id": "5ab8f1fa5542991b5579f077",
+      "original_question": "Are Gary Lightbody and Dustin Kensrue from the same country?",
+      "rewritten_query": "Gary Lightbody and Dustin Kensrue are from the United States.",
+      "gold_answer": "no",
+      "rag_generated_answer": "yes",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Multi-Hop Reasoning Failure",
+      "gold_doc_ids": [
+        "2893773",
+        "6131604"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1647671",
+        "45218",
+        "2893773",
+        "6131604",
+        "39928514"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "355604",
+        "1647671",
+        "45218",
+        "2893773",
+        "6131604"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.1825,
+      "generation_latency_seconds": 0.68,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "2893773",
+          "chunk_id": "2893773_c0",
+          "title": "Dustin Kensrue",
+          "similarity_score": 0.5286,
+          "snippet": "Dustin Michael Kensrue (pronounced KENZ-roo) (born November 18, 1980) is a vocalist, lyricist, and rhythm guitarist in the Orange County, California, ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "6131604",
+          "chunk_id": "6131604_c0",
+          "title": "Gary Lightbody",
+          "similarity_score": 0.453,
+          "snippet": "Gary Lightbody (born 15 June 1976) is a Northern Irish singer, songwriter, guitarist and multi-instrumentalist, best known as the lead singer and rhyt..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1647671",
+          "chunk_id": "1647671_c0",
+          "title": "Lynne Spears",
+          "similarity_score": 0.2572,
+          "snippet": "Lynne Irene Spears (born Lynne Irene Bridges; May 4, 1955) is an American author and mother of film and television producer Bryan Spears, pop singer B..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "355604",
+          "chunk_id": "355604_c0",
+          "title": "John Podesta",
+          "similarity_score": 0.2388,
+          "snippet": "John David Podesta (born January 8, 1949) is a columnist and former chairman of the 2016 Hillary Clinton presidential campaign. He previously served a..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2273,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        }
+      ]
+    },
+    {
+      "query_index": 32,
+      "query_id": "5a74b6ea55429974ef308c41",
+      "original_question": "What commune, ecovillage, and spiritual community was founded by Oberto Airaudi?",
+      "rewritten_query": "Oberto Airaudi was a commune, ecovillage, and spiritual community founded by Oberto Airaudi.",
+      "gold_answer": "Federation of Damanhur",
+      "rag_generated_answer": "Federation of Damanhur",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "8454308",
+        "1074931"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "898257",
+        "49449800",
+        "2238418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "898257",
+        "49449800",
+        "2238418"
+      ],
+      "all_gold_retrieved_original": false,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.6424,
+      "generation_latency_seconds": 0.975,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "8454308",
+          "chunk_id": "8454308_c0",
+          "title": "Oberto Airaudi",
+          "similarity_score": 0.5657,
+          "snippet": "Oberto Airaudi (29 May 1950 – 24 June 2013) was an Italian philosopher and artist, who founded the Federation of Damanhur. Airaudi also went by the na..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "898257",
+          "chunk_id": "898257_c0",
+          "title": "Addu City",
+          "similarity_score": 0.2751,
+          "snippet": "Addu City (local administrative code Seenu) is a city in Maldives that consists of the inhabited islands of the southernmost atoll of the archipelago...."
+        },
+        {
+          "rank": 3,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.2605,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 4,
+          "doc_id": "2238418",
+          "chunk_id": "2238418_c0",
+          "title": "Indian Statistical Institute",
+          "similarity_score": 0.231,
+          "snippet": "Indian Statistical Institute (ISI) is an academic institute of national importance as recognised by a 1959 act of the Indian parliament. It grew out o..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "40343708",
+          "chunk_id": "40343708_c0",
+          "title": "Theodosia Okoh",
+          "similarity_score": 0.2167,
+          "snippet": "Theodosia Salome Okoh (13 June 1922 – 19 April 2015) was a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957. She also..."
+        }
+      ]
+    },
+    {
+      "query_index": 33,
+      "query_id": "5ab709b15542992aa3b8c78e",
+      "original_question": "The writers of the \"Assassins\" screenplay made their directing debut in which year?",
+      "rewritten_query": "The \"Assassins\" screenplay was written in the year \"1989\".",
+      "gold_answer": "1996",
+      "rag_generated_answer": "1996",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "33126",
+        "3300211"
+      ],
+      "orig_retrieved_doc_ids": [
+        "33126",
+        "62262",
+        "3300211",
+        "23066976",
+        "930379"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "33126",
+        "62262",
+        "3300211",
+        "10239839",
+        "23066976"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.0758,
+      "generation_latency_seconds": 0.995,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "3300211",
+          "chunk_id": "3300211_c0",
+          "title": "Assassins (film)",
+          "similarity_score": 0.7064,
+          "snippet": "Assassins is a 1995 American action thriller film directed by Richard Donner. The screenplay was by Andy and Larry Wachowski and Brian Helgeland. The ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "23066976",
+          "chunk_id": "23066976_c0",
+          "title": "Assignment to Kill",
+          "similarity_score": 0.3315,
+          "snippet": "Assignment to Kill is a 1968 American drama film directed by Sheldon Reynolds and starring Patrick O'Neal, Joan Hackett, John Gielgud, Herbert Lom, an..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "33126",
+          "chunk_id": "33126_c0",
+          "title": "The Wachowskis",
+          "similarity_score": 0.3069,
+          "snippet": "Lana Wachowski (formerly Laurence \"Larry\" Wachowski, born June 21, 1965) and Lilly Wachowski (formerly Andrew Paul \"Andy\" Wachowski, born December 29,..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "10239839",
+          "chunk_id": "10239839_c0",
+          "title": "Knife Edge (film)",
+          "similarity_score": 0.3011,
+          "snippet": "Knife Edge is a 2009 British thriller film directed by Anthony Hickox and starring Natalie Press, Hugh Bonneville and Tamsin Egerton...."
+        },
+        {
+          "rank": 5,
+          "doc_id": "62262",
+          "chunk_id": "62262_c0",
+          "title": "Lewis Milestone",
+          "similarity_score": 0.2984,
+          "snippet": "Lewis Milestone (born Leib Milstein; September 30, 1895 – September 25, 1980) was a Moldovan-born American motion picture director. He is known for di..."
+        }
+      ]
+    },
+    {
+      "query_index": 34,
+      "query_id": "5ae7ac1f5542993210983eed",
+      "original_question": "What is the name of the Los Angeles-based production company that produced a film based on the novel by André Aciman?",
+      "rewritten_query": "The name of the production company that produced a film based on the novel by André Aciman is:",
+      "gold_answer": "Water's End Productions",
+      "rag_generated_answer": "The relevant information to answer the above question is: Call Me by Your Name is an internationally co-produced coming-of-age drama film directed by Luca Guadagnino and written by James Ivory.",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "9792271",
+        "50731291"
+      ],
+      "orig_retrieved_doc_ids": [
+        "50731291",
+        "9792271",
+        "45218",
+        "3300211",
+        "180464"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "50731291",
+        "45218",
+        "22256",
+        "3300211",
+        "180464"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.4628,
+      "generation_latency_seconds": 3.816,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "50731291",
+          "chunk_id": "50731291_c0",
+          "title": "Call Me by Your Name (film)",
+          "similarity_score": 0.3606,
+          "snippet": "Call Me by Your Name is an internationally co-produced coming-of-age drama film directed by Luca Guadagnino and written by James Ivory. It is based on..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "3300211",
+          "chunk_id": "3300211_c0",
+          "title": "Assassins (film)",
+          "similarity_score": 0.3387,
+          "snippet": "Assassins is a 1995 American action thriller film directed by Richard Donner. The screenplay was by Andy and Larry Wachowski and Brian Helgeland. The ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2998,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "22256",
+          "chunk_id": "22256_c0",
+          "title": "Objectivism (Ayn Rand)",
+          "similarity_score": 0.2582,
+          "snippet": "Objectivism is a philosophical system developed by Russian-American writer Ayn Rand (1905–1982). Rand first expressed Objectivism in her fiction, most..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "180464",
+          "chunk_id": "180464_c0",
+          "title": "The Fountainhead",
+          "similarity_score": 0.2575,
+          "snippet": "The Fountainhead is a 1943 novel by Russian-American author Ayn Rand, her first major literary success. The novel's protagonist, Howard Roark, is an i..."
+        }
+      ]
+    },
+    {
+      "query_index": 35,
+      "query_id": "5a74691755429929fddd8412",
+      "original_question": "What friends star's wedding was photographed by Robert Evans?",
+      "rewritten_query": "Robert Evans was the photographer of Friends's wedding.",
+      "gold_answer": "Jennifer Aniston",
+      "rag_generated_answer": "Brad Pitt",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "39928514",
+        "39942"
+      ],
+      "orig_retrieved_doc_ids": [
+        "46521626",
+        "2225976",
+        "39928514",
+        "89605",
+        "39942"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "46521626",
+        "21967618",
+        "2225976",
+        "39928514"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.0089,
+      "generation_latency_seconds": 0.935,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "39928514",
+          "chunk_id": "39928514_c0",
+          "title": "Robert Evans (photographer)",
+          "similarity_score": 0.7861,
+          "snippet": "Robert Evans (born November 17, 1967) is an American photographer. Photographing professionally since the age of twenty, he is best known for his work..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "2225976",
+          "chunk_id": "2225976_c0",
+          "title": "Candleshoe",
+          "similarity_score": 0.2133,
+          "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "21967618",
+          "chunk_id": "21967618_c0",
+          "title": "Bomis",
+          "similarity_score": 0.1754,
+          "snippet": "Bomis ( to rhyme with \"promise\") was a dot-com company best known for supporting the creations of free-content online-encyclopedia projects Nupedia an..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "46521626",
+          "chunk_id": "46521626_c0",
+          "title": "Titus Davis",
+          "similarity_score": 0.1677,
+          "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.1585,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        }
+      ]
+    },
+    {
+      "query_index": 36,
+      "query_id": "5a8dea555542995a26add44f",
+      "original_question": "What is the prequel to the show where Rose Eleanor Arbuthnot-Leslie stars as Maia Rindell?",
+      "rewritten_query": "Rose Eleanor Arbuthnot-Leslie's prequel to the show where Maia Rindell stars as Rose Eleanor Arbuthnot-Leslie is",
+      "gold_answer": "The Good Wife\"",
+      "rag_generated_answer": "The Good Fight",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.5,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "29540174",
+        "52152672"
+      ],
+      "orig_retrieved_doc_ids": [
+        "29540174",
+        "4592959",
+        "2225976",
+        "20722922",
+        "1817766"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "29540174",
+        "1647671",
+        "2225976",
+        "20722922",
+        "1817766"
+      ],
+      "all_gold_retrieved_original": false,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 2.4107,
+      "generation_latency_seconds": 1.381,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "29540174",
+          "chunk_id": "29540174_c0",
+          "title": "Rose Leslie",
+          "similarity_score": 0.588,
+          "snippet": "Rose Eleanor Arbuthnot-Leslie (born 9 February 1987), known professionally as Rose Leslie, is a Scottish actress. After winning a Scottish BAFTA for B..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "2225976",
+          "chunk_id": "2225976_c0",
+          "title": "Candleshoe",
+          "similarity_score": 0.2807,
+          "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1647671",
+          "chunk_id": "1647671_c0",
+          "title": "Lynne Spears",
+          "similarity_score": 0.221,
+          "snippet": "Lynne Irene Spears (born Lynne Irene Bridges; May 4, 1955) is an American author and mother of film and television producer Bryan Spears, pop singer B..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "20722922",
+          "chunk_id": "20722922_c0",
+          "title": "Wuthering Heights (2009 TV serial)",
+          "similarity_score": 0.2155,
+          "snippet": "Wuthering Heights is a two-part ITV television series adaptation of the novel \"Wuthering Heights\" by Emily Brontë. The episodes were adapted for the s..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "1817766",
+          "chunk_id": "1817766_c0",
+          "title": "Joseph Gordon-Levitt",
+          "similarity_score": 0.2112,
+          "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+        }
+      ]
+    },
+    {
+      "query_index": 37,
+      "query_id": "5ab4826f5542990594ba9c3c",
+      "original_question": "When was Justin Vincent the MVP of a collegiate championship game?",
+      "rewritten_query": "Justin Vincent was the MVP of a collegiate championship game.",
+      "gold_answer": "January 4, 2004",
+      "rag_generated_answer": "2004",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.5,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "8340584",
+        "4892221"
+      ],
+      "orig_retrieved_doc_ids": [
+        "46521626",
+        "51406206",
+        "8340584",
+        "7558034",
+        "4892221"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "46521626",
+        "51406206",
+        "8340584",
+        "7558034",
+        "4892221"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.9687,
+      "generation_latency_seconds": 0.863,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "4892221",
+          "chunk_id": "4892221_c0",
+          "title": "Justin Vincent",
+          "similarity_score": 0.6184,
+          "snippet": "Justin Vincent (born January 25, 1983) is a former American football running back for the Pittsburgh Steelers of the National Football League. He was ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "8340584",
+          "chunk_id": "8340584_c0",
+          "title": "2004 Sugar Bowl",
+          "similarity_score": 0.3558,
+          "snippet": "The 2004 Nokia Sugar Bowl, the BCS title game for the 2003 college football season, was played on January 4, 2004 at the Louisiana Superdome in New Or..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "7558034",
+          "chunk_id": "7558034_c0",
+          "title": "Lamont Peterson",
+          "similarity_score": 0.2875,
+          "snippet": "Lamont Peterson (born January 24, 1984) is an American professional boxer. He is a two-weight world champion, having held the WBA (Regular) welterweig..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "51406206",
+          "chunk_id": "51406206_c0",
+          "title": "Corey Davis (wide receiver)",
+          "similarity_score": 0.2871,
+          "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "46521626",
+          "chunk_id": "46521626_c0",
+          "title": "Titus Davis",
+          "similarity_score": 0.2741,
+          "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+        }
+      ]
+    },
+    {
+      "query_index": 38,
+      "query_id": "5a7735ac5542993735360219",
+      "original_question": "Which actor starred in Assignment to Kill and passed away in 2000.",
+      "rewritten_query": "Assignment to Kill was a 2000 film starring an actor who died in 2000.",
+      "gold_answer": "John Gielgud",
+      "rag_generated_answer": "Patrick O'Neal",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "167961",
+        "23066976"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "62262",
+        "1046971",
+        "3300211",
+        "23066976"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "62262",
+        "1046971",
+        "3300211",
+        "993791",
+        "23066976"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 1.1197,
+      "generation_latency_seconds": 1.261,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "23066976",
+          "chunk_id": "23066976_c0",
+          "title": "Assignment to Kill",
+          "similarity_score": 0.6659,
+          "snippet": "Assignment to Kill is a 1968 American drama film directed by Sheldon Reynolds and starring Patrick O'Neal, Joan Hackett, John Gielgud, Herbert Lom, an..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "3300211",
+          "chunk_id": "3300211_c0",
+          "title": "Assassins (film)",
+          "similarity_score": 0.3401,
+          "snippet": "Assassins is a 1995 American action thriller film directed by Richard Donner. The screenplay was by Andy and Larry Wachowski and Brian Helgeland. The ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "62262",
+          "chunk_id": "62262_c0",
+          "title": "Lewis Milestone",
+          "similarity_score": 0.2741,
+          "snippet": "Lewis Milestone (born Leib Milstein; September 30, 1895 – September 25, 1980) was a Moldovan-born American motion picture director. He is known for di..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1046971",
+          "chunk_id": "1046971_c0",
+          "title": "Sylvia Sidney",
+          "similarity_score": 0.2366,
+          "snippet": "Sylvia Sidney (born Sophia Kosow; August 8, 1910 – July 1, 1999) was an American actress of stage, screen and film, with a career spanning over 70 yea..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "993791",
+          "chunk_id": "993791_c0",
+          "title": "Downfall (2004 film)",
+          "similarity_score": 0.221,
+          "snippet": "Downfall (German: Der Untergang ) is a 2004 German-Italian-Austrian historical war drama film depicting the final ten days of Adolf Hitler's rule over..."
+        }
+      ]
+    },
+    {
+      "query_index": 39,
+      "query_id": "5ab2bfc65542991669774094",
+      "original_question": "When did the British/Irish digital television channel, which features Spliced, first launch?",
+      "rewritten_query": "The British/Irish digital television channel Spliced first launched in the United Kingdom on 1 January 2017.",
+      "gold_answer": "22 July 2002",
+      "rag_generated_answer": "22 July 2002",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "24403156",
+        "4911474"
+      ],
+      "orig_retrieved_doc_ids": [
+        "200842",
+        "24403156",
+        "4911474",
+        "726979",
+        "20722922"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "200842",
+        "24403156",
+        "4911474",
+        "726979",
+        "12621451"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.487,
+      "generation_latency_seconds": 1.127,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "24403156",
+          "chunk_id": "24403156_c0",
+          "title": "Spliced (TV series)",
+          "similarity_score": 0.7339,
+          "snippet": "Spliced is a Canadian animated television series produced by Teletoon and Nelvana. The series made its world premiere on Jetix in Latin America on Apr..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "4911474",
+          "chunk_id": "4911474_c0",
+          "title": "Nicktoons (UK and Ireland)",
+          "similarity_score": 0.3657,
+          "snippet": "Nicktoons is a British/Irish digital television channel, launched on 22 July 2002. It is a cartoon based sister channel to Nickelodeon. The channel ai..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "726979",
+          "chunk_id": "726979_c0",
+          "title": "Eon Productions",
+          "similarity_score": 0.2112,
+          "snippet": "Eon Productions (an abbreviation of Everything or Nothing) is a British film production company that produces the \"James Bond\" film series. The compan..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "12621451",
+          "chunk_id": "12621451_c0",
+          "title": "Herman Spieth",
+          "similarity_score": 0.1974,
+          "snippet": "Herman Spieth (21 August 1905 – 20 October 1988) was an American zoologist and university administrator. He was the first chancellor of the University..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "200842",
+          "chunk_id": "200842_c0",
+          "title": "Only Fools and Horses",
+          "similarity_score": 0.1835,
+          "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+        }
+      ]
+    },
+    {
+      "query_index": 40,
+      "query_id": "5ade08425542995b365fabd9",
+      "original_question": "University of Toronto and Istanbul Technical University, are located in Canada?",
+      "rewritten_query": "The University of Toronto and Istanbul Technical University are located in Canada.",
+      "gold_answer": "no",
+      "rag_generated_answer": "no",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "7955325",
+        "743431"
+      ],
+      "orig_retrieved_doc_ids": [
+        "7955325",
+        "743431",
+        "230311",
+        "1074931",
+        "2238418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "7955325",
+        "743431",
+        "230311",
+        "1074931",
+        "2238418"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.9383,
+      "generation_latency_seconds": 1.571,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "7955325",
+          "chunk_id": "7955325_c0",
+          "title": "University of Toronto",
+          "similarity_score": 0.6178,
+          "snippet": "The University of Toronto (U of T, UToronto, or Toronto) is a public research university in Toronto, Ontario, Canada on the grounds that surround Quee..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "743431",
+          "chunk_id": "743431_c0",
+          "title": "Istanbul Technical University",
+          "similarity_score": 0.5569,
+          "snippet": "Istanbul Technical University (Turkish \"İstanbul Teknik Üniversitesi\", commonly referred to as ITU or Technical University) is an international techni..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "230311",
+          "chunk_id": "230311_c0",
+          "title": "University of California, Riverside",
+          "similarity_score": 0.2374,
+          "snippet": "The University of California, Riverside (UCR or UC Riverside), is a public research university and one of the 10 general campuses of the University of..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "2238418",
+          "chunk_id": "2238418_c0",
+          "title": "Indian Statistical Institute",
+          "similarity_score": 0.2266,
+          "snippet": "Indian Statistical Institute (ISI) is an academic institute of national importance as recognised by a 1959 act of the Indian parliament. It grew out o..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "1074931",
+          "chunk_id": "1074931_c0",
+          "title": "Federation of Damanhur",
+          "similarity_score": 0.179,
+          "snippet": "The Federation of Damanhur, often called simply Damanhur, is a commune, ecovillage, and spiritual community situated in the Piedmont region of norther..."
+        }
+      ]
+    },
+    {
+      "query_index": 41,
+      "query_id": "5ac5093b5542996feb3fe9d8",
+      "original_question": "Plymouth Regional High School is located in what county?",
+      "rewritten_query": "Plymouth Regional High School is located in what county?",
+      "gold_answer": "Grafton County",
+      "rag_generated_answer": "Grafton County",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "2962586",
+        "259575"
+      ],
+      "orig_retrieved_doc_ids": [
+        "2962586",
+        "7955325",
+        "259575",
+        "49449800",
+        "7148380"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "2962586",
+        "7955325",
+        "259575",
+        "49449800",
+        "7148380"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.7306,
+      "generation_latency_seconds": 1.232,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "2962586",
+          "chunk_id": "2962586_c0",
+          "title": "Plymouth Regional High School (New Hampshire)",
+          "similarity_score": 0.7165,
+          "snippet": "Plymouth Regional High School (PRHS) is a public secondary school in Plymouth, New Hampshire, United States. Surrounding towns that attend PRHS are As..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "259575",
+          "chunk_id": "259575_c0",
+          "title": "Plymouth, New Hampshire",
+          "similarity_score": 0.5378,
+          "snippet": "Plymouth is a town in Grafton County, New Hampshire, United States, in the White Mountains Region. Plymouth is located at the convergence of the Pemig..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.3199,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 4,
+          "doc_id": "7148380",
+          "chunk_id": "7148380_c0",
+          "title": "The Class of '62",
+          "similarity_score": 0.2227,
+          "snippet": "\"The Class of '62\" is an episode of the BBC sit-com \"Only Fools and Horses\". It was the fourth episode of series 7, and was first broadcast on 20 Janu..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "7955325",
+          "chunk_id": "7955325_c0",
+          "title": "University of Toronto",
+          "similarity_score": 0.1781,
+          "snippet": "The University of Toronto (U of T, UToronto, or Toronto) is a public research university in Toronto, Ontario, Canada on the grounds that surround Quee..."
+        }
+      ]
+    },
+    {
+      "query_index": 42,
+      "query_id": "5ab26ed65542993be8fa9913",
+      "original_question": "Does the Inula genus or the Fouquieria genus have more species?",
+      "rewritten_query": "The Inula genus has more species than the Fouquieria genus.",
+      "gold_answer": "Inula",
+      "rag_generated_answer": "Inula",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "18952512",
+        "1906719"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "1906719",
+        "28227842",
+        "18952512",
+        "73209"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "1906719",
+        "28227842",
+        "18952512",
+        "54185106",
+        "73209"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.3361,
+      "generation_latency_seconds": 1.615,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "1906719",
+          "chunk_id": "1906719_c0",
+          "title": "Inula",
+          "similarity_score": 0.7097,
+          "snippet": "Inula is a large genus of about 90 species of flowering plants in the family Asteraceae, native to Europe, Asia and Africa...."
+        },
+        {
+          "rank": 2,
+          "doc_id": "18952512",
+          "chunk_id": "18952512_c0",
+          "title": "Fouquieria",
+          "similarity_score": 0.6442,
+          "snippet": "Fouquieria is a genus of 11 species of desert plants, the sole genus in the family Fouquieriaceae. The genus includes the ocotillo (\"F. splendens\") an..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "73209",
+          "chunk_id": "73209_c0",
+          "title": "Guadalajara",
+          "similarity_score": 0.1707,
+          "snippet": "Guadalajara ( , ] ) is the capital and largest city of the Mexican state of Jalisco, and the seat of the municipality of Guadalajara. The city is in t..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "28227842",
+          "chunk_id": "28227842_c0",
+          "title": "Fulda Cathedral",
+          "similarity_score": 0.1643,
+          "snippet": "Fulda Cathedral (German: \"Fuldaer Dom\" , also \"Sankt Salvator\") is the former abbey church of Fulda Abbey and the burial place of Saint Boniface. Sinc..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "54185106",
+          "chunk_id": "54185106_c0",
+          "title": "Crystal Palace F.C. Player of the Year",
+          "similarity_score": 0.1466,
+          "snippet": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season. Since the inaugural award was made to John McCormick in 1972..."
+        }
+      ]
+    },
+    {
+      "query_index": 43,
+      "query_id": "5add1ebe5542990d50227dec",
+      "original_question": "Who was the director of the 2009 British thriller film starring the actor who is best known for playing Robert Crawley in \"Downtown Abbey\"?",
+      "rewritten_query": "The director of the 2009 British thriller film starring the actor who is best known for playing Robert Crawley in \"Downtown Abbey\" is John Lennon.",
+      "gold_answer": "Anthony Hickox",
+      "rag_generated_answer": "The relevant information to answer the above question is:",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false,
+        "is_correct": false
+      },
+      "failure_category": "Retrieval Failure",
+      "gold_doc_ids": [
+        "10239839",
+        "1802353"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "20722922",
+        "1802353",
+        "89605",
+        "1817766"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "29540174",
+        "39928514",
+        "1802353",
+        "89605"
+      ],
+      "all_gold_retrieved_original": false,
+      "all_gold_retrieved_rewritten": false,
+      "query_rewriting_latency_seconds": 2.3859,
+      "generation_latency_seconds": 1.576,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "1802353",
+          "chunk_id": "1802353_c0",
+          "title": "Hugh Bonneville",
+          "similarity_score": 0.6287,
+          "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.3532,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "29540174",
+          "chunk_id": "29540174_c0",
+          "title": "Rose Leslie",
+          "similarity_score": 0.321,
+          "snippet": "Rose Eleanor Arbuthnot-Leslie (born 9 February 1987), known professionally as Rose Leslie, is a Scottish actress. After winning a Scottish BAFTA for B..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "89605",
+          "chunk_id": "89605_c0",
+          "title": "Jennifer Saunders",
+          "similarity_score": 0.3079,
+          "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "39928514",
+          "chunk_id": "39928514_c0",
+          "title": "Robert Evans (photographer)",
+          "similarity_score": 0.3015,
+          "snippet": "Robert Evans (born November 17, 1967) is an American photographer. Photographing professionally since the age of twenty, he is best known for his work..."
+        }
+      ]
+    },
+    {
+      "query_index": 44,
+      "query_id": "5a7541ab5542993748c89803",
+      "original_question": "What school is located in the southernmost atoll of the archipelago of the Maldives?",
+      "rewritten_query": "The southernmost atoll of the archipelago of the Maldives is located in the southernmost atoll.",
+      "gold_answer": "Maradhoo Feydhoo School",
+      "rag_generated_answer": "Maradhoo Feydhoo School",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "49449800",
+        "898257"
+      ],
+      "orig_retrieved_doc_ids": [
+        "898257",
+        "2962586",
+        "49449800",
+        "230311",
+        "3751418"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "898257",
+        "1792975",
+        "44152621",
+        "49449800",
+        "3751418"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.7906,
+      "generation_latency_seconds": 2.339,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "898257",
+          "chunk_id": "898257_c0",
+          "title": "Addu City",
+          "similarity_score": 0.5026,
+          "snippet": "Addu City (local administrative code Seenu) is a city in Maldives that consists of the inhabited islands of the southernmost atoll of the archipelago...."
+        },
+        {
+          "rank": 2,
+          "doc_id": "49449800",
+          "chunk_id": "49449800_c0",
+          "title": "Maradhoo Feydhoo School",
+          "similarity_score": 0.3039,
+          "snippet": "Maradhoo Feydhoo School is a school located in Maradhoo-Feydhoo, a district of Addu City in the Maldives...."
+        },
+        {
+          "rank": 3,
+          "doc_id": "44152621",
+          "chunk_id": "44152621_c0",
+          "title": "Sanghamitra Bandyopadhyay",
+          "similarity_score": 0.1331,
+          "snippet": "Sanghamitra Bandyopadhyay (born 1968) is an Indian computer scientist specializing in computational biology. A professor at the Indian Statistical Ins..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1792975",
+          "chunk_id": "1792975_c0",
+          "title": "Tom Hardy",
+          "similarity_score": 0.1316,
+          "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "3751418",
+          "chunk_id": "3751418_c0",
+          "title": "The World's Best Prom",
+          "similarity_score": 0.1293,
+          "snippet": "The World's Best Prom is a 2006 documentary film about a high school prom in Racine, Wisconsin. \"Prom\" was released as a short film and was expanded t..."
+        }
+      ]
+    },
+    {
+      "query_index": 45,
+      "query_id": "5a83e925554299123d8c21ca",
+      "original_question": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician, since February 2017 he has served as Minister of which official Ghanaian agency responsible the creation of linkages between the Government of Ghana and the traditional authorities in the country?",
+      "rewritten_query": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He served as Minister of the Ghanaian Government of Ghana from February 2017 to February 2018.",
+      "gold_answer": "Ministry for Chieftaincy and Traditional Affairs",
+      "rag_generated_answer": "The Ministry for Chieftaincy and Traditional Affairs",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "54682964",
+        "38944834"
+      ],
+      "orig_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "54682964",
+        "5814825",
+        "38944834"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "8454308",
+        "40343708",
+        "5814825",
+        "54682964",
+        "38944834"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 2.5563,
+      "generation_latency_seconds": 1.529,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "54682964",
+          "chunk_id": "54682964_c0",
+          "title": "Kofi Dzamesi",
+          "similarity_score": 0.9285,
+          "snippet": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician. He was a Volta Regional minister under the John Kufour administration. Since February ..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "5814825",
+          "chunk_id": "5814825_c0",
+          "title": "Karol Karski",
+          "similarity_score": 0.4363,
+          "snippet": "Karol Karski (born May 13, 1966 in Warsaw) is a Polish politician, former Vice-Minister of Foreign Affairs of Poland. Doctor of Law. He was elected to..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "40343708",
+          "chunk_id": "40343708_c0",
+          "title": "Theodosia Okoh",
+          "similarity_score": 0.3566,
+          "snippet": "Theodosia Salome Okoh (13 June 1922 – 19 April 2015) was a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957. She also..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "38944834",
+          "chunk_id": "38944834_c0",
+          "title": "Ministry for Chieftaincy and Religious Affairs",
+          "similarity_score": 0.3183,
+          "snippet": "The Ministry for Chieftaincy and Traditional Affairs is the official Ghanaian agency responsible the creation of linkages between the Government of Gh..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "8454308",
+          "chunk_id": "8454308_c0",
+          "title": "Oberto Airaudi",
+          "similarity_score": 0.3082,
+          "snippet": "Oberto Airaudi (29 May 1950 – 24 June 2013) was an Italian philosopher and artist, who founded the Federation of Damanhur. Airaudi also went by the na..."
+        }
+      ]
+    },
+    {
+      "query_index": 46,
+      "query_id": "5a7a783b5542990783324f58",
+      "original_question": "What country of origin does 17 Carat and Seventeen have in common?",
+      "rewritten_query": "17 Carat and Seventeen are related.",
+      "gold_answer": "Korean",
+      "rag_generated_answer": "South Korean",
+      "correctness_assessment": {
+        "exact_match": false,
+        "f1_score": 0.6667,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "52427290",
+        "46703097"
+      ],
+      "orig_retrieved_doc_ids": [
+        "1906719",
+        "46703097",
+        "52427290",
+        "1074931",
+        "520309"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "9352902",
+        "46703097",
+        "52427290",
+        "1074931",
+        "39942"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 0.6857,
+      "generation_latency_seconds": 0.955,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "52427290",
+          "chunk_id": "52427290_c0",
+          "title": "17 Carat",
+          "similarity_score": 0.6606,
+          "snippet": "17 Carat is the debut extended play by South Korean boy group Seventeen. It was released on May 29, 2015 by Pledis Entertainment and distributed by LO..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "46703097",
+          "chunk_id": "46703097_c0",
+          "title": "Seventeen (band)",
+          "similarity_score": 0.4863,
+          "snippet": "Seventeen (Hangul: 세븐틴 ), also stylized as SEVENTEEN or SVT, is a South Korean boy group formed by Pledis Entertainment in 2015. The group consists of..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "39942",
+          "chunk_id": "39942_c0",
+          "title": "Jennifer Aniston",
+          "similarity_score": 0.1444,
+          "snippet": "Jennifer Joanna Aniston (born February 11, 1969) is an American actress, producer, and businesswoman. She is the daughter of Greek-born actor John Ani..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "1074931",
+          "chunk_id": "1074931_c0",
+          "title": "Federation of Damanhur",
+          "similarity_score": 0.1239,
+          "snippet": "The Federation of Damanhur, often called simply Damanhur, is a commune, ecovillage, and spiritual community situated in the Piedmont region of norther..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "9352902",
+          "chunk_id": "9352902_c0",
+          "title": "Tremont Stakes",
+          "similarity_score": 0.1192,
+          "snippet": "The Tremont Stakes is a Listed American Thoroughbred horse race run annually for two-year-olds over the distance of 5 ⁄ furlongs on the dirt in early ..."
+        }
+      ]
+    },
+    {
+      "query_index": 47,
+      "query_id": "5ae07f6d55429945ae959385",
+      "original_question": "Who is the protagonist in Ayn Rand's most notable novel?",
+      "rewritten_query": "Ayn Rand is the protagonist of Ayn Rand's most notable novel.",
+      "gold_answer": "Howard Roark",
+      "rag_generated_answer": "Howard Roark",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "180464",
+        "22256"
+      ],
+      "orig_retrieved_doc_ids": [
+        "44152621",
+        "22256",
+        "180464",
+        "89605",
+        "46928473"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "44152621",
+        "22256",
+        "180464",
+        "89605",
+        "39942"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.1849,
+      "generation_latency_seconds": 1.394,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "22256",
+          "chunk_id": "22256_c0",
+          "title": "Objectivism (Ayn Rand)",
+          "similarity_score": 0.6758,
+          "snippet": "Objectivism is a philosophical system developed by Russian-American writer Ayn Rand (1905–1982). Rand first expressed Objectivism in her fiction, most..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "180464",
+          "chunk_id": "180464_c0",
+          "title": "The Fountainhead",
+          "similarity_score": 0.5991,
+          "snippet": "The Fountainhead is a 1943 novel by Russian-American author Ayn Rand, her first major literary success. The novel's protagonist, Howard Roark, is an i..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "89605",
+          "chunk_id": "89605_c0",
+          "title": "Jennifer Saunders",
+          "similarity_score": 0.2327,
+          "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "39942",
+          "chunk_id": "39942_c0",
+          "title": "Jennifer Aniston",
+          "similarity_score": 0.2213,
+          "snippet": "Jennifer Joanna Aniston (born February 11, 1969) is an American actress, producer, and businesswoman. She is the daughter of Greek-born actor John Ani..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "44152621",
+          "chunk_id": "44152621_c0",
+          "title": "Sanghamitra Bandyopadhyay",
+          "similarity_score": 0.2134,
+          "snippet": "Sanghamitra Bandyopadhyay (born 1968) is an Indian computer scientist specializing in computational biology. A professor at the Indian Statistical Ins..."
+        }
+      ]
+    },
+    {
+      "query_index": 48,
+      "query_id": "5ab2f57955429929539468cf",
+      "original_question": "The composer of A Survivor from Warsaw emigrated to the United States in what year?",
+      "rewritten_query": "The composer of A Survivor was born in Warsaw. He emigrated to the United States in the year of his birth.",
+      "gold_answer": "1934",
+      "rag_generated_answer": "1934",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "67025",
+        "6566239"
+      ],
+      "orig_retrieved_doc_ids": [
+        "45280",
+        "6566239",
+        "5814825",
+        "67025",
+        "46928473"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "45280",
+        "6566239",
+        "5814825",
+        "67025",
+        "46928473"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.7233,
+      "generation_latency_seconds": 1.259,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "6566239",
+          "chunk_id": "6566239_c0",
+          "title": "A Survivor from Warsaw",
+          "similarity_score": 0.654,
+          "snippet": "A Survivor from Warsaw, Op. 46, is a cantata by the Los Angeles-based Austrian composer Arnold Schoenberg, written in tribute to Holocaust victims. Th..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "67025",
+          "chunk_id": "67025_c0",
+          "title": "Arnold Schoenberg",
+          "similarity_score": 0.3485,
+          "snippet": "Arnold Franz Walter Schoenberg or Schönberg ( ; ] ; 13 September 187413 July 1951) was an Austrian composer, music theorist, and painter. He was assoc..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "5814825",
+          "chunk_id": "5814825_c0",
+          "title": "Karol Karski",
+          "similarity_score": 0.2886,
+          "snippet": "Karol Karski (born May 13, 1966 in Warsaw) is a Polish politician, former Vice-Minister of Foreign Affairs of Poland. Doctor of Law. He was elected to..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "45280",
+          "chunk_id": "45280_c0",
+          "title": "Arthur Sullivan",
+          "similarity_score": 0.2573,
+          "snippet": "Sir Arthur Seymour Sullivan MVO (13 May 1842 – 22 November 1900) was an English composer. He is best known for his series of 14 operatic collaboration..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "46928473",
+          "chunk_id": "46928473_c0",
+          "title": "Lorilee Craker",
+          "similarity_score": 0.2463,
+          "snippet": "Lorilee Craker (born 1968) is a writer in Michigan, United States. She grew up in Winnipeg, Manitoba, Canada. She has three children. She advocates pa..."
+        }
+      ]
+    },
+    {
+      "query_index": 49,
+      "query_id": "5a7def2a5542995f4f402324",
+      "original_question": "Anna Howard Shaw Day starred the actor, director, and producer who was best known for playing what character on Mad Men?",
+      "rewritten_query": "Anna Howard Shaw Day is an actor, director, and producer best known for playing the character Mad Men.",
+      "gold_answer": "Don Draper",
+      "rag_generated_answer": "Don Draper",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "26171562",
+        "3634471"
+      ],
+      "orig_retrieved_doc_ids": [
+        "167961",
+        "26171562",
+        "45218",
+        "1046971",
+        "3634471"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "167961",
+        "26171562",
+        "45218",
+        "1046971",
+        "3634471"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.4749,
+      "generation_latency_seconds": 1.266,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "3634471",
+          "chunk_id": "3634471_c0",
+          "title": "Jon Hamm",
+          "similarity_score": 0.5358,
+          "snippet": "Jonathan Daniel Hamm (born March 10, 1971) is an American actor, director, and television producer best known for playing advertising executive Don Dr..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "26171562",
+          "chunk_id": "26171562_c0",
+          "title": "Anna Howard Shaw Day",
+          "similarity_score": 0.4964,
+          "snippet": "\"Anna Howard Shaw Day\" is the thirteenth episode of the fourth season of the American television comedy series \"30 Rock\", and the 71st episode of the ..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "1046971",
+          "chunk_id": "1046971_c0",
+          "title": "Sylvia Sidney",
+          "similarity_score": 0.366,
+          "snippet": "Sylvia Sidney (born Sophia Kosow; August 8, 1910 – July 1, 1999) was an American actress of stage, screen and film, with a career spanning over 70 yea..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "167961",
+          "chunk_id": "167961_c0",
+          "title": "John Gielgud",
+          "similarity_score": 0.3074,
+          "snippet": "Sir Arthur John Gielgud ( ; 14 April 1904 – 21 May 2000) was an English actor and theatre director whose career spanned eight decades. With Ralph Rich..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "45218",
+          "chunk_id": "45218_c0",
+          "title": "Sacha Baron Cohen",
+          "similarity_score": 0.2957,
+          "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+        }
+      ]
+    },
+    {
+      "query_index": 50,
+      "query_id": "5ae2e2c655429928c423952d",
+      "original_question": "When was the American Democratic politician which was the governor of 185th New York State Legislature born?",
+      "rewritten_query": "The American Democratic politician who was the governor of the 185th New York State Legislature was born on January 1, 1865.",
+      "gold_answer": "June 15, 1932",
+      "rag_generated_answer": "June 15, 1932",
+      "correctness_assessment": {
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true,
+        "is_correct": true
+      },
+      "failure_category": null,
+      "gold_doc_ids": [
+        "45604736",
+        "277935"
+      ],
+      "orig_retrieved_doc_ids": [
+        "355604",
+        "45604736",
+        "277935",
+        "330637",
+        "12621451"
+      ],
+      "rewritten_retrieved_doc_ids": [
+        "355604",
+        "45604736",
+        "277935",
+        "330637",
+        "5814825"
+      ],
+      "all_gold_retrieved_original": true,
+      "all_gold_retrieved_rewritten": true,
+      "query_rewriting_latency_seconds": 1.7565,
+      "generation_latency_seconds": 0.846,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "doc_id": "45604736",
+          "chunk_id": "45604736_c0",
+          "title": "185th New York State Legislature",
+          "similarity_score": 0.6342,
+          "snippet": "The 185th New York State Legislature, consisting of the New York State Senate and the New York State Assembly, met from January 5, 1983, to December 3..."
+        },
+        {
+          "rank": 2,
+          "doc_id": "277935",
+          "chunk_id": "277935_c0",
+          "title": "Mario Cuomo",
+          "similarity_score": 0.47,
+          "snippet": "Mario Matthew Cuomo ( ; ] ; June 15, 1932 – January 1, 2015) was an American Democratic politician. He served as the 52nd Governor of New York for thr..."
+        },
+        {
+          "rank": 3,
+          "doc_id": "355604",
+          "chunk_id": "355604_c0",
+          "title": "John Podesta",
+          "similarity_score": 0.1965,
+          "snippet": "John David Podesta (born January 8, 1949) is a columnist and former chairman of the 2016 Hillary Clinton presidential campaign. He previously served a..."
+        },
+        {
+          "rank": 4,
+          "doc_id": "330637",
+          "chunk_id": "330637_c0",
+          "title": "Belmont Park",
+          "similarity_score": 0.1884,
+          "snippet": "Belmont Park is a major Thoroughbred horse-racing facility located in Elmont, New York, just outside New York City limits. It first opened on May 4, 1..."
+        },
+        {
+          "rank": 5,
+          "doc_id": "5814825",
+          "chunk_id": "5814825_c0",
+          "title": "Karol Karski",
+          "similarity_score": 0.1784,
+          "snippet": "Karol Karski (born May 13, 1966 in Warsaw) is a Polish politician, former Vice-Minister of Foreign Affairs of Poland. Doctor of Law. He was elected to..."
+        }
+      ]
+    }
+  ]
+}

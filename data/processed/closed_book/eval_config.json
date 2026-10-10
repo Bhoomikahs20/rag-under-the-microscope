@@ -1,0 +1,15 @@
+{
+  "model_id": "google/flan-t5-base",
+  "architecture": "Seq2Seq / Flan-T5-Base",
+  "parameters": "250M",
+  "closed_book_prompt_template": "Answer the question: {question}",
+  "decoding_parameters": {
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 50,
+    "random_seed": 42
+  },
+  "retrieval_used": false,
+  "corpus_access_allowed": false,
+  "external_search_allowed": false
+}

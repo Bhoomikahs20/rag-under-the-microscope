@@ -1,0 +1,217 @@
+{
+  "full_coverage_confirmed": true,
+  "counts": {
+    "queries": 50,
+    "corpus_documents": 100,
+    "qrels": 100
+  },
+  "integrity_checks": {
+    "duplicate_query_ids": 0,
+    "duplicate_corpus_ids": 0,
+    "duplicate_qrel_pairs": 0,
+    "missing_query_ids_in_queries": 0,
+    "missing_corpus_ids_in_corpus": 0,
+    "empty_query_texts": 0,
+    "empty_corpus_texts": 0,
+    "empty_corpus_titles": 0
+  },
+  "relevant_docs_per_query_stats": {
+    "mean": 2.0,
+    "std": 0.0,
+    "min": 2,
+    "max": 2,
+    "distribution": {
+      "2": 50
+    }
+  },
+  "query_char_stats": {
+    "mean": 98.34,
+    "std": 49.69,
+    "min": 56,
+    "p25": 66.25,
+    "median": 83.5,
+    "p75": 113.5,
+    "max": 299
+  },
+  "query_word_stats": {
+    "mean": 16.26,
+    "std": 8.34,
+    "min": 9,
+    "p25": 11.0,
+    "median": 14.0,
+    "p75": 19.75,
+    "max": 53
+  },
+  "sample_pairs": [
+    {
+      "sample_index": 1,
+      "query_id": "5a7c35885542996dd594b8d9",
+      "query_text": "The Hope Theatre presented plays during what overall time frame in England?",
+      "relevant_documents": [
+        {
+          "doc_id": "7629569",
+          "title": "Hope Theatre",
+          "text_snippet": "The Hope Theatre was one of the theatres built in and around London for the presentation of plays in English Renaissance theatre, comparable to the Globe, the Curtain, the Swan, an..."
+        },
+        {
+          "doc_id": "39566",
+          "title": "English Renaissance theatre",
+          "text_snippet": "English Renaissance theatre, also known as early modern English theatre, or (commonly) as Elizabethan theatre, refers to the theatre of England between 1562 and 1642...."
+        }
+      ]
+    },
+    {
+      "sample_index": 2,
+      "query_id": "5a8e4a605542995a26add4cb",
+      "query_text": "The composer of the opera \"The Zoo\" has composed how many major orchestral works?",
+      "relevant_documents": [
+        {
+          "doc_id": "4934253",
+          "title": "The Zoo",
+          "text_snippet": "The Zoo is a one-act comic opera, with music by Arthur Sullivan and a libretto by B. C. Stephenson, writing under the pen name of Bolton Rowe. It premiered on 5 June 1875 at the St..."
+        },
+        {
+          "doc_id": "45280",
+          "title": "Arthur Sullivan",
+          "text_snippet": "Sir Arthur Seymour Sullivan MVO (13 May 1842 – 22 November 1900) was an English composer. He is best known for his series of 14 operatic collaborations with the dramatist W. S. Gil..."
+        }
+      ]
+    },
+    {
+      "sample_index": 3,
+      "query_id": "5a8780385542996e4f30880e",
+      "query_text": "What character in the television special \"The Pound Puppies\" did the voice actor of Fred Jones from \"Scooby-Doo\" voice as?",
+      "relevant_documents": [
+        {
+          "doc_id": "37328049",
+          "title": "Pound Puppies (film)",
+          "text_snippet": "The Pound Puppies is an animated television special, produced by Hanna-Barbera Productions, based on the popular toy line from Tonka, which aired in syndication on October 26, 1985..."
+        },
+        {
+          "doc_id": "487732",
+          "title": "Frank Welker",
+          "text_snippet": "Franklin Wendell Welker (born March 12, 1946) is an American actor, who for most of his career has specialized as a voice actor. He is best known for his role as Fred Jones from th..."
+        }
+      ]
+    },
+    {
+      "sample_index": 4,
+      "query_id": "5a8cb59055429941ae14ded6",
+      "query_text": "What is the name of the television series \"Wuthering Heights\" actor who also starred in the action film \"Black Hawk Down\"?",
+      "relevant_documents": [
+        {
+          "doc_id": "20722922",
+          "title": "Wuthering Heights (2009 TV serial)",
+          "text_snippet": "Wuthering Heights is a two-part ITV television series adaptation of the novel \"Wuthering Heights\" by Emily Brontë. The episodes were adapted for the screen by Peter Bowker and dire..."
+        },
+        {
+          "doc_id": "1792975",
+          "title": "Tom Hardy",
+          "text_snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's other notable films include th..."
+        }
+      ]
+    },
+    {
+      "sample_index": 5,
+      "query_id": "5ae5fb975542996de7b71aa8",
+      "query_text": "Edmundo \"Eddie\" Rodriguez was born in what Mexican state?",
+      "relevant_documents": [
+        {
+          "doc_id": "21757108",
+          "title": "Edmundo Rodriguez",
+          "text_snippet": "Edmundo \"Eddie\" Rodriguez (born April 22, 1970 in Guadalajara, Mexico) is a retired Mexican soccer player. He spent most of his career in the U.S. leagues including two seasons in ..."
+        },
+        {
+          "doc_id": "73209",
+          "title": "Guadalajara",
+          "text_snippet": "Guadalajara ( , ] ) is the capital and largest city of the Mexican state of Jalisco, and the seat of the municipality of Guadalajara. The city is in the central region of Jalisco i..."
+        }
+      ]
+    },
+    {
+      "sample_index": 6,
+      "query_id": "5abd0e8355429924427fcee2",
+      "query_text": "Sylvia Sidney starred in the film Beetlejuice, which was directed by whom?",
+      "relevant_documents": [
+        {
+          "doc_id": "1046971",
+          "title": "Sylvia Sidney",
+          "text_snippet": "Sylvia Sidney (born Sophia Kosow; August 8, 1910 – July 1, 1999) was an American actress of stage, screen and film, with a career spanning over 70 years, who first rose to prominen..."
+        },
+        {
+          "doc_id": "293524",
+          "title": "Beetlejuice",
+          "text_snippet": "Beetlejuice is a 1988 American comedy-fantasy film directed by Tim Burton, produced by The Geffen Film Company and distributed by Warner Bros. The plot revolves around a recently d..."
+        }
+      ]
+    },
+    {
+      "sample_index": 7,
+      "query_id": "5a7257ce5542990c210a410d",
+      "query_text": "This English comedian wrote the British sitcom \"Absolutely Fabulous\"",
+      "relevant_documents": [
+        {
+          "doc_id": "49546885",
+          "title": "Absolutely Fabulous (series 3)",
+          "text_snippet": "The third series of \"Absolutely Fabulous\", a British sitcom, premiered on BBC One on 30 March 1995. This series consists of six episodes and concluded on 11 May 1995. Initially, th..."
+        },
+        {
+          "doc_id": "89605",
+          "title": "Jennifer Saunders",
+          "text_snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship), an International Emmy Award,..."
+        }
+      ]
+    },
+    {
+      "sample_index": 8,
+      "query_id": "5ab739c65542993667793f9a",
+      "query_text": "\"The Class of '62\" is an episode of the BBC television sitcom, \"Only Fools and Horses\", created and written by who?",
+      "relevant_documents": [
+        {
+          "doc_id": "7148380",
+          "title": "The Class of '62",
+          "text_snippet": "\"The Class of '62\" is an episode of the BBC sit-com \"Only Fools and Horses\". It was the fourth episode of series 7, and was first broadcast on 20 January 1991. In the episode, Del ..."
+        },
+        {
+          "doc_id": "200842",
+          "title": "Only Fools and Horses",
+          "text_snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the United Kingdom from 1981 to 1991..."
+        }
+      ]
+    },
+    {
+      "sample_index": 9,
+      "query_id": "5a8c5d795542995e66a475d4",
+      "query_text": "Where is the company located that produced the 2006 James Bond movie Casino Royale?",
+      "relevant_documents": [
+        {
+          "doc_id": "930379",
+          "title": "Casino Royale (2006 film)",
+          "text_snippet": "Casino Royale (2006) is the twenty-first spy film in the Eon Productions \"James Bond\" film series and the first to star Daniel Craig as the fictional MI6 agent James Bond. Directed..."
+        },
+        {
+          "doc_id": "726979",
+          "title": "Eon Productions",
+          "text_snippet": "Eon Productions (an abbreviation of Everything or Nothing) is a British film production company that produces the \"James Bond\" film series. The company is based in London's Piccadi..."
+        }
+      ]
+    },
+    {
+      "sample_index": 10,
+      "query_id": "5add443a5542992ae4cec503",
+      "query_text": "What American biotechnology company is part of Gloucester Pharmaceuticals?",
+      "relevant_documents": [
+        {
+          "doc_id": "24314125",
+          "title": "Romidepsin",
+          "text_snippet": "Romidepsin, also known as Istodax, is an anticancer agent used in cutaneous T-cell lymphoma (CTCL) and other peripheral T-cell lymphomas (PTCLs). Romidepsin is a natural product ob..."
+        },
+        {
+          "doc_id": "2887610",
+          "title": "Celgene",
+          "text_snippet": "Celgene Corporation is an American biotechnology company that discovers, develops and commercializes medicines for cancer and inflammatory disorders. It is incorporated in Delaware..."
+        }
+      ]
+    }
+  ]
+}

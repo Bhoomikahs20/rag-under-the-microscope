@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this book, codebase, empirical benchmark, or ablation results in your work, please cite it using the metadata below."
+title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
+subtitle: "An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval"
+type: book
+authors:
+  - family-names: "Bhuyan"
+    given-names: "Hrishikesh"
+year: 2026
+month: 10
+edition: "First Edition"
+url: "https://github.com/user/rag-book-work"
+repository-code: "https://github.com/user/rag-book-work"
+license: "CC-BY-4.0"
+keywords:
+  - retrieval-augmented-generation
+  - rag
+  - information-retrieval
+  - vector-databases
+  - dense-retrieval
+  - bm25
+  - reranking
+  - hotpotqa
+  - benchmark
+  - llm-evaluation
+preferred-citation:
+  type: book
+  title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
+  authors:
+    - family-names: "Bhuyan"
+      given-names: "Hrishikesh"
+  year: 2026
+  month: 10
+  publisher:
+    name: "Antigravity Research Press"
+  notes: "Audited Empirical Research Monograph & Benchmark Codebase"

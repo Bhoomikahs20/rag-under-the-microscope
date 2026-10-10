@@ -1,0 +1,694 @@
+[
+  {
+    "fail_index": 1,
+    "query_index": 3,
+    "query_id": "5a8780385542996e4f30880e",
+    "question": "What character in the television special \"The Pound Puppies\" did the voice actor of Fred Jones from \"Scooby-Doo\" voice as?",
+    "gold_answer": "Howler",
+    "rag_answer": "Cooler",
+    "gold_relevant_docs": [
+      "487732",
+      "37328049"
+    ],
+    "retrieved_doc_ids": [
+      "1499129",
+      "487732",
+      "37328049"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Frank Welker",
+      "Pound Puppies (film)"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "487732",
+        "chunk_id": "487732_c0",
+        "title": "Frank Welker",
+        "similarity_score": 0.6594,
+        "snippet": "Franklin Wendell Welker (born March 12, 1946) is an American actor, who for most of his career has specialized as a voice actor. He is best known for ..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "37328049",
+        "chunk_id": "37328049_c0",
+        "title": "Pound Puppies (film)",
+        "similarity_score": 0.6047,
+        "snippet": "The Pound Puppies is an animated television special, produced by Hanna-Barbera Productions, based on the popular toy line from Tonka, which aired in s..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "1499129",
+        "chunk_id": "1499129_c0",
+        "title": "Pooh's Heffalump Movie",
+        "similarity_score": 0.2804,
+        "snippet": "Pooh's Heffalump Movie is a 2005 American animated film produced by DisneyToon Studios and released by Walt Disney Pictures, featuring characters from..."
+      }
+    ]
+  },
+  {
+    "fail_index": 2,
+    "query_index": 5,
+    "query_id": "5ae5fb975542996de7b71aa8",
+    "question": "Edmundo \"Eddie\" Rodriguez was born in what Mexican state?",
+    "gold_answer": "Jalisco",
+    "rag_answer": "Guadalajara",
+    "gold_relevant_docs": [
+      "73209",
+      "21757108"
+    ],
+    "retrieved_doc_ids": [
+      "40343708",
+      "2893773",
+      "21757108"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Edmundo Rodriguez"
+    ],
+    "rel_missing_titles": [
+      "Guadalajara"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "21757108",
+        "chunk_id": "21757108_c0",
+        "title": "Edmundo Rodriguez",
+        "similarity_score": 0.8273,
+        "snippet": "Edmundo \"Eddie\" Rodriguez (born April 22, 1970 in Guadalajara, Mexico) is a retired Mexican soccer player. He spent most of his career in the U.S. lea..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "40343708",
+        "chunk_id": "40343708_c0",
+        "title": "Theodosia Okoh",
+        "similarity_score": 0.2656,
+        "snippet": "Theodosia Salome Okoh (13 June 1922 – 19 April 2015) was a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957. She also..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "2893773",
+        "chunk_id": "2893773_c0",
+        "title": "Dustin Kensrue",
+        "similarity_score": 0.2599,
+        "snippet": "Dustin Michael Kensrue (pronounced KENZ-roo) (born November 18, 1980) is a vocalist, lyricist, and rhythm guitarist in the Orange County, California, ..."
+      }
+    ]
+  },
+  {
+    "fail_index": 3,
+    "query_index": 7,
+    "query_id": "5a7257ce5542990c210a410d",
+    "question": "This English comedian wrote the British sitcom \"Absolutely Fabulous\"",
+    "gold_answer": "Jennifer Saunders",
+    "rag_answer": "John Sullivan",
+    "gold_relevant_docs": [
+      "89605",
+      "49546885"
+    ],
+    "retrieved_doc_ids": [
+      "89605",
+      "49546885",
+      "200842"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Jennifer Saunders",
+      "Absolutely Fabulous (series 3)"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "49546885",
+        "chunk_id": "49546885_c0",
+        "title": "Absolutely Fabulous (series 3)",
+        "similarity_score": 0.5646,
+        "snippet": "The third series of \"Absolutely Fabulous\", a British sitcom, premiered on BBC One on 30 March 1995. This series consists of six episodes and concluded..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "89605",
+        "chunk_id": "89605_c0",
+        "title": "Jennifer Saunders",
+        "similarity_score": 0.3806,
+        "snippet": "Jennifer Jane Saunders (born 6 July 1958) is an English comedian, screenwriter, and actress. She has won three BAFTAs (including the BAFTA Fellowship)..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "200842",
+        "chunk_id": "200842_c0",
+        "title": "Only Fools and Horses",
+        "similarity_score": 0.364,
+        "snippet": "Only Fools and Horses is a British television sitcom created and written by John Sullivan. Seven series were originally broadcast on BBC One in the Un..."
+      }
+    ]
+  },
+  {
+    "fail_index": 4,
+    "query_index": 13,
+    "query_id": "5adf48b25542995ec70e8fb5",
+    "question": "In what city did Amir Khan and Lamont Peterson fight for the welterweight titles in 2011?",
+    "gold_answer": "British",
+    "rag_answer": "London",
+    "gold_relevant_docs": [
+      "1290366",
+      "7558034"
+    ],
+    "retrieved_doc_ids": [
+      "1290366",
+      "52152672",
+      "7558034"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Amir Khan (boxer)",
+      "Lamont Peterson"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "7558034",
+        "chunk_id": "7558034_c0",
+        "title": "Lamont Peterson",
+        "similarity_score": 0.7361,
+        "snippet": "Lamont Peterson (born January 24, 1984) is an American professional boxer. He is a two-weight world champion, having held the WBA (Regular) welterweig..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "1290366",
+        "chunk_id": "1290366_c0",
+        "title": "Amir Khan (boxer)",
+        "similarity_score": 0.689,
+        "snippet": "Amir Iqbal Khan (born 8 December 1986) is a British professional boxer. He is a former unified light-welterweight world champion, having held the WBA ..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "52152672",
+        "chunk_id": "52152672_c0",
+        "title": "The Good Fight",
+        "similarity_score": 0.3089,
+        "snippet": "The Good Fight is an American legal and political drama television series produced for CBS's streaming service CBS All Access. It is CBS All Access' f..."
+      }
+    ]
+  },
+  {
+    "fail_index": 5,
+    "query_index": 14,
+    "query_id": "5a89c2715542993b751ca990",
+    "question": "Which was released first, God's Angry Man or The World's Best Prom?",
+    "gold_answer": "God's Angry Man",
+    "rag_answer": "The World's Best Prom",
+    "gold_relevant_docs": [
+      "858143",
+      "3751418"
+    ],
+    "retrieved_doc_ids": [
+      "858143",
+      "3751418",
+      "52427290"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "God's Angry Man",
+      "The World's Best Prom"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "3751418",
+        "chunk_id": "3751418_c0",
+        "title": "The World's Best Prom",
+        "similarity_score": 0.5733,
+        "snippet": "The World's Best Prom is a 2006 documentary film about a high school prom in Racine, Wisconsin. \"Prom\" was released as a short film and was expanded t..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "858143",
+        "chunk_id": "858143_c0",
+        "title": "God's Angry Man",
+        "similarity_score": 0.4263,
+        "snippet": "God's Angry Man is a 1981 documentary film about Gene Scott, a U.S. pastor and Stanford PhD who served for almost fifty years as an ordained minister ..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "52427290",
+        "chunk_id": "52427290_c0",
+        "title": "17 Carat",
+        "similarity_score": 0.2589,
+        "snippet": "17 Carat is the debut extended play by South Korean boy group Seventeen. It was released on May 29, 2015 by Pledis Entertainment and distributed by LO..."
+      }
+    ]
+  },
+  {
+    "fail_index": 6,
+    "query_index": 17,
+    "query_id": "5a7e264055429965cec5eaa4",
+    "question": "Fulda Cathedral is the burial place of the leading figure in what?",
+    "gold_answer": "Anglo-Saxon mission",
+    "rag_answer": "The relevant information to answer the above question is: Fulda Cathedral (German: \"Fuldaer Dom\" , also \"Sankt Salvator\") is the former abbey church of Fulda Abbey and the",
+    "gold_relevant_docs": [
+      "28172",
+      "28227842"
+    ],
+    "retrieved_doc_ids": [
+      "28172",
+      "18952512",
+      "28227842"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Saint Boniface",
+      "Fulda Cathedral"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "28227842",
+        "chunk_id": "28227842_c0",
+        "title": "Fulda Cathedral",
+        "similarity_score": 0.7684,
+        "snippet": "Fulda Cathedral (German: \"Fuldaer Dom\" , also \"Sankt Salvator\") is the former abbey church of Fulda Abbey and the burial place of Saint Boniface. Sinc..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "28172",
+        "chunk_id": "28172_c0",
+        "title": "Saint Boniface",
+        "similarity_score": 0.3175,
+        "snippet": "Saint Boniface (Latin: \"Bonifatius\" ; 675 – 5 June 754 AD), born Winfrid, Wynfrith, or Wynfryth in the kingdom of Wessex in Anglo-Saxon England, was a..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "18952512",
+        "chunk_id": "18952512_c0",
+        "title": "Fouquieria",
+        "similarity_score": 0.1836,
+        "snippet": "Fouquieria is a genus of 11 species of desert plants, the sole genus in the family Fouquieriaceae. The genus includes the ocotillo (\"F. splendens\") an..."
+      }
+    ]
+  },
+  {
+    "fail_index": 7,
+    "query_index": 21,
+    "query_id": "5a71532e5542994082a3e7d6",
+    "question": "In what year did the actor who played Edward Snowden act in a movie with Heath Ledger and Julia Styles?",
+    "gold_answer": "1999",
+    "rag_answer": "2016",
+    "gold_relevant_docs": [
+      "1817766",
+      "398934"
+    ],
+    "retrieved_doc_ids": [
+      "1802353",
+      "1817766",
+      "1792975"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Joseph Gordon-Levitt"
+    ],
+    "rel_missing_titles": [
+      "10 Things I Hate About You"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "1817766",
+        "chunk_id": "1817766_c0",
+        "title": "Joseph Gordon-Levitt",
+        "similarity_score": 0.4166,
+        "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "1802353",
+        "chunk_id": "1802353_c0",
+        "title": "Hugh Bonneville",
+        "similarity_score": 0.4131,
+        "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "1792975",
+        "chunk_id": "1792975_c0",
+        "title": "Tom Hardy",
+        "similarity_score": 0.3532,
+        "snippet": "(born 15 September 1977) is an English actor and producer. His motion picture debut was in Ridley Scott's 2001 action film \"Black Hawk Down\". Hardy's ..."
+      }
+    ]
+  },
+  {
+    "fail_index": 8,
+    "query_index": 23,
+    "query_id": "5ab985b5554299131ca4235e",
+    "question": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season, nine of these players have won the award for a second time, the most recent being which professional footballer, who plays as a winger for Premier League club Crystal Palace, and the Ivory Coast national team?",
+    "gold_answer": "Wilfried Zaha",
+    "rag_answer": "The relevant information to answer the above question is: Dazet Wilfried Armel Zaha (born 10 November 1992) is a professional footballer who plays as a winger for Premier League club Crystal Palace and the Ivory",
+    "gold_relevant_docs": [
+      "28871495",
+      "54185106"
+    ],
+    "retrieved_doc_ids": [
+      "28871495",
+      "51406206",
+      "54185106"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Wilfried Zaha",
+      "Crystal Palace F.C. Player of the Year"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "54185106",
+        "chunk_id": "54185106_c0",
+        "title": "Crystal Palace F.C. Player of the Year",
+        "similarity_score": 0.6959,
+        "snippet": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season. Since the inaugural award was made to John McCormick in 1972..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "28871495",
+        "chunk_id": "28871495_c0",
+        "title": "Wilfried Zaha",
+        "similarity_score": 0.5056,
+        "snippet": "Dazet Wilfried Armel Zaha (born 10 November 1992) is a professional footballer who plays as a winger for Premier League club Crystal Palace and the Iv..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "51406206",
+        "chunk_id": "51406206_c0",
+        "title": "Corey Davis (wide receiver)",
+        "similarity_score": 0.2677,
+        "snippet": "Corey Davis (born January 11, 1995) is an American football wide receiver for the Tennessee Titans of the National Football League (NFL). He played co..."
+      }
+    ]
+  },
+  {
+    "fail_index": 9,
+    "query_index": 31,
+    "query_id": "5ab8f1fa5542991b5579f077",
+    "question": "Are Gary Lightbody and Dustin Kensrue from the same country?",
+    "gold_answer": "no",
+    "rag_answer": "yes",
+    "gold_relevant_docs": [
+      "6131604",
+      "2893773"
+    ],
+    "retrieved_doc_ids": [
+      "6131604",
+      "39928514",
+      "2893773"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "Gary Lightbody",
+      "Dustin Kensrue"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "2893773",
+        "chunk_id": "2893773_c0",
+        "title": "Dustin Kensrue",
+        "similarity_score": 0.5779,
+        "snippet": "Dustin Michael Kensrue (pronounced KENZ-roo) (born November 18, 1980) is a vocalist, lyricist, and rhythm guitarist in the Orange County, California, ..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "6131604",
+        "chunk_id": "6131604_c0",
+        "title": "Gary Lightbody",
+        "similarity_score": 0.4624,
+        "snippet": "Gary Lightbody (born 15 June 1976) is a Northern Irish singer, songwriter, guitarist and multi-instrumentalist, best known as the lead singer and rhyt..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "39928514",
+        "chunk_id": "39928514_c0",
+        "title": "Robert Evans (photographer)",
+        "similarity_score": 0.2247,
+        "snippet": "Robert Evans (born November 17, 1967) is an American photographer. Photographing professionally since the age of twenty, he is best known for his work..."
+      }
+    ]
+  },
+  {
+    "fail_index": 10,
+    "query_index": 34,
+    "query_id": "5ae7ac1f5542993210983eed",
+    "question": "What is the name of the Los Angeles-based production company that produced a film based on the novel by André Aciman?",
+    "gold_answer": "Water's End Productions",
+    "rag_answer": "Luca Guadagnino",
+    "gold_relevant_docs": [
+      "9792271",
+      "50731291"
+    ],
+    "retrieved_doc_ids": [
+      "50731291",
+      "45218",
+      "3300211"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Call Me by Your Name (film)"
+    ],
+    "rel_missing_titles": [
+      "Tom Dolby"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "3300211",
+        "chunk_id": "3300211_c0",
+        "title": "Assassins (film)",
+        "similarity_score": 0.3298,
+        "snippet": "Assassins is a 1995 American action thriller film directed by Richard Donner. The screenplay was by Andy and Larry Wachowski and Brian Helgeland. The ..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "45218",
+        "chunk_id": "45218_c0",
+        "title": "Sacha Baron Cohen",
+        "similarity_score": 0.3128,
+        "snippet": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, screenwriter, and producer. Baron Cohen is most widely known for creating..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "50731291",
+        "chunk_id": "50731291_c0",
+        "title": "Call Me by Your Name (film)",
+        "similarity_score": 0.2882,
+        "snippet": "Call Me by Your Name is an internationally co-produced coming-of-age drama film directed by Luca Guadagnino and written by James Ivory. It is based on..."
+      }
+    ]
+  },
+  {
+    "fail_index": 11,
+    "query_index": 35,
+    "query_id": "5a74691755429929fddd8412",
+    "question": "What friends star's wedding was photographed by Robert Evans?",
+    "gold_answer": "Jennifer Aniston",
+    "rag_answer": "Brad Pitt",
+    "gold_relevant_docs": [
+      "39928514",
+      "39942"
+    ],
+    "retrieved_doc_ids": [
+      "39928514",
+      "2225976",
+      "46521626"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Robert Evans (photographer)"
+    ],
+    "rel_missing_titles": [
+      "Jennifer Aniston"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "39928514",
+        "chunk_id": "39928514_c0",
+        "title": "Robert Evans (photographer)",
+        "similarity_score": 0.769,
+        "snippet": "Robert Evans (born November 17, 1967) is an American photographer. Photographing professionally since the age of twenty, he is best known for his work..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "46521626",
+        "chunk_id": "46521626_c0",
+        "title": "Titus Davis",
+        "similarity_score": 0.2449,
+        "snippet": "Titus Davis (born January 3, 1993) is an American football wide receiver who is currently a free agent. He was signed by the San Diego Chargers as an ..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "2225976",
+        "chunk_id": "2225976_c0",
+        "title": "Candleshoe",
+        "similarity_score": 0.2407,
+        "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+      }
+    ]
+  },
+  {
+    "fail_index": 12,
+    "query_index": 36,
+    "query_id": "5a8dea555542995a26add44f",
+    "question": "What is the prequel to the show where Rose Eleanor Arbuthnot-Leslie stars as Maia Rindell?",
+    "gold_answer": "The Good Wife\"",
+    "rag_answer": "The Good Fight",
+    "gold_relevant_docs": [
+      "52152672",
+      "29540174"
+    ],
+    "retrieved_doc_ids": [
+      "4592959",
+      "2225976",
+      "29540174"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Rose Leslie"
+    ],
+    "rel_missing_titles": [
+      "The Good Fight"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "29540174",
+        "chunk_id": "29540174_c0",
+        "title": "Rose Leslie",
+        "similarity_score": 0.5364,
+        "snippet": "Rose Eleanor Arbuthnot-Leslie (born 9 February 1987), known professionally as Rose Leslie, is a Scottish actress. After winning a Scottish BAFTA for B..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "2225976",
+        "chunk_id": "2225976_c0",
+        "title": "Candleshoe",
+        "similarity_score": 0.3291,
+        "snippet": "Candleshoe is a 1977 American family adventure film produced by Walt Disney Productions based on the Michael Innes novel \"Christmas at Candleshoe\" and..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "4592959",
+        "chunk_id": "4592959_c0",
+        "title": "All Quiet on the Western Front (1930 film)",
+        "similarity_score": 0.2197,
+        "snippet": "All Quiet on the Western Front is a 1930 American epic Pre-Code war film based on the Erich Maria Remarque novel of the same name. It was directed by ..."
+      }
+    ]
+  },
+  {
+    "fail_index": 13,
+    "query_index": 40,
+    "query_id": "5ade08425542995b365fabd9",
+    "question": "University of Toronto and Istanbul Technical University, are located in Canada?",
+    "gold_answer": "no",
+    "rag_answer": "yes",
+    "gold_relevant_docs": [
+      "7955325",
+      "743431"
+    ],
+    "retrieved_doc_ids": [
+      "7955325",
+      "743431",
+      "2238418"
+    ],
+    "rel_retrieved_count": "2/2",
+    "rel_retrieved_titles": [
+      "University of Toronto",
+      "Istanbul Technical University"
+    ],
+    "rel_missing_titles": [],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "7955325",
+        "chunk_id": "7955325_c0",
+        "title": "University of Toronto",
+        "similarity_score": 0.5984,
+        "snippet": "The University of Toronto (U of T, UToronto, or Toronto) is a public research university in Toronto, Ontario, Canada on the grounds that surround Quee..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "743431",
+        "chunk_id": "743431_c0",
+        "title": "Istanbul Technical University",
+        "similarity_score": 0.5619,
+        "snippet": "Istanbul Technical University (Turkish \"İstanbul Teknik Üniversitesi\", commonly referred to as ITU or Technical University) is an international techni..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "2238418",
+        "chunk_id": "2238418_c0",
+        "title": "Indian Statistical Institute",
+        "similarity_score": 0.2719,
+        "snippet": "Indian Statistical Institute (ISI) is an academic institute of national importance as recognised by a 1959 act of the Indian parliament. It grew out o..."
+      }
+    ]
+  },
+  {
+    "fail_index": 14,
+    "query_index": 43,
+    "query_id": "5add1ebe5542990d50227dec",
+    "question": "Who was the director of the 2009 British thriller film starring the actor who is best known for playing Robert Crawley in \"Downtown Abbey\"?",
+    "gold_answer": "Anthony Hickox",
+    "rag_answer": "Coky Giedroyc",
+    "gold_relevant_docs": [
+      "1802353",
+      "10239839"
+    ],
+    "retrieved_doc_ids": [
+      "1817766",
+      "1802353",
+      "20722922"
+    ],
+    "rel_retrieved_count": "1/2",
+    "rel_retrieved_titles": [
+      "Hugh Bonneville"
+    ],
+    "rel_missing_titles": [
+      "Knife Edge (film)"
+    ],
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "doc_id": "1802353",
+        "chunk_id": "1802353_c0",
+        "title": "Hugh Bonneville",
+        "similarity_score": 0.663,
+        "snippet": "Hugh Richard Bonneville Williams (born 10 November 1963), known professionally as Hugh Bonneville, is a British stage, television and film actor. He i..."
+      },
+      {
+        "rank": 2,
+        "doc_id": "20722922",
+        "chunk_id": "20722922_c0",
+        "title": "Wuthering Heights (2009 TV serial)",
+        "similarity_score": 0.3649,
+        "snippet": "Wuthering Heights is a two-part ITV television series adaptation of the novel \"Wuthering Heights\" by Emily Brontë. The episodes were adapted for the s..."
+      },
+      {
+        "rank": 3,
+        "doc_id": "1817766",
+        "chunk_id": "1817766_c0",
+        "title": "Joseph Gordon-Levitt",
+        "similarity_score": 0.3405,
+        "snippet": "Joseph Leonard Gordon-Levitt ( ; born February 17, 1981) is an American actor, filmmaker, singer and entrepreneur. As a child, he appeared in the film..."
+      }
+    ]
+  }
+]

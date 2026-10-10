@@ -1,0 +1,1116 @@
+{
+  "experiment_metadata": {
+    "title": "Chapter 7 Comprehensive RAG Architecture Ablation & Master Results",
+    "description": "Consolidated experimental results across all baseline, component optimization, advanced query expansion, component ablation, retrieval depth sensitivity, and generator scaling experiments on HotpotQA.",
+    "dataset": "HotpotQA Pilot (50 Queries, 100 Corpus Documents, Gold Qrels)",
+    "random_seed": 42,
+    "consolidated_timestamp": "2026-10-06"
+  },
+  "master_configurations": [
+    {
+      "experiment_group": "Baseline System",
+      "config_id": "baseline_minilm_k5",
+      "config_name": "Baseline (MiniLM-L6-v2, K=5, Flan-T5-base)",
+      "description": "Initial benchmark system using 250w/50o chunks, all-MiniLM-L6-v2 dense retrieval, K=5, Flan-T5-base generator.",
+      "metrics": {
+        "answer_accuracy_percent": 72.0,
+        "exact_match_percent": 58.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.93,
+        "precision_at_k": 0.62,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 11,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1
+      },
+      "latency_ms": {
+        "total_online_latency_mean_ms": 1850.0
+      },
+      "offline_cost_seconds": 0.52,
+      "protocol_id": "PROTO_PILOT_BASELINE",
+      "experiment_protocol": "Pilot Baseline: MiniLM-L6-v2 dense search (K=5, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/rag_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Top-K Sensitivity",
+      "config_id": "top_k_1",
+      "config_name": "Top-K Retrieval (K=1)",
+      "description": "Baseline MiniLM dense retriever with retrieval depth K=1.",
+      "metrics": {
+        "answer_accuracy_percent": 40.0,
+        "exact_match_percent": 32.0,
+        "hit_rate_percent": 98.0,
+        "recall_at_k": 0.49,
+        "precision_at_k": 0.98,
+        "k_retrieved": 1
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 29,
+        "Multi-Hop Reasoning Failure": 0,
+        "Generation Failure": 0,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.52,
+      "protocol_id": "PROTO_PILOT_TOP_K",
+      "experiment_protocol": "Pilot Top-K: MiniLM-L6-v2 dense search varying K directly (1,3,5,10, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/top_k_experiment/top_k_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=1 direct"
+    },
+    {
+      "experiment_group": "Top-K Sensitivity",
+      "config_id": "top_k_3",
+      "config_name": "Top-K Retrieval (K=3)",
+      "description": "Baseline MiniLM dense retriever with retrieval depth K=3.",
+      "metrics": {
+        "answer_accuracy_percent": 72.0,
+        "exact_match_percent": 58.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.93,
+        "precision_at_k": 0.62,
+        "k_retrieved": 3
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 6,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.52,
+      "protocol_id": "PROTO_PILOT_TOP_K",
+      "experiment_protocol": "Pilot Top-K: MiniLM-L6-v2 dense search varying K directly (1,3,5,10, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/top_k_experiment/top_k_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=3 direct"
+    },
+    {
+      "experiment_group": "Top-K Sensitivity",
+      "config_id": "top_k_5",
+      "config_name": "Top-K Retrieval (K=5)",
+      "description": "Baseline MiniLM dense retriever with retrieval depth K=5.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.52,
+      "protocol_id": "PROTO_PILOT_TOP_K",
+      "experiment_protocol": "Pilot Top-K: MiniLM-L6-v2 dense search varying K directly (1,3,5,10, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/top_k_experiment/top_k_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Top-K Sensitivity",
+      "config_id": "top_k_10",
+      "config_name": "Top-K Retrieval (K=10)",
+      "description": "Baseline MiniLM dense retriever with retrieval depth K=10.",
+      "metrics": {
+        "answer_accuracy_percent": 12.0,
+        "exact_match_percent": 10.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.96,
+        "precision_at_k": 0.192,
+        "k_retrieved": 10
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 3,
+        "Multi-Hop Reasoning Failure": 33,
+        "Generation Failure": 7,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.52,
+      "protocol_id": "PROTO_PILOT_TOP_K",
+      "experiment_protocol": "Pilot Top-K: MiniLM-L6-v2 dense search varying K directly (1,3,5,10, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/top_k_experiment/top_k_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=10 direct"
+    },
+    {
+      "experiment_group": "Chunking Strategy",
+      "config_id": "chunking_100w_20o",
+      "config_name": "Chunking: small_chunks_100w_20o",
+      "description": "Chunking experiment with size 100 words and overlap 20 words.",
+      "metrics": {
+        "answer_accuracy_percent": 72.0,
+        "exact_match_percent": 60.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.4213,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 7,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 2.594,
+      "protocol_id": "PROTO_PILOT_CHUNKING",
+      "experiment_protocol": "Pilot Chunking: MiniLM-L6-v2 dense search (K=5, no reranker, no hybrid), Flan-T5-base generator, varying chunk size/overlap.",
+      "source_file": "data/processed/rag_baseline/chunking_experiment/chunking_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Chunking Strategy",
+      "config_id": "chunking_250w_50o",
+      "config_name": "Chunking: medium_chunks_250w_50o",
+      "description": "Chunking experiment with size 250 words and overlap 50 words.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 2.925,
+      "protocol_id": "PROTO_PILOT_CHUNKING",
+      "experiment_protocol": "Pilot Chunking: MiniLM-L6-v2 dense search (K=5, no reranker, no hybrid), Flan-T5-base generator, varying chunk size/overlap.",
+      "source_file": "data/processed/rag_baseline/chunking_experiment/chunking_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Chunking Strategy",
+      "config_id": "chunking_500w_100o",
+      "config_name": "Chunking: large_chunks_500w_100o",
+      "description": "Chunking experiment with size 500 words and overlap 100 words.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 2.617,
+      "protocol_id": "PROTO_PILOT_CHUNKING",
+      "experiment_protocol": "Pilot Chunking: MiniLM-L6-v2 dense search (K=5, no reranker, no hybrid), Flan-T5-base generator, varying chunk size/overlap.",
+      "source_file": "data/processed/rag_baseline/chunking_experiment/chunking_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Chunking Strategy",
+      "config_id": "chunking_2000w_0o",
+      "config_name": "Chunking: full_document_unchunked",
+      "description": "Chunking experiment with size 2000 words and overlap 0 words.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 2.447,
+      "protocol_id": "PROTO_PILOT_CHUNKING",
+      "experiment_protocol": "Pilot Chunking: MiniLM-L6-v2 dense search (K=5, no reranker, no hybrid), Flan-T5-base generator, varying chunk size/overlap.",
+      "source_file": "data/processed/rag_baseline/chunking_experiment/chunking_results.json",
+      "retrieval_stack_details": "Dense (MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Embedding Model Comparison",
+      "config_id": "embedding_sentence_transformers_all_MiniLM_L6_v2",
+      "config_name": "Embedding: sentence-transformers/all-MiniLM-L6-v2",
+      "description": "Dense embedding model comparison with model sentence-transformers/all-MiniLM-L6-v2.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 1.945,
+      "protocol_id": "PROTO_PILOT_EMBEDDING",
+      "experiment_protocol": "Pilot Embedding: Single dense model search (MiniLM vs BGE vs E5, K=5, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/embedding_experiment/embedding_results.json",
+      "retrieval_stack_details": "Dense (sentence-transformers/all-MiniLM-L6-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Embedding Model Comparison",
+      "config_id": "embedding_sentence_transformers_all_mpnet_base_v2",
+      "config_name": "Embedding: sentence-transformers/all-mpnet-base-v2",
+      "description": "Dense embedding model comparison with model sentence-transformers/all-mpnet-base-v2.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 62.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.96,
+        "precision_at_k": 0.384,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 3,
+        "Multi-Hop Reasoning Failure": 7,
+        "Generation Failure": 0,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 18.157,
+      "protocol_id": "PROTO_PILOT_EMBEDDING",
+      "experiment_protocol": "Pilot Embedding: Single dense model search (MiniLM vs BGE vs E5, K=5, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/embedding_experiment/embedding_results.json",
+      "retrieval_stack_details": "Dense (sentence-transformers/all-mpnet-base-v2), K=5 direct"
+    },
+    {
+      "experiment_group": "Embedding Model Comparison",
+      "config_id": "embedding_BAAI_bge_small_en_v1.5",
+      "config_name": "Embedding: BAAI/bge-small-en-v1.5",
+      "description": "Dense embedding model comparison with model BAAI/bge-small-en-v1.5.",
+      "metrics": {
+        "answer_accuracy_percent": 74.0,
+        "exact_match_percent": 60.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.98,
+        "precision_at_k": 0.392,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 2,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 3.926,
+      "protocol_id": "PROTO_PILOT_EMBEDDING",
+      "experiment_protocol": "Pilot Embedding: Single dense model search (MiniLM vs BGE vs E5, K=5, no reranker, no hybrid), Flan-T5-base generator.",
+      "source_file": "data/processed/rag_baseline/embedding_experiment/embedding_results.json",
+      "retrieval_stack_details": "Dense (BAAI/bge-small-en-v1.5), K=5 direct"
+    },
+    {
+      "experiment_group": "Reranking",
+      "config_id": "reranking_cross_encoder",
+      "config_name": "Cross-Encoder Reranker (BGE K_init=15 -> K_final=5)",
+      "description": "BGE dense retrieval candidate pool K_init=15 reranked with ms-marco-MiniLM-L-6-v2 to K_final=5.",
+      "metrics": {
+        "answer_accuracy_percent": 74.0,
+        "exact_match_percent": 60.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.96,
+        "precision_at_k": 0.384,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 3,
+        "Multi-Hop Reasoning Failure": 7,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 1.967,
+      "protocol_id": "PROTO_PILOT_RERANKING",
+      "experiment_protocol": "Pilot Reranking: BGE-small-en-v1.5 dense retrieval candidate pool K_init=15 reranked with ms-marco-MiniLM-L-6-v2 to K_final=5.",
+      "source_file": "data/processed/rag_baseline/reranking_experiment/reranking_results.json",
+      "retrieval_stack_details": "Dense (BGE-small-v1.5) K_init=15 -> Cross-Encoder Reranker K_final=5"
+    },
+    {
+      "experiment_group": "Hybrid Search",
+      "config_id": "hybrid_dense_only",
+      "config_name": "Hybrid Search: dense_only",
+      "description": "Retrieval mode dense_only evaluated with candidate pool K_init=15 to K_final=5.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.95,
+        "precision_at_k": 0.38,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_HYBRID",
+      "experiment_protocol": "Pilot Hybrid: Dense (BGE), Lexical (BM25), Hybrid Fusion (alpha=0.5), or Hybrid + Reranker with K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/hybrid_search_experiment/hybrid_search_results.json",
+      "retrieval_stack_details": "dense_only (K_init=15 -> K_final=5)"
+    },
+    {
+      "experiment_group": "Hybrid Search",
+      "config_id": "hybrid_bm25_only",
+      "config_name": "Hybrid Search: bm25_only",
+      "description": "Retrieval mode bm25_only evaluated with candidate pool K_init=15 to K_final=5.",
+      "metrics": {
+        "answer_accuracy_percent": 74.0,
+        "exact_match_percent": 60.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.96,
+        "precision_at_k": 0.384,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 3,
+        "Multi-Hop Reasoning Failure": 7,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_HYBRID",
+      "experiment_protocol": "Pilot Hybrid: Dense (BGE), Lexical (BM25), Hybrid Fusion (alpha=0.5), or Hybrid + Reranker with K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/hybrid_search_experiment/hybrid_search_results.json",
+      "retrieval_stack_details": "bm25_only (K_init=15 -> K_final=5)"
+    },
+    {
+      "experiment_group": "Hybrid Search",
+      "config_id": "hybrid_hybrid_fusion_alpha_0.5",
+      "config_name": "Hybrid Search: hybrid_fusion_alpha_0.5",
+      "description": "Retrieval mode hybrid_fusion_alpha_0.5 evaluated with candidate pool K_init=15 to K_final=5.",
+      "metrics": {
+        "answer_accuracy_percent": 70.0,
+        "exact_match_percent": 56.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.98,
+        "precision_at_k": 0.392,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 2,
+        "Multi-Hop Reasoning Failure": 10,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_HYBRID",
+      "experiment_protocol": "Pilot Hybrid: Dense (BGE), Lexical (BM25), Hybrid Fusion (alpha=0.5), or Hybrid + Reranker with K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/hybrid_search_experiment/hybrid_search_results.json",
+      "retrieval_stack_details": "hybrid_fusion_alpha_0.5 (K_init=15 -> K_final=5)"
+    },
+    {
+      "experiment_group": "Query Transformation",
+      "config_id": "query_rewriting",
+      "config_name": "Query Rewriting (Flan-T5-base Rewriter + BGE K=5)",
+      "description": "FLAN-T5-base rewrites raw query into single expanded query before BGE dense retrieval.",
+      "metrics": {
+        "answer_accuracy_percent": 74.0,
+        "exact_match_percent": 62.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.89,
+        "precision_at_k": 0.356,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 8,
+        "Multi-Hop Reasoning Failure": 2,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "avg_query_transformation_latency_seconds": 1.5298
+      },
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_QUERY_REWRITING",
+      "experiment_protocol": "Pilot Query Rewriting: Flan-T5-base query rewriter + BGE dense retrieval (K=5, no reranker).",
+      "source_file": "data/processed/rag_baseline/query_rewriting_experiment/query_rewriting_results.json",
+      "retrieval_stack_details": "Flan-T5 Query Rewriter -> Dense (BGE) K=5 direct"
+    },
+    {
+      "experiment_group": "Query Transformation",
+      "config_id": "multi_query_rrf",
+      "config_name": "Multi-Query Expansion (3 Queries + RRF + BGE K=5)",
+      "description": "FLAN-T5-base generates 3 sub-queries, retrieved separately and fused using Reciprocal Rank Fusion.",
+      "metrics": {
+        "answer_accuracy_percent": 72.0,
+        "exact_match_percent": 60.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.94,
+        "precision_at_k": 0.376,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 5,
+        "Multi-Hop Reasoning Failure": 6,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "avg_query_transformation_latency_seconds": 2.3395
+      },
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_MULTI_QUERY",
+      "experiment_protocol": "Pilot Multi-Query Expansion: Flan-T5-base 3 pseudo-queries + BGE dense retrieval + Reciprocal Rank Fusion (K=5, no reranker).",
+      "source_file": "data/processed/rag_baseline/multi_query_experiment/multi_query_results.json",
+      "retrieval_stack_details": "Flan-T5 3 Sub-queries -> Dense (BGE) + RRF K=5 direct"
+    },
+    {
+      "experiment_group": "Query Transformation",
+      "config_id": "hyde_retrieval",
+      "config_name": "HyDE (Hypothetical Document Embeddings + BGE K=5)",
+      "description": "FLAN-T5-base generates hypothetical answer document used as dense search query embedding.",
+      "metrics": {
+        "answer_accuracy_percent": 54.0,
+        "exact_match_percent": 42.0,
+        "hit_rate_percent": 78.0,
+        "recall_at_k": 0.66,
+        "precision_at_k": 0.264,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 18,
+        "Multi-Hop Reasoning Failure": 3,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "avg_query_transformation_latency_seconds": 0.4552
+      },
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_HYDE",
+      "experiment_protocol": "Pilot HyDE: Flan-T5-base hypothetical document generation + BGE dense retrieval (K=5, no reranker).",
+      "source_file": "data/processed/rag_baseline/hyde_experiment/hyde_results.json",
+      "retrieval_stack_details": "Flan-T5 HyDE Generator -> Dense (BGE) K=5 direct"
+    },
+    {
+      "experiment_group": "Chunk Augmentation",
+      "config_id": "contextual_retrieval",
+      "config_name": "Contextual Retrieval (LLM Chunk Summaries + MiniLM K=5)",
+      "description": "LLM generates document context prepended to each chunk before embedding with MiniLM-L6-v2.",
+      "metrics": {
+        "answer_accuracy_percent": 76.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.96,
+        "precision_at_k": 0.384,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 4,
+        "Multi-Hop Reasoning Failure": 5,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {},
+      "offline_cost_seconds": 0.0,
+      "protocol_id": "PROTO_PILOT_CONTEXTUAL_RETRIEVAL",
+      "experiment_protocol": "Pilot Contextual Retrieval: LLM document summaries prepended to chunks + MiniLM-L6-v2 dense retrieval (K=5, no reranker).",
+      "source_file": "data/processed/rag_baseline/contextual_retrieval_experiment/contextual_retrieval_results.json",
+      "retrieval_stack_details": "LLM Contextual Chunks -> Dense (MiniLM-L6-v2) K=5 direct"
+    },
+    {
+      "experiment_group": "Component Ablation (Runs 0-4)",
+      "config_id": "ablation_RUN-0",
+      "config_name": "Ablation RUN-0: RUN-0 (Full System Stack)",
+      "description": "Contextual Chunks + BGE Dense + BM25 Hybrid (alpha=0.5) + Reranker (K_init=15 -> K_final=5)",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 66.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 32.58,
+          "p50_ms": 26.09,
+          "p95_ms": 45.96
+        },
+        "reranking_latency": {
+          "mean_ms": 582.55,
+          "p50_ms": 583.09,
+          "p95_ms": 721.34
+        },
+        "generation_latency": {
+          "mean_ms": 1438.9,
+          "p50_ms": 1241.5,
+          "p95_ms": 2768.3
+        },
+        "total_online_latency": {
+          "mean_ms": 2054.2,
+          "p50_ms": 1855.64,
+          "p95_ms": 3674.34
+        }
+      },
+      "offline_cost_seconds": 188.2318,
+      "protocol_id": "PROTO_STD_CHAPTER_7_ABLATION",
+      "experiment_protocol": "Standardized Chapter 7 Ablation (Runs 0-4): Standardized HotpotQA timing and stack configuration, candidate pool K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/chapter_7_ablation_results.json",
+      "retrieval_stack_details": "Ablation Run RUN-0: Candidate K_init=15 -> K_final=5"
+    },
+    {
+      "experiment_group": "Component Ablation (Runs 0-4)",
+      "config_id": "ablation_RUN-1",
+      "config_name": "Ablation RUN-1: RUN-1 (No Contextual Summaries)",
+      "description": "Standard Chunks + BGE Dense + BM25 Hybrid (alpha=0.5) + Reranker (K_init=15 -> K_final=5)",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 66.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 28.78,
+          "p50_ms": 27.72,
+          "p95_ms": 39.79
+        },
+        "reranking_latency": {
+          "mean_ms": 597.44,
+          "p50_ms": 621.53,
+          "p95_ms": 784.57
+        },
+        "generation_latency": {
+          "mean_ms": 1579.06,
+          "p50_ms": 1454.0,
+          "p95_ms": 2928.5
+        },
+        "total_online_latency": {
+          "mean_ms": 2205.5,
+          "p50_ms": 2089.71,
+          "p95_ms": 3623.06
+        }
+      },
+      "offline_cost_seconds": 4.491,
+      "protocol_id": "PROTO_STD_CHAPTER_7_ABLATION",
+      "experiment_protocol": "Standardized Chapter 7 Ablation (Runs 0-4): Standardized HotpotQA timing and stack configuration, candidate pool K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/chapter_7_ablation_results.json",
+      "retrieval_stack_details": "Ablation Run RUN-1: Candidate K_init=15 -> K_final=5"
+    },
+    {
+      "experiment_group": "Component Ablation (Runs 0-4)",
+      "config_id": "ablation_RUN-2",
+      "config_name": "Ablation RUN-2: RUN-2 (No BM25 Lexical Search)",
+      "description": "Contextual Chunks + BGE Dense Only + Reranker (K_init=15 -> K_final=5)",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.99,
+        "precision_at_k": 0.396,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 1,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 1,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 43.33,
+          "p50_ms": 42.76,
+          "p95_ms": 68.07
+        },
+        "reranking_latency": {
+          "mean_ms": 826.63,
+          "p50_ms": 820.98,
+          "p95_ms": 1214.3
+        },
+        "generation_latency": {
+          "mean_ms": 2014.38,
+          "p50_ms": 1939.5,
+          "p95_ms": 3336.0
+        },
+        "total_online_latency": {
+          "mean_ms": 2884.42,
+          "p50_ms": 2809.76,
+          "p95_ms": 4189.65
+        }
+      },
+      "offline_cost_seconds": 187.7816,
+      "protocol_id": "PROTO_STD_CHAPTER_7_ABLATION",
+      "experiment_protocol": "Standardized Chapter 7 Ablation (Runs 0-4): Standardized HotpotQA timing and stack configuration, candidate pool K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/chapter_7_ablation_results.json",
+      "retrieval_stack_details": "Ablation Run RUN-2: Candidate K_init=15 -> K_final=5"
+    },
+    {
+      "experiment_group": "Component Ablation (Runs 0-4)",
+      "config_id": "ablation_RUN-3",
+      "config_name": "Ablation RUN-3: RUN-3 (No Dense Vector Search)",
+      "description": "Contextual Chunks + BM25 Lexical Only + Reranker (K_init=15 -> K_final=5)",
+      "metrics": {
+        "answer_accuracy_percent": 76.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 9,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 0.91,
+          "p50_ms": 0.27,
+          "p95_ms": 2.1
+        },
+        "reranking_latency": {
+          "mean_ms": 641.17,
+          "p50_ms": 647.34,
+          "p95_ms": 946.67
+        },
+        "generation_latency": {
+          "mean_ms": 1711.86,
+          "p50_ms": 1567.5,
+          "p95_ms": 2850.2
+        },
+        "total_online_latency": {
+          "mean_ms": 2354.18,
+          "p50_ms": 2137.88,
+          "p95_ms": 3715.03
+        }
+      },
+      "offline_cost_seconds": 182.4523,
+      "protocol_id": "PROTO_STD_CHAPTER_7_ABLATION",
+      "experiment_protocol": "Standardized Chapter 7 Ablation (Runs 0-4): Standardized HotpotQA timing and stack configuration, candidate pool K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/chapter_7_ablation_results.json",
+      "retrieval_stack_details": "Ablation Run RUN-3: Candidate K_init=15 -> K_final=5"
+    },
+    {
+      "experiment_group": "Component Ablation (Runs 0-4)",
+      "config_id": "ablation_RUN-4",
+      "config_name": "Ablation RUN-4: RUN-4 (No Reranker)",
+      "description": "Contextual Chunks + BGE Dense + BM25 Hybrid (alpha=0.5) Direct Top-5 (No Reranker)",
+      "metrics": {
+        "answer_accuracy_percent": 76.0,
+        "exact_match_percent": 62.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 3,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 30.55,
+          "p50_ms": 28.01,
+          "p95_ms": 43.81
+        },
+        "reranking_latency": {
+          "mean_ms": 0.0,
+          "p50_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        "generation_latency": {
+          "mean_ms": 1762.4,
+          "p50_ms": 1543.0,
+          "p95_ms": 3522.55
+        },
+        "total_online_latency": {
+          "mean_ms": 1793.35,
+          "p50_ms": 1568.69,
+          "p95_ms": 3555.61
+        }
+      },
+      "offline_cost_seconds": 188.0862,
+      "protocol_id": "PROTO_STD_CHAPTER_7_ABLATION",
+      "experiment_protocol": "Standardized Chapter 7 Ablation (Runs 0-4): Standardized HotpotQA timing and stack configuration, candidate pool K_init=15 -> K_final=5.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/chapter_7_ablation_results.json",
+      "retrieval_stack_details": "Ablation Run RUN-4: Candidate K_init=15 -> K_final=5"
+    },
+    {
+      "experiment_group": "K-final Sensitivity (Final Retriever)",
+      "config_id": "k_final_1",
+      "config_name": "Final Architecture Retrieval Depth K_final=1",
+      "description": "Revised Chapter 7 retriever (BGE+BM25+Reranker, K_init=15) evaluated at K_final=1.",
+      "metrics": {
+        "answer_accuracy_percent": 46.0,
+        "exact_match_percent": 38.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 0.5,
+        "precision_at_k": 1.0,
+        "k_retrieved": 1
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 26,
+        "Multi-Hop Reasoning Failure": 0,
+        "Generation Failure": 0,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 41.19,
+          "p50_ms": 41.42,
+          "p95_ms": 57.32
+        },
+        "reranking_latency": {
+          "mean_ms": 710.47,
+          "p50_ms": 680.52,
+          "p95_ms": 926.6
+        },
+        "generation_latency": {
+          "mean_ms": 626.74,
+          "p50_ms": 590.0,
+          "p95_ms": 1043.8
+        },
+        "total_online_latency": {
+          "mean_ms": 1378.39,
+          "p50_ms": 1322.94,
+          "p95_ms": 1889.22
+        }
+      },
+      "offline_cost_seconds": 4.5553,
+      "protocol_id": "PROTO_STD_CHAPTER_7_KFINAL",
+      "experiment_protocol": "Standardized Chapter 7 K-final Sensitivity: Finalized retriever (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 fixed) varying K_final (1,3,5,10).",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/k_final_sensitivity/k_final_sensitivity_results.json",
+      "retrieval_stack_details": "Final Retriever (BGE+BM25 Hybrid + Reranker) K_init=15 fixed -> K_final=1"
+    },
+    {
+      "experiment_group": "K-final Sensitivity (Final Retriever)",
+      "config_id": "k_final_3",
+      "config_name": "Final Architecture Retrieval Depth K_final=3",
+      "description": "Revised Chapter 7 retriever (BGE+BM25+Reranker, K_init=15) evaluated at K_final=3.",
+      "metrics": {
+        "answer_accuracy_percent": 76.0,
+        "exact_match_percent": 64.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.6667,
+        "k_retrieved": 3
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 9,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 44.14,
+          "p50_ms": 43.19,
+          "p95_ms": 54.33
+        },
+        "reranking_latency": {
+          "mean_ms": 768.62,
+          "p50_ms": 813.68,
+          "p95_ms": 928.9
+        },
+        "generation_latency": {
+          "mean_ms": 1307.02,
+          "p50_ms": 1127.0,
+          "p95_ms": 3125.0
+        },
+        "total_online_latency": {
+          "mean_ms": 2119.96,
+          "p50_ms": 1929.12,
+          "p95_ms": 3959.86
+        }
+      },
+      "offline_cost_seconds": 4.5553,
+      "protocol_id": "PROTO_STD_CHAPTER_7_KFINAL",
+      "experiment_protocol": "Standardized Chapter 7 K-final Sensitivity: Finalized retriever (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 fixed) varying K_final (1,3,5,10).",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/k_final_sensitivity/k_final_sensitivity_results.json",
+      "retrieval_stack_details": "Final Retriever (BGE+BM25 Hybrid + Reranker) K_init=15 fixed -> K_final=3"
+    },
+    {
+      "experiment_group": "K-final Sensitivity (Final Retriever)",
+      "config_id": "k_final_5",
+      "config_name": "Final Architecture Retrieval Depth K_final=5",
+      "description": "Revised Chapter 7 retriever (BGE+BM25+Reranker, K_init=15) evaluated at K_final=5.",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 66.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 45.48,
+          "p50_ms": 44.4,
+          "p95_ms": 55.68
+        },
+        "reranking_latency": {
+          "mean_ms": 797.73,
+          "p50_ms": 840.08,
+          "p95_ms": 951.89
+        },
+        "generation_latency": {
+          "mean_ms": 2094.9,
+          "p50_ms": 1925.0,
+          "p95_ms": 3896.3
+        },
+        "total_online_latency": {
+          "mean_ms": 2938.23,
+          "p50_ms": 2774.66,
+          "p95_ms": 4732.69
+        }
+      },
+      "offline_cost_seconds": 4.5553,
+      "protocol_id": "PROTO_STD_CHAPTER_7_KFINAL",
+      "experiment_protocol": "Standardized Chapter 7 K-final Sensitivity: Finalized retriever (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 fixed) varying K_final (1,3,5,10).",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/k_final_sensitivity/k_final_sensitivity_results.json",
+      "retrieval_stack_details": "Final Retriever (BGE+BM25 Hybrid + Reranker) K_init=15 fixed -> K_final=5"
+    },
+    {
+      "experiment_group": "K-final Sensitivity (Final Retriever)",
+      "config_id": "k_final_10",
+      "config_name": "Final Architecture Retrieval Depth K_final=10",
+      "description": "Revised Chapter 7 retriever (BGE+BM25+Reranker, K_init=15) evaluated at K_final=10.",
+      "metrics": {
+        "answer_accuracy_percent": 0.0,
+        "exact_match_percent": 0.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.2,
+        "k_retrieved": 10
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 40,
+        "Generation Failure": 9,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 46.61,
+          "p50_ms": 44.37,
+          "p95_ms": 59.83
+        },
+        "reranking_latency": {
+          "mean_ms": 762.54,
+          "p50_ms": 720.28,
+          "p95_ms": 957.19
+        },
+        "generation_latency": {
+          "mean_ms": 3591.86,
+          "p50_ms": 3336.5,
+          "p95_ms": 5901.65
+        },
+        "total_online_latency": {
+          "mean_ms": 4401.14,
+          "p50_ms": 4154.26,
+          "p95_ms": 6716.31
+        }
+      },
+      "offline_cost_seconds": 4.5553,
+      "protocol_id": "PROTO_STD_CHAPTER_7_KFINAL",
+      "experiment_protocol": "Standardized Chapter 7 K-final Sensitivity: Finalized retriever (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 fixed) varying K_final (1,3,5,10).",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/k_final_sensitivity/k_final_sensitivity_results.json",
+      "retrieval_stack_details": "Final Retriever (BGE+BM25 Hybrid + Reranker) K_init=15 fixed -> K_final=10"
+    },
+    {
+      "experiment_group": "Generator Scaling",
+      "config_id": "generator_flan_t5_base",
+      "config_name": "Generator Model: google/flan-t5-base (250M Baseline)",
+      "description": "Evaluates google/flan-t5-base (250M Baseline) on finalized retrieval stack (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 -> K_final=5).",
+      "metrics": {
+        "answer_accuracy_percent": 78.0,
+        "exact_match_percent": 66.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 8,
+        "Generation Failure": 2,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 39.7,
+          "p50_ms": 42.45,
+          "p95_ms": 54.19
+        },
+        "reranking_latency": {
+          "mean_ms": 703.47,
+          "p50_ms": 701.96,
+          "p95_ms": 910.5
+        },
+        "generation_latency": {
+          "mean_ms": 1854.72,
+          "p50_ms": 1653.0,
+          "p95_ms": 3696.6
+        },
+        "total_online_latency": {
+          "mean_ms": 2598.07,
+          "p50_ms": 2454.52,
+          "p95_ms": 4434.29
+        }
+      },
+      "offline_cost_seconds": 4.4641,
+      "protocol_id": "PROTO_STD_CHAPTER_7_GENERATOR_SCALING",
+      "experiment_protocol": "Standardized Chapter 7 Generator Scaling: Finalized retrieval stack (K_init=15 -> K_final=5) comparing google/flan-t5-base vs google/flan-t5-large.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/generator_scaling/generator_scaling_results.json",
+      "retrieval_stack_details": "Final Retriever (K_init=15 -> K_final=5) with google/flan-t5-base (250M Baseline)"
+    },
+    {
+      "experiment_group": "Generator Scaling",
+      "config_id": "generator_flan_t5_large",
+      "config_name": "Generator Model: google/flan-t5-large (780M Larger LLM)",
+      "description": "Evaluates google/flan-t5-large (780M Larger LLM) on finalized retrieval stack (Standard Chunks + BGE + BM25 Hybrid + Reranker, K_init=15 -> K_final=5).",
+      "metrics": {
+        "answer_accuracy_percent": 96.0,
+        "exact_match_percent": 84.0,
+        "hit_rate_percent": 100.0,
+        "recall_at_k": 1.0,
+        "precision_at_k": 0.4,
+        "k_retrieved": 5
+      },
+      "failure_category_counts": {
+        "Retrieval Failure": 0,
+        "Multi-Hop Reasoning Failure": 1,
+        "Generation Failure": 0,
+        "Gold-Answer / Data-Quality Issue": 1,
+        "Insufficient Context": 0,
+        "Answer-Format Mismatch": 0
+      },
+      "latency_ms": {
+        "retrieval_latency": {
+          "mean_ms": 46.57,
+          "p50_ms": 44.06,
+          "p95_ms": 63.79
+        },
+        "reranking_latency": {
+          "mean_ms": 767.56,
+          "p50_ms": 788.1,
+          "p95_ms": 913.43
+        },
+        "generation_latency": {
+          "mean_ms": 5670.84,
+          "p50_ms": 5704.0,
+          "p95_ms": 8085.55
+        },
+        "total_online_latency": {
+          "mean_ms": 6485.1,
+          "p50_ms": 6352.45,
+          "p95_ms": 8966.45
+        }
+      },
+      "offline_cost_seconds": 4.4641,
+      "protocol_id": "PROTO_STD_CHAPTER_7_GENERATOR_SCALING",
+      "experiment_protocol": "Standardized Chapter 7 Generator Scaling: Finalized retrieval stack (K_init=15 -> K_final=5) comparing google/flan-t5-base vs google/flan-t5-large.",
+      "source_file": "data/processed/rag_baseline/chapter_7_ablation/generator_scaling/generator_scaling_results.json",
+      "retrieval_stack_details": "Final Retriever (K_init=15 -> K_final=5) with google/flan-t5-large (780M Larger LLM)"
+    }
+  ]
+}

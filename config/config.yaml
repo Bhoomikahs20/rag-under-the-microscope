@@ -1,0 +1,23 @@
+project:
+  name: "RAG Book Research - HotpotQA Pilot"
+  version: "0.2.0"
+  description: "Reproducible linked pilot dataset setup with query-document relevance mappings for BeIR/hotpotqa"
+
+dataset:
+  hf_path: "BeIR/hotpotqa"
+  qrels_hf_path: "BeIR/hotpotqa-qrels"
+  subsets:
+    corpus: "corpus"
+    queries: "queries"
+    qrels: "train"
+  pilot_size:
+    queries_count: 50
+    target_corpus_documents: 100
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  manifest_path: "data/manifest.json"
+
+reproducibility:
+  seed: 42

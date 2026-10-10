@@ -1,0 +1,38 @@
+# Python Virtual Environments & Caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE & OS Metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs & Temporary Scratch Caches
+logs/
+scratch/__pycache__/
+
+# Raw Data Downloads Cache (Ignore raw cache downloads, preserve directory structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+
+# Exclude Third-Party Text Corpus from Git Tracking (Downloaded directly from Hugging Face on first run)
+data/processed/hotpotqa_pilot_corpus.json
+
+# Explicitly Track Core Publication Artifacts & Benchmark Results under data/processed/
+!data/processed/.gitkeep
+!data/processed/publication/
+!data/processed/publication/**
+!data/processed/rag_baseline/
+!data/processed/rag_baseline/**
+!data/processed/figures/
+!data/processed/figures/**
+!data/processed/hotpotqa_pilot_queries.json
+!data/processed/hotpotqa_pilot_qrels.json
+!data/processed/rag_book_*.md
+!data/processed/validation_report.*

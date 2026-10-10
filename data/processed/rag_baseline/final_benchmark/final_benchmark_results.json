@@ -1,0 +1,117 @@
+{
+  "benchmark_info": {
+    "protocol_id": "PROTO_FINAL_BENCHMARK",
+    "benchmark_title": "Finalized Leakage-Safe RAG System Benchmark",
+    "eval_timestamp": "2026-10-07T09:51:36",
+    "random_seed": 42,
+    "dataset_split": {
+      "dev_queries_count": 10,
+      "test_queries_count": 40,
+      "total_queries_count": 50,
+      "leakage_safe_verification": true
+    },
+    "frozen_architecture": {
+      "chunking": "Standard 250w / 50o (Title + Text, No Contextual Summaries)",
+      "dense_retriever": "BAAI/bge-small-en-v1.5",
+      "lexical_retriever": "BM25Okapi",
+      "hybrid_score_fusion": "Min-Max Normalized (alpha=0.5), K_init=15",
+      "reranker": "ms-marco-MiniLM-L-6-v2, K_final=5",
+      "generator": "google/flan-t5-large (780M parameters, greedy T=0.0, max_new_tokens=50)"
+    }
+  },
+  "test_set_summary_metrics": {
+    "query_count": 40,
+    "accuracy_percent": 90.0,
+    "accuracy_95_ci": [
+      80.0,
+      97.5
+    ],
+    "exact_match_percent": 85.0,
+    "exact_match_95_ci": [
+      72.5,
+      95.0
+    ],
+    "hit_rate_percent": 100.0,
+    "hit_rate_95_ci": [
+      100.0,
+      100.0
+    ],
+    "recall_at_5": 1.0,
+    "recall_at_5_95_ci": [
+      1.0,
+      1.0
+    ],
+    "precision_at_5": 0.4,
+    "precision_at_5_95_ci": [
+      0.4,
+      0.4
+    ],
+    "failure_taxonomy_counts": {
+      "Retrieval Failure": 0,
+      "Multi-Hop Reasoning Failure": 3,
+      "Generation Failure": 0,
+      "Insufficient Context": 0,
+      "Gold-Answer / Data-Quality Issue": 1
+    },
+    "online_latency_summary_ms": {
+      "dense_retrieval": {
+        "mean_ms": 45.59,
+        "p50_ms": 44.38,
+        "p95_ms": 58.43
+      },
+      "bm25_retrieval": {
+        "mean_ms": 1.07,
+        "p50_ms": 0.92,
+        "p95_ms": 1.62
+      },
+      "reranking": {
+        "mean_ms": 788.71,
+        "p50_ms": 734.05,
+        "p95_ms": 1083.9
+      },
+      "generation": {
+        "mean_ms": 6436.84,
+        "p50_ms": 5965.8,
+        "p95_ms": 8483.31
+      },
+      "generation_latency_95_ci": [
+        5959.18,
+        7021.75
+      ],
+      "total_online_latency": {
+        "mean_ms": 7272.35,
+        "p50_ms": 6787.3,
+        "p95_ms": 9487.72
+      },
+      "total_online_latency_95_ci": [
+        6768.42,
+        7874.62
+      ]
+    },
+    "offline_indexing_cost_seconds": {
+      "dense_indexing_seconds": 13.3178,
+      "bm25_indexing_seconds": 0.0088,
+      "total_indexing_seconds": 13.3266
+    }
+  },
+  "dev_set_summary_metrics": {
+    "query_count": 10,
+    "accuracy_percent": 100.0,
+    "exact_match_percent": 80.0,
+    "recall_at_5": 1.0,
+    "failure_taxonomy_counts": {
+      "Retrieval Failure": 0,
+      "Multi-Hop Reasoning Failure": 0,
+      "Generation Failure": 0,
+      "Insufficient Context": 0,
+      "Gold-Answer / Data-Quality Issue": 0
+    },
+    "online_latency_summary_ms": {
+      "total_online_latency": {
+        "mean_ms": 9541.95,
+        "p50_ms": 8890.49,
+        "p95_ms": 15740.63
+      }
+    }
+  }
+}

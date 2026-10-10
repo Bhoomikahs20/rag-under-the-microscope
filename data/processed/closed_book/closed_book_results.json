@@ -1,0 +1,875 @@
+{
+  "evaluation_type": "Closed-Book QA (No Retrieval / No Context)",
+  "total_queries": 50,
+  "correct_count": 5,
+  "correct_rate_percent": 10.0,
+  "exact_match_rate_percent": 10.0,
+  "evaluation_time_seconds": 25.29,
+  "model_config": {
+    "model_id": "google/flan-t5-base",
+    "architecture": "Seq2Seq / Flan-T5-Base",
+    "parameters": "250M",
+    "closed_book_prompt_template": "Answer the question: {question}",
+    "decoding_parameters": {
+      "do_sample": false,
+      "temperature": 0.0,
+      "max_new_tokens": 50,
+      "random_seed": 42
+    },
+    "retrieval_used": false,
+    "corpus_access_allowed": false,
+    "external_search_allowed": false
+  },
+  "query_results": [
+    {
+      "query_index": 1,
+      "query_id": "5a7c35885542996dd594b8d9",
+      "question": "The Hope Theatre presented plays during what overall time frame in England?",
+      "model_answer": "mid-19th century",
+      "gold_answer": "1562 and 1642",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 2,
+      "query_id": "5a8e4a605542995a26add4cb",
+      "question": "The composer of the opera \"The Zoo\" has composed how many major orchestral works?",
+      "model_answer": "seven",
+      "gold_answer": "13",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 3,
+      "query_id": "5a8780385542996e4f30880e",
+      "question": "What character in the television special \"The Pound Puppies\" did the voice actor of Fred Jones from \"Scooby-Doo\" voice as?",
+      "model_answer": "a pig",
+      "gold_answer": "Howler",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 4,
+      "query_id": "5a8cb59055429941ae14ded6",
+      "question": "What is the name of the television series \"Wuthering Heights\" actor who also starred in the action film \"Black Hawk Down\"?",
+      "model_answer": "john dillinger",
+      "gold_answer": "Tom Hardy",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 5,
+      "query_id": "5ae5fb975542996de7b71aa8",
+      "question": "Edmundo \"Eddie\" Rodriguez was born in what Mexican state?",
+      "model_answer": "san pedro",
+      "gold_answer": "Jalisco",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 6,
+      "query_id": "5abd0e8355429924427fcee2",
+      "question": "Sylvia Sidney starred in the film Beetlejuice, which was directed by whom?",
+      "model_answer": "john mccartney",
+      "gold_answer": "Tim Burton",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 7,
+      "query_id": "5a7257ce5542990c210a410d",
+      "question": "This English comedian wrote the British sitcom \"Absolutely Fabulous\"",
+      "model_answer": "john mccartney",
+      "gold_answer": "Jennifer Saunders",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 8,
+      "query_id": "5ab739c65542993667793f9a",
+      "question": "\"The Class of '62\" is an episode of the BBC television sitcom, \"Only Fools and Horses\", created and written by who?",
+      "model_answer": "john mccartney",
+      "gold_answer": "John Sullivan",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.5,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 9,
+      "query_id": "5a8c5d795542995e66a475d4",
+      "question": "Where is the company located that produced the 2006 James Bond movie Casino Royale?",
+      "model_answer": "New York City",
+      "gold_answer": "based in London's Piccadilly and also operates from Pinewood Studios in the United Kingdom",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 10,
+      "query_id": "5add443a5542992ae4cec503",
+      "question": "What American biotechnology company is part of Gloucester Pharmaceuticals?",
+      "model_answer": "GE",
+      "gold_answer": "Celgene",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 11,
+      "query_id": "5a8b2d8e5542995d1e6f12f1",
+      "question": "Which hall at the University of California school, which also has a branch in Palm Desert, is named after the first chancellor of this school?",
+      "model_answer": "san diego",
+      "gold_answer": "Spieth Hall",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 12,
+      "query_id": "5ac1d63055429964131be2a1",
+      "question": "E-mails from Bill Clinton's Chief of staff lead to the pizzagate conspiracy in what year?",
+      "model_answer": "1998",
+      "gold_answer": "2016",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 13,
+      "query_id": "5adf48b25542995ec70e8fb5",
+      "question": "In what city did Amir Khan and Lamont Peterson fight for the welterweight titles in 2011?",
+      "model_answer": "san francisco",
+      "gold_answer": "British",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 14,
+      "query_id": "5a89c2715542993b751ca990",
+      "question": "Which was released first, God's Angry Man or The World's Best Prom?",
+      "model_answer": "The World's Best Prom",
+      "gold_answer": "God's Angry Man",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 15,
+      "query_id": "5a7612cf55429976ec32bcfe",
+      "question": "Which American wide receiver has a brother who was drafted by the Titans fifth overall in the 2017 NFL Draft?",
+      "model_answer": "Jason Campbell",
+      "gold_answer": "Titus Davis",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 16,
+      "query_id": "5ab9c21055429970cfb8eb9d",
+      "question": "Michael Jones is a competitor in sport where motorcycle riders attempt to impress judges with what?",
+      "model_answer": "speed",
+      "gold_answer": "jumps and stunts",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 17,
+      "query_id": "5a7e264055429965cec5eaa4",
+      "question": "Fulda Cathedral is the burial place of the leading figure in what?",
+      "model_answer": "scottish king scott",
+      "gold_answer": "Anglo-Saxon mission",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 18,
+      "query_id": "5a88a74a554299206df2b31b",
+      "question": "What profession does Lewis Milestone and All Quiet on the Western Front have in common?",
+      "model_answer": "novelist",
+      "gold_answer": "director",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 19,
+      "query_id": "5ae1bb88554299234fd042dd",
+      "question": "Are both Candleshoe and Pooh's Heffalump Movie Walt Disney films?",
+      "model_answer": "yes",
+      "gold_answer": "yes",
+      "correctness_assessment": {
+        "is_correct": true,
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 20,
+      "query_id": "5ae4d3235542993aec5ec0dd",
+      "question": "Lorilee Craker co-authored a memoir about a woman who is what relation to Britney Spears?",
+      "model_answer": "sister",
+      "gold_answer": "mother",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 21,
+      "query_id": "5a71532e5542994082a3e7d6",
+      "question": "In what year did the actor who played Edward Snowden act in a movie with Heath Ledger and Julia Styles?",
+      "model_answer": "2007",
+      "gold_answer": "1999",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 22,
+      "query_id": "5ae5e5fc55429929b0807a06",
+      "question": "John Shakespeare was the son of the husbandman who lived in what Warwickshire town?",
+      "model_answer": "st john s",
+      "gold_answer": "Snitterfield",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 23,
+      "query_id": "5ab985b5554299131ca4235e",
+      "question": "The Crystal Palace Football Club Player of the Year is awarded at the end of each season, nine of these players have won the award for a second time, the most recent being which professional footballer, who plays as a winger for Premier League club Crystal Palace, and the Ivory Coast national team?",
+      "model_answer": "antonio sanchez",
+      "gold_answer": "Wilfried Zaha",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 24,
+      "query_id": "5abef2505542993fe9a41db2",
+      "question": "Ulrich Matthes is best known for his role in  a 2004 German-Italian-Austrian historical war drama film directed by who?",
+      "model_answer": "Luc Besson",
+      "gold_answer": "Oliver Hirschbiegel",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 25,
+      "query_id": "5a8e0c34554299068b959e37",
+      "question": "The Tremont Stakes in June is among the classic races held at Belmont Park in which U.S. state?",
+      "model_answer": "california",
+      "gold_answer": "New York",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 26,
+      "query_id": "5a87dc635542994846c1cdf2",
+      "question": "When was the Polish politician and former Vice-Minister of Foreign Affairs of Poland, who was a Doctor of Law, and who candidated from a right-wing populist, national-conservative, and Christian democratic political party in Poland, elected to the Sejm?",
+      "model_answer": "1 October 1931",
+      "gold_answer": "September 25, 2005",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 27,
+      "query_id": "5a81de8d55429926c1cdada9",
+      "question": "Which English actor co-wrote and also played in The Dictator?",
+      "model_answer": "john dillinger",
+      "gold_answer": "Sacha Baron Cohen",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 28,
+      "query_id": "5a7559b25542992db9473648",
+      "question": "Nupedia was underwritten by what company that was founded in 1996?",
+      "model_answer": "e-commerce company",
+      "gold_answer": "Bomis",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 29,
+      "query_id": "5a8b634255429949d91db58b",
+      "question": "What symbol did a Ghanaian stateswoman, teacher and artist known for designing Ghana's flag in 1957 use in that flag?",
+      "model_answer": "oh i am",
+      "gold_answer": "The Black Star of Africa",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 30,
+      "query_id": "5a7f81bc5542992097ad2f8f",
+      "question": "Sanghamitra Bandyopadhyay a professor at theIndian Statistical Institute, a public university established in what year?",
+      "model_answer": "1931",
+      "gold_answer": "1931",
+      "correctness_assessment": {
+        "is_correct": true,
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 31,
+      "query_id": "5ab8f1fa5542991b5579f077",
+      "question": "Are Gary Lightbody and Dustin Kensrue from the same country?",
+      "model_answer": "no",
+      "gold_answer": "no",
+      "correctness_assessment": {
+        "is_correct": true,
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 32,
+      "query_id": "5a74b6ea55429974ef308c41",
+      "question": "What commune, ecovillage, and spiritual community was founded by Oberto Airaudi?",
+      "model_answer": "saigon",
+      "gold_answer": "Federation of Damanhur",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 33,
+      "query_id": "5ab709b15542992aa3b8c78e",
+      "question": "The writers of the \"Assassins\" screenplay made their directing debut in which year?",
+      "model_answer": "1939",
+      "gold_answer": "1996",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 34,
+      "query_id": "5ae7ac1f5542993210983eed",
+      "question": "What is the name of the Los Angeles-based production company that produced a film based on the novel by André Aciman?",
+      "model_answer": "san antonio",
+      "gold_answer": "Water's End Productions",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 35,
+      "query_id": "5a74691755429929fddd8412",
+      "question": "What friends star's wedding was photographed by Robert Evans?",
+      "model_answer": "sarah sandler",
+      "gold_answer": "Jennifer Aniston",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 36,
+      "query_id": "5a8dea555542995a26add44f",
+      "question": "What is the prequel to the show where Rose Eleanor Arbuthnot-Leslie stars as Maia Rindell?",
+      "model_answer": "The Girl Next Door",
+      "gold_answer": "The Good Wife\"",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 37,
+      "query_id": "5ab4826f5542990594ba9c3c",
+      "question": "When was Justin Vincent the MVP of a collegiate championship game?",
+      "model_answer": "2002",
+      "gold_answer": "January 4, 2004",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 38,
+      "query_id": "5a7735ac5542993735360219",
+      "question": "Which actor starred in Assignment to Kill and passed away in 2000.",
+      "model_answer": "john dillinger",
+      "gold_answer": "John Gielgud",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.5,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 39,
+      "query_id": "5ab2bfc65542991669774094",
+      "question": "When did the British/Irish digital television channel, which features Spliced, first launch?",
+      "model_answer": "19 January 2007",
+      "gold_answer": "22 July 2002",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 40,
+      "query_id": "5ade08425542995b365fabd9",
+      "question": "University of Toronto and Istanbul Technical University, are located in Canada?",
+      "model_answer": "no",
+      "gold_answer": "no",
+      "correctness_assessment": {
+        "is_correct": true,
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 41,
+      "query_id": "5ac5093b5542996feb3fe9d8",
+      "question": "Plymouth Regional High School is located in what county?",
+      "model_answer": "Suffolk County",
+      "gold_answer": "Grafton County",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.5,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 42,
+      "query_id": "5ab26ed65542993be8fa9913",
+      "question": "Does the Inula genus or the Fouquieria genus have more species?",
+      "model_answer": "Inula",
+      "gold_answer": "Inula",
+      "correctness_assessment": {
+        "is_correct": true,
+        "exact_match": true,
+        "f1_score": 1.0,
+        "substring_match": true
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 43,
+      "query_id": "5add1ebe5542990d50227dec",
+      "question": "Who was the director of the 2009 British thriller film starring the actor who is best known for playing Robert Crawley in \"Downtown Abbey\"?",
+      "model_answer": "John McAdams",
+      "gold_answer": "Anthony Hickox",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 44,
+      "query_id": "5a7541ab5542993748c89803",
+      "question": "What school is located in the southernmost atoll of the archipelago of the Maldives?",
+      "model_answer": "sai sai sai sai sai sai sai sai sai sai sai sai s",
+      "gold_answer": "Maradhoo Feydhoo School",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 45,
+      "query_id": "5a83e925554299123d8c21ca",
+      "question": "Kofi Dzamesi (born 1960) is a Ghanaian engineer and politician, since February 2017 he has served as Minister of which official Ghanaian agency responsible the creation of linkages between the Government of Ghana and the traditional authorities in the country?",
+      "model_answer": "gubernatorial commission",
+      "gold_answer": "Ministry for Chieftaincy and Traditional Affairs",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 46,
+      "query_id": "5a7a783b5542990783324f58",
+      "question": "What country of origin does 17 Carat and Seventeen have in common?",
+      "model_answer": "American",
+      "gold_answer": "Korean",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 47,
+      "query_id": "5ae07f6d55429945ae959385",
+      "question": "Who is the protagonist in Ayn Rand's most notable novel?",
+      "model_answer": "samuel samuel",
+      "gold_answer": "Howard Roark",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 48,
+      "query_id": "5ab2f57955429929539468cf",
+      "question": "The composer of A Survivor from Warsaw emigrated to the United States in what year?",
+      "model_answer": "1931",
+      "gold_answer": "1934",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 49,
+      "query_id": "5a7def2a5542995f4f402324",
+      "question": "Anna Howard Shaw Day starred the actor, director, and producer who was best known for playing what character on Mad Men?",
+      "model_answer": "sam scott",
+      "gold_answer": "Don Draper",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    },
+    {
+      "query_index": 50,
+      "query_id": "5ae2e2c655429928c423952d",
+      "question": "When was the American Democratic politician which was the governor of 185th New York State Legislature born?",
+      "model_answer": "February 17, 1903",
+      "gold_answer": "June 15, 1932",
+      "correctness_assessment": {
+        "is_correct": false,
+        "exact_match": false,
+        "f1_score": 0.0,
+        "substring_match": false
+      },
+      "model_details": {
+        "model_id": "google/flan-t5-base",
+        "decoding": "greedy (temp=0.0)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,716 @@
+{
+  "project": "RAG Book Research - Linked HotpotQA Pilot",
+  "dataset_metadata": {
+    "source_corpus_and_queries": "https://huggingface.co/datasets/BeIR/hotpotqa",
+    "source_qrels": "https://huggingface.co/datasets/BeIR/hotpotqa-qrels",
+    "hf_dataset_ids": {
+      "corpus_and_queries": "BeIR/hotpotqa",
+      "qrels": "BeIR/hotpotqa-qrels"
+    },
+    "original_benchmark": "BeIR (Benchmarking Information Retrieval)",
+    "underlying_dataset": "HotpotQA (Multi-hop Question Answering)",
+    "license": "CC BY-SA 4.0",
+    "reproducible_seed": 42,
+    "sampling_method": "Linked sampling via qrels (100% query-document ground truth coverage)",
+    "full_corpus_note": "Full corpus contains ~5.23M Wikipedia paragraphs; pilot subset extracted reproducibly."
+  },
+  "subsets": {
+    "queries": {
+      "subset_name": "queries",
+      "split": "queries",
+      "fields": {
+        "_id": "string (unique query ID)",
+        "title": "string (optional title or empty string)",
+        "text": "string (multi-hop question text)"
+      },
+      "pilot_sample_count": 50,
+      "local_filepath": "data/processed\\hotpotqa_pilot_queries.json"
+    },
+    "corpus": {
+      "subset_name": "corpus",
+      "split": "corpus",
+      "fields": {
+        "_id": "string (unique document ID)",
+        "title": "string (Wikipedia article title)",
+        "text": "string (paragraph content)"
+      },
+      "pilot_sample_count": 100,
+      "local_filepath": "data/processed\\hotpotqa_pilot_corpus.json"
+    },
+    "qrels": {
+      "subset_name": "qrels",
+      "split": "train",
+      "fields": {
+        "query_id": "string (matching query _id)",
+        "corpus_id": "string (matching document _id)",
+        "score": "integer (relevance label, 1 = relevant)"
+      },
+      "pilot_sample_count": 100,
+      "local_filepath": "data/processed\\hotpotqa_pilot_qrels.json"
+    }
+  },
+  "linked_pilot_summary": {
+    "queries_count": 50,
+    "corpus_documents_count": 100,
+    "relevance_links_count": 100,
+    "coverage": "100% of selected queries have all relevant documents present in the pilot corpus",
+    "query_ids": [
+      "5a7c35885542996dd594b8d9",
+      "5a8e4a605542995a26add4cb",
+      "5a8780385542996e4f30880e",
+      "5a8cb59055429941ae14ded6",
+      "5ae5fb975542996de7b71aa8",
+      "5abd0e8355429924427fcee2",
+      "5a7257ce5542990c210a410d",
+      "5ab739c65542993667793f9a",
+      "5a8c5d795542995e66a475d4",
+      "5add443a5542992ae4cec503",
+      "5a8b2d8e5542995d1e6f12f1",
+      "5ac1d63055429964131be2a1",
+      "5adf48b25542995ec70e8fb5",
+      "5a89c2715542993b751ca990",
+      "5a7612cf55429976ec32bcfe",
+      "5ab9c21055429970cfb8eb9d",
+      "5a7e264055429965cec5eaa4",
+      "5a88a74a554299206df2b31b",
+      "5ae1bb88554299234fd042dd",
+      "5ae4d3235542993aec5ec0dd",
+      "5a71532e5542994082a3e7d6",
+      "5ae5e5fc55429929b0807a06",
+      "5ab985b5554299131ca4235e",
+      "5abef2505542993fe9a41db2",
+      "5a8e0c34554299068b959e37",
+      "5a87dc635542994846c1cdf2",
+      "5a81de8d55429926c1cdada9",
+      "5a7559b25542992db9473648",
+      "5a8b634255429949d91db58b",
+      "5a7f81bc5542992097ad2f8f",
+      "5ab8f1fa5542991b5579f077",
+      "5a74b6ea55429974ef308c41",
+      "5ab709b15542992aa3b8c78e",
+      "5ae7ac1f5542993210983eed",
+      "5a74691755429929fddd8412",
+      "5a8dea555542995a26add44f",
+      "5ab4826f5542990594ba9c3c",
+      "5a7735ac5542993735360219",
+      "5ab2bfc65542991669774094",
+      "5ade08425542995b365fabd9",
+      "5ac5093b5542996feb3fe9d8",
+      "5ab26ed65542993be8fa9913",
+      "5add1ebe5542990d50227dec",
+      "5a7541ab5542993748c89803",
+      "5a83e925554299123d8c21ca",
+      "5a7a783b5542990783324f58",
+      "5ae07f6d55429945ae959385",
+      "5ab2f57955429929539468cf",
+      "5a7def2a5542995f4f402324",
+      "5ae2e2c655429928c423952d"
+    ],
+    "corpus_ids": [
+      "22256",
+      "28172",
+      "33126",
+      "39566",
+      "39942",
+      "45218",
+      "45280",
+      "62262",
+      "67025",
+      "73209",
+      "89605",
+      "167961",
+      "180464",
+      "200842",
+      "230311",
+      "259575",
+      "277935",
+      "293524",
+      "308187",
+      "330637",
+      "355604",
+      "398934",
+      "487732",
+      "520309",
+      "726979",
+      "743431",
+      "858143",
+      "898257",
+      "930379",
+      "993791",
+      "1046971",
+      "1074931",
+      "1290366",
+      "1499129",
+      "1647671",
+      "1792975",
+      "1802353",
+      "1817766",
+      "1906719",
+      "2225976",
+      "2238418",
+      "2887610",
+      "2893773",
+      "2962586",
+      "3300211",
+      "3634471",
+      "3751418",
+      "4255524",
+      "4592959",
+      "4699574",
+      "4892221",
+      "4911474",
+      "4934253",
+      "5814825",
+      "6131604",
+      "6566239",
+      "7148380",
+      "7558034",
+      "7629569",
+      "7672206",
+      "7955325",
+      "8340584",
+      "8454308",
+      "9352902",
+      "9792271",
+      "10239839",
+      "12621451",
+      "15838235",
+      "18952512",
+      "20722922",
+      "21757108",
+      "21967618",
+      "23066976",
+      "24314125",
+      "24403156",
+      "25844500",
+      "26155570",
+      "26171562",
+      "28227842",
+      "28871495",
+      "29540174",
+      "30553238",
+      "37328049",
+      "38944834",
+      "39928514",
+      "40343708",
+      "44152621",
+      "45604736",
+      "46521626",
+      "46703097",
+      "46928473",
+      "49449800",
+      "49546885",
+      "50731291",
+      "51406206",
+      "52152672",
+      "52376302",
+      "52427290",
+      "54185106",
+      "54682964"
+    ],
+    "relevance_relationships": [
+      {
+        "query_id": "5a7735ac5542993735360219",
+        "corpus_id": "23066976",
+        "score": 1
+      },
+      {
+        "query_id": "5a7735ac5542993735360219",
+        "corpus_id": "167961",
+        "score": 1
+      },
+      {
+        "query_id": "5a8780385542996e4f30880e",
+        "corpus_id": "37328049",
+        "score": 1
+      },
+      {
+        "query_id": "5a8780385542996e4f30880e",
+        "corpus_id": "487732",
+        "score": 1
+      },
+      {
+        "query_id": "5a8e0c34554299068b959e37",
+        "corpus_id": "9352902",
+        "score": 1
+      },
+      {
+        "query_id": "5a8e0c34554299068b959e37",
+        "corpus_id": "330637",
+        "score": 1
+      },
+      {
+        "query_id": "5ae1bb88554299234fd042dd",
+        "corpus_id": "2225976",
+        "score": 1
+      },
+      {
+        "query_id": "5ae1bb88554299234fd042dd",
+        "corpus_id": "1499129",
+        "score": 1
+      },
+      {
+        "query_id": "5a88a74a554299206df2b31b",
+        "corpus_id": "62262",
+        "score": 1
+      },
+      {
+        "query_id": "5a88a74a554299206df2b31b",
+        "corpus_id": "4592959",
+        "score": 1
+      },
+      {
+        "query_id": "5a7612cf55429976ec32bcfe",
+        "corpus_id": "46521626",
+        "score": 1
+      },
+      {
+        "query_id": "5a7612cf55429976ec32bcfe",
+        "corpus_id": "51406206",
+        "score": 1
+      },
+      {
+        "query_id": "5a7def2a5542995f4f402324",
+        "corpus_id": "26171562",
+        "score": 1
+      },
+      {
+        "query_id": "5a7def2a5542995f4f402324",
+        "corpus_id": "3634471",
+        "score": 1
+      },
+      {
+        "query_id": "5ae4d3235542993aec5ec0dd",
+        "corpus_id": "46928473",
+        "score": 1
+      },
+      {
+        "query_id": "5ae4d3235542993aec5ec0dd",
+        "corpus_id": "1647671",
+        "score": 1
+      },
+      {
+        "query_id": "5add443a5542992ae4cec503",
+        "corpus_id": "24314125",
+        "score": 1
+      },
+      {
+        "query_id": "5add443a5542992ae4cec503",
+        "corpus_id": "2887610",
+        "score": 1
+      },
+      {
+        "query_id": "5a8e4a605542995a26add4cb",
+        "corpus_id": "4934253",
+        "score": 1
+      },
+      {
+        "query_id": "5a8e4a605542995a26add4cb",
+        "corpus_id": "45280",
+        "score": 1
+      },
+      {
+        "query_id": "5ab739c65542993667793f9a",
+        "corpus_id": "7148380",
+        "score": 1
+      },
+      {
+        "query_id": "5ab739c65542993667793f9a",
+        "corpus_id": "200842",
+        "score": 1
+      },
+      {
+        "query_id": "5a7541ab5542993748c89803",
+        "corpus_id": "49449800",
+        "score": 1
+      },
+      {
+        "query_id": "5a7541ab5542993748c89803",
+        "corpus_id": "898257",
+        "score": 1
+      },
+      {
+        "query_id": "5ac5093b5542996feb3fe9d8",
+        "corpus_id": "2962586",
+        "score": 1
+      },
+      {
+        "query_id": "5ac5093b5542996feb3fe9d8",
+        "corpus_id": "259575",
+        "score": 1
+      },
+      {
+        "query_id": "5a81de8d55429926c1cdada9",
+        "corpus_id": "30553238",
+        "score": 1
+      },
+      {
+        "query_id": "5a81de8d55429926c1cdada9",
+        "corpus_id": "45218",
+        "score": 1
+      },
+      {
+        "query_id": "5a83e925554299123d8c21ca",
+        "corpus_id": "54682964",
+        "score": 1
+      },
+      {
+        "query_id": "5a83e925554299123d8c21ca",
+        "corpus_id": "38944834",
+        "score": 1
+      },
+      {
+        "query_id": "5a71532e5542994082a3e7d6",
+        "corpus_id": "1817766",
+        "score": 1
+      },
+      {
+        "query_id": "5a71532e5542994082a3e7d6",
+        "corpus_id": "398934",
+        "score": 1
+      },
+      {
+        "query_id": "5a74b6ea55429974ef308c41",
+        "corpus_id": "8454308",
+        "score": 1
+      },
+      {
+        "query_id": "5a74b6ea55429974ef308c41",
+        "corpus_id": "1074931",
+        "score": 1
+      },
+      {
+        "query_id": "5a7257ce5542990c210a410d",
+        "corpus_id": "49546885",
+        "score": 1
+      },
+      {
+        "query_id": "5a7257ce5542990c210a410d",
+        "corpus_id": "89605",
+        "score": 1
+      },
+      {
+        "query_id": "5ae5e5fc55429929b0807a06",
+        "corpus_id": "308187",
+        "score": 1
+      },
+      {
+        "query_id": "5ae5e5fc55429929b0807a06",
+        "corpus_id": "7672206",
+        "score": 1
+      },
+      {
+        "query_id": "5abd0e8355429924427fcee2",
+        "corpus_id": "1046971",
+        "score": 1
+      },
+      {
+        "query_id": "5abd0e8355429924427fcee2",
+        "corpus_id": "293524",
+        "score": 1
+      },
+      {
+        "query_id": "5ae5fb975542996de7b71aa8",
+        "corpus_id": "21757108",
+        "score": 1
+      },
+      {
+        "query_id": "5ae5fb975542996de7b71aa8",
+        "corpus_id": "73209",
+        "score": 1
+      },
+      {
+        "query_id": "5a74691755429929fddd8412",
+        "corpus_id": "39928514",
+        "score": 1
+      },
+      {
+        "query_id": "5a74691755429929fddd8412",
+        "corpus_id": "39942",
+        "score": 1
+      },
+      {
+        "query_id": "5ab2f57955429929539468cf",
+        "corpus_id": "6566239",
+        "score": 1
+      },
+      {
+        "query_id": "5ab2f57955429929539468cf",
+        "corpus_id": "67025",
+        "score": 1
+      },
+      {
+        "query_id": "5add1ebe5542990d50227dec",
+        "corpus_id": "10239839",
+        "score": 1
+      },
+      {
+        "query_id": "5add1ebe5542990d50227dec",
+        "corpus_id": "1802353",
+        "score": 1
+      },
+      {
+        "query_id": "5ae2e2c655429928c423952d",
+        "corpus_id": "45604736",
+        "score": 1
+      },
+      {
+        "query_id": "5ae2e2c655429928c423952d",
+        "corpus_id": "277935",
+        "score": 1
+      },
+      {
+        "query_id": "5ab8f1fa5542991b5579f077",
+        "corpus_id": "6131604",
+        "score": 1
+      },
+      {
+        "query_id": "5ab8f1fa5542991b5579f077",
+        "corpus_id": "2893773",
+        "score": 1
+      },
+      {
+        "query_id": "5a7e264055429965cec5eaa4",
+        "corpus_id": "28227842",
+        "score": 1
+      },
+      {
+        "query_id": "5a7e264055429965cec5eaa4",
+        "corpus_id": "28172",
+        "score": 1
+      },
+      {
+        "query_id": "5ab709b15542992aa3b8c78e",
+        "corpus_id": "3300211",
+        "score": 1
+      },
+      {
+        "query_id": "5ab709b15542992aa3b8c78e",
+        "corpus_id": "33126",
+        "score": 1
+      },
+      {
+        "query_id": "5ab985b5554299131ca4235e",
+        "corpus_id": "54185106",
+        "score": 1
+      },
+      {
+        "query_id": "5ab985b5554299131ca4235e",
+        "corpus_id": "28871495",
+        "score": 1
+      },
+      {
+        "query_id": "5a89c2715542993b751ca990",
+        "corpus_id": "858143",
+        "score": 1
+      },
+      {
+        "query_id": "5a89c2715542993b751ca990",
+        "corpus_id": "3751418",
+        "score": 1
+      },
+      {
+        "query_id": "5a87dc635542994846c1cdf2",
+        "corpus_id": "5814825",
+        "score": 1
+      },
+      {
+        "query_id": "5a87dc635542994846c1cdf2",
+        "corpus_id": "520309",
+        "score": 1
+      },
+      {
+        "query_id": "5ae7ac1f5542993210983eed",
+        "corpus_id": "9792271",
+        "score": 1
+      },
+      {
+        "query_id": "5ae7ac1f5542993210983eed",
+        "corpus_id": "50731291",
+        "score": 1
+      },
+      {
+        "query_id": "5ab9c21055429970cfb8eb9d",
+        "corpus_id": "15838235",
+        "score": 1
+      },
+      {
+        "query_id": "5ab9c21055429970cfb8eb9d",
+        "corpus_id": "4699574",
+        "score": 1
+      },
+      {
+        "query_id": "5abef2505542993fe9a41db2",
+        "corpus_id": "4255524",
+        "score": 1
+      },
+      {
+        "query_id": "5abef2505542993fe9a41db2",
+        "corpus_id": "993791",
+        "score": 1
+      },
+      {
+        "query_id": "5a7c35885542996dd594b8d9",
+        "corpus_id": "7629569",
+        "score": 1
+      },
+      {
+        "query_id": "5a7c35885542996dd594b8d9",
+        "corpus_id": "39566",
+        "score": 1
+      },
+      {
+        "query_id": "5a8b634255429949d91db58b",
+        "corpus_id": "25844500",
+        "score": 1
+      },
+      {
+        "query_id": "5a8b634255429949d91db58b",
+        "corpus_id": "40343708",
+        "score": 1
+      },
+      {
+        "query_id": "5a8b2d8e5542995d1e6f12f1",
+        "corpus_id": "12621451",
+        "score": 1
+      },
+      {
+        "query_id": "5a8b2d8e5542995d1e6f12f1",
+        "corpus_id": "230311",
+        "score": 1
+      },
+      {
+        "query_id": "5ab26ed65542993be8fa9913",
+        "corpus_id": "1906719",
+        "score": 1
+      },
+      {
+        "query_id": "5ab26ed65542993be8fa9913",
+        "corpus_id": "18952512",
+        "score": 1
+      },
+      {
+        "query_id": "5a7f81bc5542992097ad2f8f",
+        "corpus_id": "44152621",
+        "score": 1
+      },
+      {
+        "query_id": "5a7f81bc5542992097ad2f8f",
+        "corpus_id": "2238418",
+        "score": 1
+      },
+      {
+        "query_id": "5a7559b25542992db9473648",
+        "corpus_id": "26155570",
+        "score": 1
+      },
+      {
+        "query_id": "5a7559b25542992db9473648",
+        "corpus_id": "21967618",
+        "score": 1
+      },
+      {
+        "query_id": "5a8c5d795542995e66a475d4",
+        "corpus_id": "930379",
+        "score": 1
+      },
+      {
+        "query_id": "5a8c5d795542995e66a475d4",
+        "corpus_id": "726979",
+        "score": 1
+      },
+      {
+        "query_id": "5ac1d63055429964131be2a1",
+        "corpus_id": "52376302",
+        "score": 1
+      },
+      {
+        "query_id": "5ac1d63055429964131be2a1",
+        "corpus_id": "355604",
+        "score": 1
+      },
+      {
+        "query_id": "5a8cb59055429941ae14ded6",
+        "corpus_id": "20722922",
+        "score": 1
+      },
+      {
+        "query_id": "5a8cb59055429941ae14ded6",
+        "corpus_id": "1792975",
+        "score": 1
+      },
+      {
+        "query_id": "5ab2bfc65542991669774094",
+        "corpus_id": "24403156",
+        "score": 1
+      },
+      {
+        "query_id": "5ab2bfc65542991669774094",
+        "corpus_id": "4911474",
+        "score": 1
+      },
+      {
+        "query_id": "5ae07f6d55429945ae959385",
+        "corpus_id": "22256",
+        "score": 1
+      },
+      {
+        "query_id": "5ae07f6d55429945ae959385",
+        "corpus_id": "180464",
+        "score": 1
+      },
+      {
+        "query_id": "5ade08425542995b365fabd9",
+        "corpus_id": "7955325",
+        "score": 1
+      },
+      {
+        "query_id": "5ade08425542995b365fabd9",
+        "corpus_id": "743431",
+        "score": 1
+      },
+      {
+        "query_id": "5a8dea555542995a26add44f",
+        "corpus_id": "29540174",
+        "score": 1
+      },
+      {
+        "query_id": "5a8dea555542995a26add44f",
+        "corpus_id": "52152672",
+        "score": 1
+      },
+      {
+        "query_id": "5ab4826f5542990594ba9c3c",
+        "corpus_id": "4892221",
+        "score": 1
+      },
+      {
+        "query_id": "5ab4826f5542990594ba9c3c",
+        "corpus_id": "8340584",
+        "score": 1
+      },
+      {
+        "query_id": "5adf48b25542995ec70e8fb5",
+        "corpus_id": "7558034",
+        "score": 1
+      },
+      {
+        "query_id": "5adf48b25542995ec70e8fb5",
+        "corpus_id": "1290366",
+        "score": 1
+      },
+      {
+        "query_id": "5a7a783b5542990783324f58",
+        "corpus_id": "52427290",
+        "score": 1
+      },
+      {
+        "query_id": "5a7a783b5542990783324f58",
+        "corpus_id": "46703097",
+        "score": 1
+      }
+    ]
+  },
+  "created_at": "2026-10-03T13:30:50.140178",
+  "manifest_version": "2.0"
+}

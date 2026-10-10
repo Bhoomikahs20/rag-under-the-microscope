@@ -1,0 +1,33 @@
+{
+  "experiment_name": "Baseline RAG Pipeline",
+  "random_seed": 42,
+  "dataset_info": {
+    "queries_count": 50,
+    "corpus_documents_count": 100,
+    "qrels_count": 100
+  },
+  "chunking_settings": {
+    "chunk_size_words": 250,
+    "chunk_overlap_words": 50,
+    "total_chunks_created": 100
+  },
+  "retrieval_settings": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "vector_index_type": "FAISS IndexFlatIP (Cosine Similarity)",
+    "top_k": 3,
+    "indexing_time_seconds": 2.169
+  },
+  "generation_settings": {
+    "generator_model": "google/flan-t5-base",
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 50,
+    "prompt_template": "Context:\n{context}\n\nQuestion: {question}\nAnswer the question based ONLY on the context provided above:"
+  },
+  "advanced_features": {
+    "reranking": false,
+    "query_rewriting": false,
+    "hybrid_search": false
+  },
+  "runtime_seconds": 125.22
+}
