@@ -1,5 +1,5 @@
 # Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems
-## An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval
+## An Empirical Engineering Guide
 
 **Author:** Bhoomika H S  
 **Publication Date:** October 2026  
@@ -10,7 +10,7 @@
 
 ## Copyright & Disclaimer Notice
 
-**Copyright © 2026 Hrishikesh Bhuyan. All rights reserved.**
+**Copyright © 2026 Bboomika H S. All rights reserved.**
 
 Permission is granted to review, cite, and reproduce excerpts of this manuscript for research, educational, and technical evaluation purposes, provided proper credit is given to the source repository.
 
