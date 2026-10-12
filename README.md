@@ -124,12 +124,12 @@ pip install python-docx reportlab markdown
 
 If you utilize this repository, evaluation framework, or empirical findings in your research or production systems, please cite as:
 
-```@book{bhuyan2026rag,
+```bibtex
+@book{hs2026rag,
   title     = {Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems},
   subtitle  = {An Empirical Engineering Guide},
-  author    = {Bhuyan, Hrishikesh},
+  author    = {H S, Bhoomika},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23276026}
 }
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23276026.svg)](https://doi.org/10.5281/zenodo.23276026)
