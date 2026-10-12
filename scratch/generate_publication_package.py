@@ -192,12 +192,15 @@ def generate_docx(blocks, output_path):
     print(f"Generating DOCX at: {output_path}")
     doc = docx.Document()
 
-    # Set page margins (1 inch all sides)
+    # Set page margins (1 inch all sides) and ensure footer is completely removed
     for section in doc.sections:
         section.top_margin = Inches(1.0)
         section.bottom_margin = Inches(1.0)
         section.left_margin = Inches(1.0)
         section.right_margin = Inches(1.0)
+        section.footer.is_linked_to_previous = False
+        for p in section.footer.paragraphs:
+            p.text = ""
 
     # Palette
     NAVY = RGBColor(26, 54, 93)      # #1A365D
@@ -450,11 +453,7 @@ class NumberedCanvas(canvas.Canvas):
         self.setLineWidth(0.5)
         self.line(54, 742, 558, 742)
 
-        # Footer
-        self.line(54, 50, 558, 50)
-        page_str = f"Page {self._pageNumber} of {page_count}"
-        self.drawRightString(558, 38, page_str)
-        self.drawString(54, 38, "Antigravity AI Engineering & Research Team | Confidential & Published")
+        # Footer completely removed
         self.restoreState()
 
 
@@ -589,6 +588,7 @@ def generate_pdf(blocks, output_path):
 
         elif btype == "paragraph":
             text = clean_inline_markdown(b["text"])
+            text = text.replace("©", "&copy;")
             if text.startswith("*Figure ") or text.startswith("Figure "):
                 story.append(Paragraph(text, style_caption))
             else:
@@ -689,7 +689,7 @@ def generate_pdf(blocks, output_path):
 
 README_CONTENT = """# RAG Book: Retrieval-Augmented Generation — From Baseline Pipelines to Production Systems
 
-Welcome to the official repository for **"Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems (An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval)"**.
+Welcome to the official repository for **"Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems (An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval)"** by **Bhoomika H S**.
 
 ---
 
@@ -815,13 +815,13 @@ pip install python-docx reportlab markdown
 If you utilize this repository, evaluation framework, or empirical findings in your research or production systems, please cite as:
 
 ```bibtex
-@book{antigravity2026rag,
+@book{bhoomika2026rag,
   title     = {Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems},
   subtitle  = {An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval},
-  author    = {Antigravity AI Engineering \& Research Team},
+  author    = {Bhoomika H S},
   year      = {2026},
-  publisher = {Antigravity AI Press},
-  url       = {d:/Rag book work/data/processed/publication/}
+  publisher = {Antigravity Research Press},
+  url       = {https://github.com/Bhoomikahs20/rag-under-the-microscope}
 }
 ```
 """

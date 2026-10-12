@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this book, codebase, empirical benchmark, or ablation results in your work, please cite it using the metadata below."
 title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
-subtitle: "An Empirical Engineering Guide"
+subtitle: "An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval"
 type: book
 
 authors:

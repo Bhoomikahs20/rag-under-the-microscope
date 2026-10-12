@@ -1,6 +1,6 @@
 # RAG Book: Retrieval-Augmented Generation — From Baseline Pipelines to Production Systems
 
-Welcome to the official repository for **"Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems (An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval)"**.
+Welcome to the official repository for **"Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems (An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval)"** by **Bhoomika H S**.
 
 ---
 
@@ -127,9 +127,11 @@ If you utilize this repository, evaluation framework, or empirical findings in y
 ```bibtex
 @book{hs2026rag,
   title     = {Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems},
-  subtitle  = {An Empirical Engineering Guide},
+  subtitle  = {An Empirical Engineering Guide to Component Evaluation, Infrastructure Architecture, and Adaptive Retrieval},
   author    = {H S, Bhoomika},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.23276026}
+  doi       = {10.5281/zenodo.23276026},
+  url       = {https://zenodo.org/records/23276026}
 }
+```
