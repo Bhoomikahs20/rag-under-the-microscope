@@ -5,8 +5,8 @@ subtitle: "An Empirical Engineering Guide"
 type: book
 
 authors:
-  - family-names: "Bhuyan"
-    given-names: "Hrishikesh"
+  - family-names: "H S"
+    given-names: "Bhoomika"
 
 year: 2026
 month: 10
@@ -34,8 +34,8 @@ preferred-citation:
   type: book
   title: "Retrieval-Augmented Generation: From Baseline Pipelines to Production Systems"
   authors:
-    - family-names: "Bhuyan"
-      given-names: "Hrishikesh"
+    - family-names: "H S"
+      given-names: "Bhoomika"
   year: 2026
   month: 10
   publisher:
